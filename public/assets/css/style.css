@@ -1,0 +1,1057 @@
+
+html{
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: 'ABeeZee', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar{
+    padding: 20px 30px;
+    background-color: #02081A;
+}
+
+.navbar .logo{
+    width: 65px;
+    height: 58px;
+}
+
+.navbar-nav li{
+    padding: 10px 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navbar .btn-phone{
+    background-color: #B1A42C;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 22px;
+    margin-top: 14px;
+}
+
+.navbar .btn-phone:hover{
+    background-color: #fff;
+}
+
+.navbar .dropdown:hover #projectMenu{
+    display: block;
+}
+
+.navbar .dropdown:hover #mediaMenu{
+    display: block;
+}
+
+.navbar #projectMenu a{
+    padding: 10px 25px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar #projectMenu a:hover{
+    background-color: #02081A;
+    color: #B1A42C;
+    transition: background-color 0.9s;
+}
+
+.navbar #mediaMenu a{
+    padding: 10px 25px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar #mediaMenu a:hover{
+    background-color: #02081A;
+    color: #B1A42C;
+    transition: background-color 0.9s;
+}
+
+/* Home Section CSS Start */
+.home-section .carousel-caption {
+    width: 552px;
+    left: 9%;
+    top: 42% !important;
+    transform: translateY(-50%);
+    text-align: left;
+    bottom: initial;
+    color: #d6e4f4;
+    font-weight: bold;
+}
+
+.home-section .team{
+    color: #fff !important;
+}
+
+.home-section .team1{
+    font-weight: bold;
+}
+
+.home-section .team2{
+    font-weight: bold;
+}
+
+.home-section .team3{
+    font-weight: bold;
+    color: #B1A42C;
+}
+
+.home-section .c-img{
+    background-size: cover;
+    filter: brightness(0.5);
+}
+
+.home-section .btn-book{
+    padding: 12px 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+.home-section .btn-learn{
+    padding: 12px 45px;
+    background: #B1A42C;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+.home-section .btn-book:hover{
+    background: #B1A42C;
+}
+
+.home-section .btn-learn:hover{
+    background: #000;
+}
+
+.home-section #carousel_img{
+    margin-top: -10rem;
+    margin-bottom: 2rem;
+}
+
+.home-section .best{
+    color: #B1A42C;
+}
+
+.home-section .second{
+    background-color: #F7F7F7;
+    padding: 10px 10px;
+}
+
+.home-section .para{
+    font-size: 13px;
+}
+
+.home-section .today{
+    padding: 12px 35px;
+    background: black;
+    border-radius: 30px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.home-section .detail{
+    padding: 12px 50px;
+    background: #B1A42C;
+    border-radius: 30px;
+    font-size: 12px;
+    color: #fff;
+    margin-left: 8px;
+}
+
+.home-section .today:hover{
+    background: #B1A42C;
+}
+
+.home-section .detail:hover{
+    background: #000;
+}
+
+.home-section .icon{
+    border: 1px solid #B1A42C;
+    font-size: 35px;
+    margin-top: 66px;
+    margin-left: -46px;
+    padding: 3px 5px;
+    border-radius: 45px;
+    color: #B1A42C;
+}
+
+.home-section .garden{
+    margin-top: 74px;
+    margin-left: 7px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-section .ul li{
+    list-style: none;
+}
+
+.home-section .ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.home-section .third{
+    background-color: #02081A;
+    padding: 60px 0px;
+}
+
+.home-section .right-head{
+    color: #D2AC2C;
+    font-size: 50px;
+
+}
+
+.home-section .right-img{
+    width: 100%;
+    height: 70%;
+    border-radius: 3px;
+}
+
+.home-section .more{
+    color: #D2AC2C;
+    font-size: 13px;
+}
+
+.home-section .btn-project{
+    border: 2px solid #fff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.home-section .btn-project:hover{
+    background: #D2AC2C;
+    color: #000;
+    border: 1px solid #D2AC2C;
+}
+
+.home-section .forth-head{
+    color: #D2AC2C;
+    font-size: 45px;
+}
+
+.home-section .fourth{
+    background-color: #02081A;
+    padding: 60px 0px;
+}
+
+.home-section .wish{
+    font-size: 15px;
+    color: #cecece;
+}
+
+.home-section .client{
+    color: #cecece;
+}
+
+.home-section .box{
+    margin-top: 10rem;
+    border-left: 0.1px solid #fff;
+    border-right: 0.1px solid #fff;
+}
+
+.home-section .box1{
+    margin-top: 15px;
+}
+
+.home-section .span{
+    color: #b2b2b2;
+    font-size: 12px;
+}
+
+.home-section .card{
+    height: 100%;
+    box-shadow: 0 1px 10px 0 rgb(0 0 0 / 18%);
+}
+
+.home-section .c-f{
+    height: 50px;
+}
+
+.home-section .read{
+    background-color: #D2AC2C;
+    color: #000;
+    font-weight: bold;
+    padding: 11px 32px;
+    margin-top: 15px;
+    border-radius: 26px;
+}
+
+.home-section .read:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.home-section .news{
+    width: 100%;
+    height: 170px;
+}
+
+.home-section .sixth{
+    background-color: #02081A;
+    padding: 30px 0px;
+}
+
+.home-section .near{
+    height: 26rem;
+    width: 78%;
+    margin-top: 15px;
+}
+
+.home-section .overview .al{
+    font-size: 14px;
+}
+
+.home-section .overview .btn-pres{
+    border-radius: 25px;
+    padding: 12px 18px;
+    background-color: #000;
+    font-size: 13px;
+    color: #fff;
+}
+
+.home-section .overview .btn-payment{
+    border-radius: 25px;
+    padding: 12px 24px;
+    background-color: #D2AC2C;
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
+}
+
+.home-section .overview .btn-payment:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.home-section .overview .btn-pres:hover{
+    background-color: #D2AC2C;
+    color: #000;
+}
+
+.home-section .overview #ifram{
+    width: 100%;
+}
+
+.home-section #al-noor{
+    height: 90vh;
+}
+
+.home-section .services .service-p{
+    font-size: 12px;
+}
+
+.home-section .services .ambu{
+    font-size: 25px;
+}
+
+.home-section .location{
+    padding: 30px 0px;
+}
+
+.home-section .location .loc-mark{
+    font-size: 50px;
+    color: #D2AC2C;
+}
+
+.home-section .location .km{
+    font-size: 13px;
+}
+
+.home-section .booking .al-noor-logo{
+    width: 60%;
+}
+
+.home-section .booking .contact-num{
+    margin-top: -15px;
+    margin-bottom: 0px;
+}
+
+.home-section .booking .input{
+    padding: 15px;
+}
+
+.home-section .booking .btn-booking{
+    padding: 12px 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 30px;
+}
+
+.home-section .booking .btn-booking:hover{
+    background-color: #D2AC2C;
+}
+
+.seventh{
+    background-color: #02081A;
+    padding: 0px 20px;
+}
+
+.seventh #md-5{
+    background-color: #D2AC2C;
+}
+
+.seventh #md-6{
+    background-color: #fff;
+}
+
+.seventh #md-8{
+    background-color: #fff;
+}
+
+.seventh .call{
+    width: 34%;
+}
+
+.seventh .talk{
+    font-weight: 900;
+}
+
+.seventh .send{
+    padding: 10px 62px;
+    background: #fff;
+    border-radius: 30px;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.seventh .send:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.seventh .contact-us{
+    margin-left: -30px;
+}
+
+.seventh .contact-us li{
+    list-style: none;
+    padding: 10px 0px;
+    display: flex;
+}
+
+.seventh .contact-us li .loc{
+    margin-left: 10px;
+    font-size: 13px;
+    margin-top: -8px;
+}
+
+.seventh .contact-us li .email{
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.seventh .last-icon{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: -40px;
+}
+
+.seventh .last-icon li{
+    padding: 0px 13px;
+    cursor: pointer;
+}
+
+.seventh .last-icon li:hover{
+    background-color: #000;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 10px;
+    transition: background-color 0.9s;
+}
+
+footer{
+    background-color: #02081A;
+    margin-top: -112px;
+    padding: 105px 0px 5px 0px;
+}
+
+footer .fot-p{
+    margin-top: -25px;
+    font-size: 12px;
+}
+/* Home Section CSS End */
+
+
+
+
+/* ABOUT Section CSS Start */
+.about-section{
+    padding: 0px 0px;
+}
+
+.about-section .top-img{
+    width: 100%;
+    height: 470px;
+    background-size: cover;
+    filter: brightness(0.7);
+}
+
+.about-section .carousel-caption{
+    position: absolute;
+    top: 200px;
+}
+
+.about-section .us{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.about-section #cont{
+    margin-top: 90px;
+    color: #000;
+}
+
+.about-section .rung{
+    font-size: 13px;
+}
+
+.about-section .first .box{
+    background-color: #D2AC2C;
+    padding: 40px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-section .first .box1{
+    background-color: #02081A;
+    padding: 52px 20px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-section .first .box1:hover{
+    background-color: #D2AC2C;
+    transition: background-color 0.4s;
+}
+
+.about-section .first .box2{
+    background-color: #D2AC2C;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-section .first .box3{
+    background-color: #02081A;
+    color: #fff;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-section .first .box3:hover{
+    background-color: #D2AC2C;
+    transition: background-color 0.4s;
+}
+
+.about-section .first .box4{
+    background-color: #D2AC2C;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-section .first .box5{
+    background-color: #02081A;
+    color: #fff;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-section .first .box5:hover{
+    background-color: #D2AC2C;
+    transition: background-color 0.4s;
+}
+
+.about-section .a-icon1{
+    font-size: 55px;
+    color: #fff;
+}
+
+.about-section .a-icon2{
+    font-size: 55px;
+}
+
+.about-section .hub{
+    background-color: #fff;
+}
+
+.about-section .second .box{
+    background-color: #02081A;
+    padding: 20px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.about-section .second .box1{
+    background-color: #D2AC2C;
+    padding: 41px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.about-section .second .box2{
+    background-color: #02081A;
+    padding: 41px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.about-section .second .box:hover{
+    background-color: #D2AC2C;
+    transition: background-color 0.4s;
+}
+
+.about-section .second .box1:hover{
+    background-color: #02081A;
+    transition: background-color 0.4s;
+}
+
+.about-section .second .box2:hover{
+    background-color: #D2AC2C;
+    transition: background-color 0.4s;
+}
+
+.about-section .second .state{
+    font-weight: bold;
+    color: #000;
+    color: #fff;
+}
+
+.about-section .second .help{
+    font-size: 14px;
+    color: #fff;
+}
+
+.about-section .second .star{
+    font-size: 40px;
+    margin-top: 25px;
+    color: #fff;
+}
+
+.about-section .third{
+    padding: 60px 0px;
+}
+
+.about-section .third .dot{
+    font-weight: bold;
+    color: #D2AC2C;
+    font-size: 50px;
+}
+
+.about-section .third .btn-us{
+    padding: 12px 35px;
+    background-color: #D2AC2C;
+    color: #000;
+    border-radius: 30px;
+}
+
+.about-section .third .btn-us:hover{
+    background-color: #000;
+    color: #D2AC2C;
+}
+
+.about-section .forth{
+    background-image: url('../images/Al-NoorOrchard-GalleryPic08.jpg');
+    background-size: cover;
+    padding: 260px 0px;
+}
+
+.about-section .forth .all-d:hover{
+    background-color: #0c0e093a;
+}
+
+.about-section .forth .cl{
+    font-weight: bold;
+    color: #fff;
+}
+
+.about-section .forth .num{
+    color: #D2AC2C;
+    font-weight: bold;
+}
+
+.about-section .forth .btn-whats{
+    padding: 10px 43px;
+    background-color: #D2AC2C;
+    color: #000;
+    border-radius: 30px;
+}
+
+.about-section .forth .btn-whats:hover{
+    background-color: #000;
+    color: #D2AC2C;
+}
+
+.about-section .fifth .more{
+    color: #D2AC2C;
+    font-size: 13px;
+}
+
+.about-section .fifth .p-img{
+    width: 100%;
+    height: 72%;
+}
+
+.about-section .fifth .g-img{
+    width: 100%;
+    height: 90%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.about-section .fifth .g-img:hover{
+    /* transform: translateY(10px); */
+    /* transform: scaleY(1.5); */
+}
+
+.about-section .fifth .a-g{
+    cursor: pointer;
+}
+
+.about-section .fifth .a-g:hover{
+    color: #D2AC2C;
+}
+
+.about-section .youtube .video{
+    width: 100%;
+    height: auto;
+}
+
+.about-section .con{
+    font-weight: bold;
+    color: #000;
+}
+
+.about-section .contact .contact-us{
+    margin-left: -30px;
+}
+
+.about-section .contact .contact-us{
+    margin-left: -30px;
+}
+
+.about-section .contact .contact-us li{
+    list-style: none;
+    padding: 10px 0px;
+    display: flex;
+}
+
+.about-section .contact-us li .loc{
+    margin-left: 10px;
+    font-size: 13px;
+    margin-top: -4px;
+}
+
+.about-section .contact-us li .email{
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.about-section .contact .last-icon{
+    margin-top: -15px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: -40px;
+}
+
+.about-section .contact .last-icon li{
+    padding: 0px 13px;
+    cursor: pointer;
+}
+
+.about-section .contact .last-icon li:hover{
+    background-color: #000;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 10px;
+    transition: background-color 0.9s;
+}
+
+.about-section .send-msg{
+    padding: 12px 17px;
+    background-color: #D2AC2C;
+    color: #000;
+    font-size: 12px;
+    border-radius: 25px;
+}
+
+.about-section .send-msg:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+/* ABOUT Section CSS End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Quires  Start*/
+@media screen and (max-width: 768px){
+    /* Home Section Media Query CSS Start */
+    .home-section #carousel_img{
+        margin-top: 0rem;
+        margin-bottom: 5rem;
+    }
+
+    .home-section #carousel_img img{
+        padding: 25px 1px;
+        width: 75%;
+    }
+
+    .home-section .team1{
+        font-size: 24px;
+    }
+    
+    .home-section .team2{
+        font-size: 24px;
+    }
+    
+    .home-section .team3{
+        font-size: 24px;
+    }
+
+    .home-section .btn-book{
+        padding: 8px 30px;
+    }
+
+    .home-section .btn-learn{
+        padding: 7px 30px;
+    }
+    .home-section .btn-project {
+        border: 2px solid #fff;
+        padding: 8px 20px;
+        font-size: 11px;
+        margin-top: 30px !important;
+    }
+
+    .home-section .team-logo{
+        width: 80%;
+    }
+
+    .home-section .all-project{
+        text-align: center;
+    }
+
+    .home-section .box{
+        border-left: none;
+        border-right: none;
+    }
+
+    .home-section .noor{
+        font-size: 20px;
+    }
+
+    .home-section .read{
+        padding: 10px 28px;
+    }
+
+    .home-section .card{
+        margin-top: 15px;
+    }
+
+    .home-section .near {
+        height: 12rem;
+    }
+
+    .home-section .seventh #md-8{
+        margin-top: 10px;
+    }
+
+    .home-section .overview #ifram{
+        margin-top: 20px;
+    }
+
+    .home-section .future{
+        font-size: 12px;
+    }
+
+    .home-section #al-noor {
+        height: 32vh;
+    }
+    /* Home Section Media Query CSS End */
+
+    /* About Section Media Query CSS Start */
+    .about-section .us {
+        font-size: 35px;
+    }
+
+    .about-section .top-img {
+        width: 100%;
+        height: 275px;
+    }
+
+    .about-section .carousel-caption {
+        position: absolute;
+        top: 100px;
+    }
+
+    .about-section .achive{
+        font-size: 25px;
+        margin-top: 30px;
+    }
+
+    .about-section .box3 {
+        margin-top: 15px;
+    }
+
+    .about-section .fifth .a-g{
+        font-size: 20px;
+    }
+    /* About Section Media Query CSS End */
+
+}
+
+@media screen and (max-width: 997px){
+    /* Home Section Media Query CSS Start */
+    .home-section .left-head{
+        font-size: 18px
+    }
+
+    .home-section .para {
+        font-size: 11px;
+    }
+
+    .home-section .choose{
+        margin-top: 10px;
+    }
+
+    .home-section .garden {
+        font-size: 16px;
+    }
+
+    .home-section .top-pro{
+        font-size: 25px;
+    }
+
+    .home-section .lead{
+        font-size: 18px;
+    }
+    .home-section .latest{
+        font-size: 10px;
+    }
+    /* Home Section Media Query CSS End */
+
+    /* About Section Media Query CSS Start */
+    .about-section .second .state{
+        font-size: 14px;
+    }
+
+    .about-section .second .help{
+        font-size: 10px;
+    }
+
+    .about-section .fifth .u-head{
+        font-size: 18px;
+    }
+    /* About Section Media Query CSS End */
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 990px) {
+    /* Home Section Media Query CSS Start */
+    .home-section .today{
+        padding: 12px 16px;
+    }
+    .home-section .detail{
+        padding: 12px 16px;
+    }
+
+    .home-section .team-logo{
+        margin-top: 80px;
+    }
+
+    .home-section .btn-project{
+        margin-top: 40px !important;
+    }
+
+    .home-section .third {
+        padding: 15px 0px;
+    }
+
+    .home-section .lda{
+        font-size: 11px;
+    }
+    .home-section .near {
+        height: 22rem;
+        width: 84%;
+        margin-top: 15px;
+    }
+
+    .home-section .card {
+        height: 90%;
+    }
+
+    .home-section .news{
+        height: 128px;
+    }
+    /* Home Section Media Query CSS End */
+
+
+
+    /* ABOUT Section Media Query CSS Start */
+    .about-section .level{
+        font-size: 10px;
+    }
+
+    .about-section .box{
+        padding: 25px 20px;
+    }
+
+    .about-section .box1{
+        padding: 25px 20px;
+    }
+
+    .about-section .box2{
+        padding: 18px 20px;
+    }
+
+    .about-section .box3{
+        padding: 25px 20px;
+    }
+
+    .about-section .box4{
+        padding: 25px 20px;
+    }
+
+    .about-section .box5{
+        padding: 25px 20px;
+    }
+    /* ABOUT Section Media Query CSS End */
+
+}
+
+
+
+
