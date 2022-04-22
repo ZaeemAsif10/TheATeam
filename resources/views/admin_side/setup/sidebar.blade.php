@@ -1,7 +1,8 @@
 <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('public/admin_assets/images/logo-icon-2.png') }}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('public/admin_assets/images/logo.png') }}" class="logo-icon"
+                alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">SYN-UI</h4>
@@ -30,10 +31,6 @@
                 <div class="menu-title">Slider</div>
             </a>
             <ul>
-                <li> <a href="widgets-static-widgets.html">
-                        <ion-icon name="ellipse-outline"></ion-icon>Add Slider
-                    </a>
-                </li>
                 <li> <a href="{{ url('slider') }}">
                         <ion-icon name="ellipse-outline"></ion-icon>View Slider
                     </a>

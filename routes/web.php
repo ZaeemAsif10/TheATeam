@@ -34,6 +34,9 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 Route::get('slider', [HomeController::class, 'index']);
 Route::get('get-slider', [HomeController::class, 'getSlider']);
 Route::post('store-slider', [HomeController::class, 'storeSlider']);
+Route::get('edit-slider', [HomeController::class, 'editSlider']);
+Route::post('update-slider', [HomeController::class, 'updateSlider']);
+Route::get('delete-slider', [HomeController::class, 'deleteSlider']);
 
 
 

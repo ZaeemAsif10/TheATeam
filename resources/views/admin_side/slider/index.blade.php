@@ -58,55 +58,91 @@
                 </div>
             </div>
             <!--Table End-->
-
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="AddSliderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Slider Add</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="Add_Slider_Form" action="" method="POST" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Title</label>
-                                            <input type="text" class="form-control" name="title" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mt-3">
-                                        <div class="form-group">
-                                            <label for="">Image</label>
-                                            <input type="file" class="form-control" name="image" required>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary add_slider">Save</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
         </div>
         <!-- end page content-->
     </div>
     <!--end page content wrapper-->
+
+
+    <!--Add Slider Modal Start -->
+    <div id="AddSliderModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Slider Add</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="Add_Slider_Form" action="" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Title</label>
+                                    <input type="text" class="form-control" name="title" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group">
+                                    <label for="">Image</label>
+                                    <input type="file" class="form-control" name="image" required>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary add_slider">Save</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Add Slider Modal End -->
+
+
+    <!--Edit Slider Modal Start -->
+    <div id="edit_slider_modal" class="modal custom-modal fade" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Slider Edit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="Edit_Slider_Form" action="" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="slider_id">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Title</label>
+                                    <input type="text" class="form-control" name="title" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group">
+                                    <label for="">Image</label>
+                                    <input type="file" class="form-control" name="image">
+                                    <span id="store_image"></span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary update_slider">Update</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Edit Slider Modal End -->
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -138,11 +174,12 @@
                             html += '<tr>' +
                                 '<td>' + c + '</td>' +
                                 '<td>' + data[i].title + '</td>' +
-                                '<td>' + data[i].image + '</td>' +
+                                '<td><img src="{{ asset("storage/app/public/uploads/slider") }}/' + data[i].image +
+                                '" width="40px" height="50px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
-                                '<a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
-                                '<a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><ion-icon name="trash-sharp" role="img" class="md hydrated" aria-label="trash sharp"></ion-icon></a>' +
+                                '<a href="#" class="text-warning btn_edit_slider" data="'+ data[i].id +'"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
+                                '<a href="javascript:;" class="text-danger btn_delete_slider" data="'+ data[i].id +'" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><ion-icon name="trash-sharp" role="img" class="md hydrated" aria-label="trash sharp"></ion-icon></a>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>';
@@ -163,7 +200,7 @@
             //Add Slider
             $('#Add_Slider_Form').on('submit', function(e) {
                 e.preventDefault();
-                $('.add_slider').text('Wait...');
+                $('.add_slider').text('Saving...');
 
                 let formData = new FormData($('#Add_Slider_Form')[0]);
 
@@ -180,10 +217,11 @@
 
                         if (response.status == 200) {
                             $('#Add_Slider_Form')[0].reset();
-                            $('#AddSliderModal').modal('hide');
                             toastr.success(response.message);
                             $('.add_slider').text('Save');
+                            $(".close").click();
                             getSlider();
+
                         }
 
                         if (response.error) {
@@ -197,6 +235,117 @@
                 });
 
             });
+
+
+            //Edit Slider
+            $('#sliderTable').on('click', '.btn_edit_slider', function(e) {
+                e.preventDefault();
+
+                var id = $(this).attr('data');
+
+                $('#edit_slider_modal').modal('show');
+
+                $.ajax({
+
+                    type: 'ajax',
+                    method: 'get',
+                    url: '{{url("edit-slider")}}',
+                    data: {
+                        id: id
+                    },
+                    async: false,
+                    dataType: 'json',
+                    success: function(data) {
+
+                        $('input[name=slider_id]').val(data.id);
+                        $('input[name=title]').val(data.title);
+                        $('#store_image').html('<img src="{{asset("storage/app/public/uploads/slider/")}}/'+data.image+'" class="mt-4 ml-4" width="40px" height="70px" />');
+                        $('#store_image').append('<input type="hidden" name="hidden_image" value="'+data.image+'" />' );
+                    },
+
+                    error: function() {
+
+                        toastr.error('something went wrong');
+
+                    }
+
+                });
+
+            });
+
+
+            //Update trainer
+        $('.update_slider').on('click', function(e) {
+            e.preventDefault();
+            $('.update_slider').text('Updating...');
+
+            let EditFormData = new FormData($('#Edit_Slider_Form')[0]);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ url('update-slider') }}",
+                data: EditFormData,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                contentType: false,
+                processData: false,
+                dataType: "json",
+                success: function(response) {
+
+                    if (response.status == 200) {
+                        $('#edit_slider_modal').modal('hide');
+                        $('#Edit_Slider_Form').find('input').val("");
+                        $('.update_slider').text('Update');
+                        toastr.success(response.message);
+                        getSlider();
+                    }
+                },
+                error: function() {
+                    toastr.error('something went wrong');
+                    $('.update_slider').text('Update');
+                }
+            });
+
+        });
+
+
+        // script for delete data
+        $('#sliderTable').on('click', '.btn_delete_slider', function(e) {
+            e.preventDefault();
+
+            var id = $(this).attr('data');
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to Delete this Data!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "GET",
+                        url: "{{ url('delete-slider') }}",
+                        data: {
+                            id: id
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        dataType: "json",
+                        success: function(response) {
+
+                            toastr.success(response.message);
+                            getSlider();
+                        }
+                    });
+                }
+            })
+
+        });
 
         });
     </script>
