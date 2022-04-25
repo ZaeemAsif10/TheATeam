@@ -104,8 +104,7 @@
 
 
     <!--Edit Slider Modal Start -->
-    <div id="edit_slider_modal" class="modal custom-modal fade" role="dialog"
-        aria-hidden="true">
+    <div id="edit_slider_modal" class="modal custom-modal fade" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -174,12 +173,16 @@
                             html += '<tr>' +
                                 '<td>' + c + '</td>' +
                                 '<td>' + data[i].title + '</td>' +
-                                '<td><img src="{{ asset("storage/app/public/uploads/slider") }}/' + data[i].image +
-                                '" width="40px" height="50px" ></td>' +
+                                '<td><img src="{{ asset('storage/app/public/uploads/slider') }}/' +
+                                data[i].image +
+                                '" width="80px" height="80px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
-                                '<a href="#" class="text-warning btn_edit_slider" data="'+ data[i].id +'"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
-                                '<a href="javascript:;" class="text-danger btn_delete_slider" data="'+ data[i].id +'" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><ion-icon name="trash-sharp" role="img" class="md hydrated" aria-label="trash sharp"></ion-icon></a>' +
+                                '<a href="#" class="text-warning btn_edit_slider" data="' + data[i].id +
+                                '"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
+                                '<a href="javascript:;" class="text-danger btn_delete_slider" data="' +
+                                data[i].id +
+                                '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><ion-icon name="trash-sharp" role="img" class="md hydrated" aria-label="trash sharp"></ion-icon></a>' +
                                 '</div>' +
                                 '</td>' +
                                 '</tr>';
@@ -200,7 +203,6 @@
             //Add Slider
             $('#Add_Slider_Form').on('submit', function(e) {
                 e.preventDefault();
-                $('.add_slider').text('Saving...');
 
                 let formData = new FormData($('#Add_Slider_Form')[0]);
 
@@ -213,11 +215,16 @@
                     },
                     contentType: false,
                     processData: false,
+                    beforeSend: function() {
+                        $('.add_slider').text('Saving...');
+                        $(".add_slider").prop("disabled", true);
+                    },
                     success: function(response) {
 
                         if (response.status == 200) {
                             toastr.success(response.message);
                             $('.add_slider').text('Save');
+                            $(".add_slider").prop("disabled", false);
                             $(".close").click();
                             $('#Add_Slider_Form').find('input').val("");
                             getSlider();
@@ -230,6 +237,7 @@
                     },
                     error: function() {
                         $('.add_slider').text('Save');
+                        $(".add_slider").prop("disabled", false);
                         toastr.error('something went wrong');
                     },
                 });
@@ -249,7 +257,7 @@
 
                     type: 'ajax',
                     method: 'get',
-                    url: '{{url("edit-slider")}}',
+                    url: '{{ url('edit-slider') }}',
                     data: {
                         id: id
                     },
@@ -259,8 +267,13 @@
 
                         $('input[name=slider_id]').val(data.id);
                         $('input[name=title]').val(data.title);
-                        $('#store_image').html('<img src="{{asset("storage/app/public/uploads/slider/")}}/'+data.image+'" class="mt-4 ml-4" width="40px" height="70px" />');
-                        $('#store_image').append('<input type="hidden" name="hidden_image" value="'+data.image+'" />' );
+                        $('#store_image').html(
+                            '<img src="{{ asset('storage/app/public/uploads/slider/') }}/' +
+                            data.image + '" class="mt-4 ml-4" width="40px" height="70px" />'
+                            );
+                        $('#store_image').append(
+                            '<input type="hidden" name="hidden_image" value="' + data
+                            .image + '" />');
                     },
 
                     error: function() {
@@ -275,77 +288,83 @@
 
 
             //Update trainer
-        $('.update_slider').on('click', function(e) {
-            e.preventDefault();
-            $('.update_slider').text('Updating...');
-
-            let EditFormData = new FormData($('#Edit_Slider_Form')[0]);
-
-            $.ajax({
-                type: "POST",
-                url: "{{ url('update-slider') }}",
-                data: EditFormData,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                contentType: false,
-                processData: false,
-                dataType: "json",
-                success: function(response) {
-
-                    if (response.status == 200) {
-                        $('#edit_slider_modal').modal('hide');
-                        $('#Edit_Slider_Form').find('input').val("");
-                        $('.update_slider').text('Update');
-                        toastr.success(response.message);
-                        getSlider();
-                    }
-                },
-                error: function() {
-                    toastr.error('something went wrong');
-                    $('.update_slider').text('Update');
-                }
-            });
-
-        });
+            $('.update_slider').on('click', function(e) {
+                e.preventDefault();
 
 
-        // script for delete data
-        $('#sliderTable').on('click', '.btn_delete_slider', function(e) {
-            e.preventDefault();
+                let EditFormData = new FormData($('#Edit_Slider_Form')[0]);
 
-            var id = $(this).attr('data');
+                $.ajax({
+                    type: "POST",
+                    url: "{{ url('update-slider') }}",
+                    data: EditFormData,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    contentType: false,
+                    processData: false,
+                    dataType: "json",
+                    beforeSend: function() {
+                        $('.update_slider').text('Updating...');
+                        $(".update_slider").prop("disabled", true);
+                    },
+                    success: function(response) {
 
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to Delete this Data!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        type: "GET",
-                        url: "{{ url('delete-slider') }}",
-                        data: {
-                            id: id
-                        },
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        dataType: "json",
-                        success: function(response) {
-
+                        if (response.status == 200) {
+                            $('#edit_slider_modal').modal('hide');
+                            $('#Edit_Slider_Form').find('input').val("");
+                            $('.update_slider').text('Update');
+                            $(".update_slider").prop("disabled", false);
                             toastr.success(response.message);
                             getSlider();
                         }
-                    });
-                }
-            })
+                    },
+                    error: function() {
+                        toastr.error('something went wrong');
+                        $('.update_slider').text('Update');
+                        $(".update_slider").prop("disabled", false);
+                    }
+                });
 
-        });
+            });
+
+
+            // script for delete data
+            $('#sliderTable').on('click', '.btn_delete_slider', function(e) {
+                e.preventDefault();
+
+                var id = $(this).attr('data');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to Delete this Data!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: "GET",
+                            url: "{{ url('delete-slider') }}",
+                            data: {
+                                id: id
+                            },
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            dataType: "json",
+                            success: function(response) {
+
+                                toastr.success(response.message);
+                                getSlider();
+                            }
+                        });
+                    }
+                })
+
+            });
 
         });
     </script>

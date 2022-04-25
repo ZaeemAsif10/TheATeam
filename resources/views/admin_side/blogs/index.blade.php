@@ -188,7 +188,7 @@
                                 '<td>' + data[i].title + '</td>' +
                                 '<td><img src="{{ asset('storage/app/public/uploads/blogs') }}/' +
                                 data[i].image +
-                                '" width="40px" height="50px" ></td>' +
+                                '" width="80px" height="80px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
                                 '<a href="#" class="text-warning btn_edit_blogs" data="' + data[i].id +
@@ -216,7 +216,6 @@
             //Add Blogs
             $('#Add_Blogs_Form').on('submit', function(e) {
                 e.preventDefault();
-                $('.add_blogs').text('Saving...');
 
                 let formData = new FormData($('#Add_Blogs_Form')[0]);
 
@@ -229,11 +228,16 @@
                     },
                     contentType: false,
                     processData: false,
+                    beforeSend: function() {
+                        $('.add_blogs').text('Saving...');
+                        $(".add_blogs").prop("disabled", true);
+                    },
                     success: function(response) {
 
                         if (response.status == 200) {
                             toastr.success(response.message);
                             $('.add_blogs').text('Save');
+                            $(".add_blogs").prop("disabled", false);
                             $(".close").click();
                             $('#Add_Blogs_Form').find('input').val("");
                             getBlogs();
@@ -246,6 +250,7 @@
                     },
                     error: function() {
                         $('.add_blogs').text('Save');
+                        $(".add_blogs").prop("disabled", false);
                         toastr.error('something went wrong');
                     },
                 });
@@ -299,7 +304,6 @@
             //Update Blogs
             $('.update_blogs').on('click', function(e) {
                 e.preventDefault();
-                $('.update_blogs').text('Updating...');
 
                 let EditFormData = new FormData($('#Edit_Blogs_Form')[0]);
 
@@ -313,12 +317,17 @@
                     contentType: false,
                     processData: false,
                     dataType: "json",
+                    beforeSend: function() {
+                        $('.update_blogs').text('Updating...');
+                        $(".update_blogs").prop("disabled", true);
+                    },
                     success: function(response) {
 
                         if (response.status == 200) {
                             $('#edit_blogs_modal').modal('hide');
                             $('#Edit_Blogs_Form').find('input').val("");
                             $('.update_blogs').text('Update');
+                            $(".update_blogs").prop("disabled", false);
                             toastr.success(response.message);
                             getBlogs();
                         }
@@ -326,6 +335,7 @@
                     error: function() {
                         toastr.error('something went wrong');
                         $('.update_blogs').text('Update');
+                        $(".update_blogs").prop("disabled", false);
                     }
                 });
 

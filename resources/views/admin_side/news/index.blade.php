@@ -188,7 +188,7 @@
                                 '<td>' + data[i].title + '</td>' +
                                 '<td><img src="{{ asset('storage/app/public/uploads/news') }}/' +
                                 data[i].image +
-                                '" width="40px" height="50px" ></td>' +
+                                '" width="80px" height="80px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
                                 '<a href="#" class="text-warning btn_edit_news" data="' + data[i].id +
@@ -216,7 +216,6 @@
             //Add News
             $('#Add_News_Form').on('submit', function(e) {
                 e.preventDefault();
-                $('.add_news').text('Saving...');
 
                 let formData = new FormData($('#Add_News_Form')[0]);
 
@@ -229,11 +228,16 @@
                     },
                     contentType: false,
                     processData: false,
+                    beforeSend: function() {
+                        $('.add_news').text('Saving...');
+                        $(".add_news").prop("disabled", true);
+                    },
                     success: function(response) {
 
                         if (response.status == 200) {
                             toastr.success(response.message);
                             $('.add_news').text('Save');
+                            $(".add_news").prop("disabled", false);
                             $(".close").click();
                             $('#Add_News_Form').find('input').val("");
                             getNews();
@@ -245,7 +249,8 @@
                         }
                     },
                     error: function() {
-                        $('.add_slider').text('Save');
+                        $('.add_news').text('Save');
+                        $(".add_news").prop("disabled", false);
                         toastr.error('something went wrong');
                     },
                 });
@@ -299,7 +304,6 @@
             //Update News
             $('.update_news').on('click', function(e) {
                 e.preventDefault();
-                $('.update_news').text('Updating...');
 
                 let EditFormData = new FormData($('#Edit_News_Form')[0]);
 
@@ -313,12 +317,17 @@
                     contentType: false,
                     processData: false,
                     dataType: "json",
+                    beforeSend: function() {
+                        $('.update_news').text('Updating...');
+                        $(".update_news").prop("disabled", true);
+                    },
                     success: function(response) {
 
                         if (response.status == 200) {
                             $('#edit_news_modal').modal('hide');
                             $('#Edit_News_Form').find('input').val("");
                             $('.update_news').text('Update');
+                            $(".update_news").prop("disabled", false);
                             toastr.success(response.message);
                             getNews();
                         }
@@ -326,6 +335,7 @@
                     error: function() {
                         toastr.error('something went wrong');
                         $('.update_news').text('Update');
+                        $(".update_news").prop("disabled", false);
                     }
                 });
 
