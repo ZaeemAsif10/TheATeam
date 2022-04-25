@@ -4,6 +4,11 @@
     <section class="home-section">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="w-100 c-img img-fluid" src="{{ asset('public/assets/images/Group-1.png') }}" alt="First slide">
@@ -18,8 +23,28 @@
                         <h5 class="team mt-4">#theAnews</h5>
                     </div>
                 </div>
-
+                <div class="carousel-item">
+                    <img class="w-100 c-img img-fluid" src="{{ asset('public/assets/images/Group-1.png') }}" alt="First slide">
+                    <div class="carousel-caption">
+                        <h5 class="team">The A Team</h5>
+                        <h1 class="team3">NEWS</h1>
+                        <p class="latest">Read about the latest real estate trends, property analyses, investment
+                            opportunities and
+                            get the real
+                            market intelligence to invest and grow rich.
+                        </p>
+                        <h5 class="team mt-4">#theAnews</h5>
+                    </div>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
 
@@ -32,129 +57,25 @@
         <div class="fifth mb-5">
             <div class="container">
                 <div class="row">
+                    @foreach ($news as $new)
                     <div class="col-md-4">
                         <div class="card border-0 mt-2">
                             <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/lda-seals-offices-of-eight-private-housing-schemes-1598564299-5771.jpg') }}"
+                                <img src="{{ asset('storage/app/public/uploads/news/'. $new->image) }}"
                                     class="img-fluid news" alt="">
                             </div>
                             <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">LDA okays e-tendering mechanism for development
-                                    projects</h6>
-                                <p class="span">LAHORE: In a meeting chaired by SM Imran, Vice Chairman Lahore
-                                    Development Authority
-                                    (LDA) of the governing body of LDA, the meeting approved the e-tendering
+                                <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $new->title }}</h6>
+                                <p class="span">{{ $new->description }}
                                 </p>
                                 <a href="#" class="more">Read More</a>
                             </div>
                             <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
+                                <p class="span">{{ \Carbon\Carbon::parse($new->created_at)->isoFormat('MMM - Do - YYYY') }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/urban-housing.jpg') }}" class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">وزیرِ اعظم نے لاہور میں پیری اربن ہاؤسنگ سکیم کا
-                                    افتتاح کردیا
-                                </h6>
-                                <p class="span">لاہور: ‏وزیر اعظم عمران خان نے رائیونڈ میں پنجاب پیری اربن ہاؤسنگ
-                                    سکیم کا افتتاح کردیا۔
-                                    اس پراجیکٹ کا سنگ بنیاد لاہور رائیونڈ میں رکھا
-                                </p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/68df0dafc3e0598cc7e9d16d0411b106.jpg') }}" class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">میٹرو بس سروس کو اپ گریڈ کرنے کا فیصلہ</h6>
-                                <p class="span">راولپنڈی: وائس چیئرمین پارکس اینڈ ہارٹیکلچر اتھارٹی ملک عابد حسین
-                                    کا کہنا ہے کہ حکومت
-                                    میٹرو بس اسٹیشنز اور اُن کے کاریڈورز کو بس سروس
-                                </p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="fifth mb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/manager-supervisor-industrial-worker-uniform-walking-large-metal-factory-hall-talking-about-increasing-production_342744-114.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">NEWS
-                                    اپریل میں ایس ای سی پی کے ساتھ 117 تعمیراتی کمپنیوں کا اندراج</h6>
-                                <p class="span">اسلام آباد: اپریل کے مہینے میں سیکورٹیز اینڈ ایکسچینج کمیشن آف
-                                    پاکستان (ایس ای سی پی) کے
-                                    ساتھ 117 کنسٹرکشن کمپنیوں نے اندراج کیا۔ ایس</p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/sbp.jpg') }}" class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">ایس بی پی کی اسکیم کے تحت 521 سولر پراجیکٹس کا
-                                    آغاز
-                                </h6>
-                                <p class="span">اسلام آباد: اسٹیٹ بینک آف پاکستان (ایس بی پی) کے گورنر باقر رضا کا
-                                    کہنا ہے رنیوایبل
-                                    انرجی فنانسنگ سکیم کے تحت بینکوں نے 521
-                                </p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/Image-from-iOS-9-1024x619-k6qpd6.jpeg') }}" class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">حکومت مُلک کی معاشی و معاشرتی ترقی کے لیے کوشاں،
-                                    وزیرِ خزانہ
-                                </h6>
-                                <p class="span">اسلام آباد: وزیرِ خزانہ شوکت ترین کا کہنا ہے حکومت مُلک کی معاشی و
-                                    معاشرتی ترقی کے لیے
-                                    کوشاں ہے اور اِس ضمن میں ہر</p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

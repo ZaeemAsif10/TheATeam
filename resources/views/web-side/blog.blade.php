@@ -4,9 +4,15 @@
     <section class="home-section">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100 c-img img-fluid" src="{{ asset('public/assets/images/Al-Jalil-Gardens-SlideShow-02.jpg') }}" alt="First slide">
+                    <img class="w-100 c-img img-fluid"
+                        src="{{ asset('public/assets/images/Al-Jalil-Gardens-SlideShow-02.jpg') }}" alt="First slide">
                     <div class="carousel-caption">
                         <h5 class="team">The A Team</h5>
                         <h1 class="team3">BLOG</h1>
@@ -17,9 +23,20 @@
                         <h5 class="team mt-4">#theAnews</h5>
                     </div>
                 </div>
-
+                <div class="carousel-item">
+                    <img class="w-100 c-img img-fluid"
+                        src="{{ asset('public/assets/images/Al-Jalil-Gardens-SlideShow-07.jpg') }}" alt="First slide">
+                    <div class="carousel-caption">
+                        <h5 class="team">The A Team</h5>
+                        <h1 class="team3">BLOG</h1>
+                        <p class="latest">Read about the latest real estate trends, property analyses, investment
+                            opportunities and get the real
+                            market intelligence to invest and grow rich.
+                        </p>
+                        <h5 class="team mt-4">#theAnews</h5>
+                    </div>
+                </div>
             </div>
-
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -31,6 +48,7 @@
         </div>
 
 
+
         <div class="mb-5 text-center">
             <h1 class="font-weight-bold forth-head">...</h1>
             <h1 class="font-weight-bold noor">BLOG</h1>
@@ -40,73 +58,40 @@
         <div class="fifth mb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}" class="img-fluid news" alt="">
+                    @foreach ($blogs as $blog)
+                        <div class="col-md-4">
+
+                            <div class="card border-0 mt-2">
+                                <div class="card-header border-0 p-0">
+                                    <img src="{{ asset('storage/app/public/uploads/blogs/' . $blog->image) }}"
+                                        class="img-fluid news" alt="">
+                                </div>
+                                <div class="card-body border-top-0">
+                                    <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $blog->title }}</h6>
+                                    <p class="span">{{ $blog->description }}
+                                    </p>
+                                    <a href="#" class="more">Read More</a>
+                                </div>
+                                <div class="card-footer text-center c-f">
+                                    <p class="span">
+                                        {{ \Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM - Do - YYYY') }}</p>
+                                </div>
                             </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">MAKE YOUR HOME MORE FRIENDLY</h6>
-                                <p class="span">Climate change, global warming, pollution, deforestation, and a
-                                    slew of other
-                                    environmental issues
-                                    are all part of life in today’s world. We may be able
-                                </p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
+
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}" class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">Buying Houses with a Limited Budget</h6>
-                                <p class="span">It’s easy to become overwhelmed by all the options available when
-                                    buying a new home.
-                                    There could be a
-                                    million questions running through your mind;
-                                </p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/apartment-living.jpg') }}" class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">Apartment Living vs House Living: The Right
-                                    Choice</h6>
-                                <p class="span">For as long as anybody can remember, the debate between living in
-                                    a house versus living
-                                    in an apartment has raged on. When looking for</p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
 
-        <div class="fifth mb-5">
+        {{-- <div class="fifth mb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card border-0 mt-2">
                             <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}" class="img-fluid news" alt="">
+                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}"
+                                    class="img-fluid news" alt="">
                             </div>
                             <div class="card-body border-top-0">
                                 <h6 class="font-weight-bold mt-4 mb-4 lda">HERE’S WHY YOU SHOULD BOOK YOUR VILLA IN -WEST
@@ -125,7 +110,8 @@
                     <div class="col-md-4">
                         <div class="card border-0 mt-2">
                             <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}" class="img-fluid news" alt="">
+                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}"
+                                    class="img-fluid news" alt="">
                             </div>
                             <div class="card-body border-top-0">
                                 <h6 class="font-weight-bold mt-4 mb-4 lda">SHOULD YOU RENOVATE OR REBUILD?
@@ -144,7 +130,8 @@
                     <div class="col-md-4">
                         <div class="card border-0 mt-2">
                             <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/apartment-living.jpg') }}" class="img-fluid news" alt="">
+                                <img src="{{ asset('public/assets/images/apartment-living.jpg') }}" class="img-fluid news"
+                                    alt="">
                             </div>
                             <div class="card-body border-top-0">
                                 <h6 class="font-weight-bold mt-4 mb-4 lda">3 Pros and Cons of Various Property Types in
@@ -163,7 +150,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
         <div class="seventh">

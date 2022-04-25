@@ -1,8 +1,9 @@
 @extends('web-side.setup.master')
 
 @section('content')
-
     <section class="home-section">
+
+
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -10,38 +11,21 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100 c-img img-fluid" src="{{ asset('public/assets/images/qwer-scaled.jpg') }}"
-                        alt="First slide">
-                    <div class="carousel-caption">
-                        <h6 class="team">The A Team</h6>
-                        <h1 class="team1">TALENTED.</h1>
-                        <h1 class="team2">TRANSPARENT.</h1>
-                        <h1 class="team3">TRUSTWORTHY.</h1>
-                        <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
-                        <a href="#" class="btn btn-default btn-learn">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="container" id="carousel_img">
-                    <div class="row text-center">
-                        <div class="col-md-4 col-sm-12">
-                            <img src="{{ asset('public/assets/images/Al-Noor.jpeg') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <img src="{{ asset('public/assets/images/Al-Jalil.jpeg') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <img src="{{ asset('public/assets/images/al-bari-residencia-2.jpg') }}" class="img-fluid"
-                                alt="">
+                @foreach ($sliders as $key => $slider)
+                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                        <img class="w-100 c-img img-fluid"
+                            src="{{ asset('storage/app/public/uploads/slider/' . $slider->image) }}" alt="First slide">
+                        <div class="carousel-caption">
+                            <h6 class="team">{{ $slider->title }}</h6>
+                            <h1 class="team1">TALENTED.</h1>
+                            <h1 class="team2">TRANSPARENT.</h1>
+                            <h1 class="team3">TRUSTWORTHY.</h1>
+                            <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
+                            <a href="#" class="btn btn-default btn-learn">Learn More</a>
                         </div>
                     </div>
-                </div>
-
-
-
+                @endforeach
             </div>
-
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -53,8 +37,12 @@
         </div>
 
 
+
+
+
+
         <div class="container">
-            <div class="text-center mb-5 choose">
+            <div class="text-center mb-5 mt-3 choose">
                 <h3>Choose The A Team For <span class="best">Best DealsSafest</span></h3>
             </div>
         </div>

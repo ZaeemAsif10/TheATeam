@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\BlogController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -17,21 +19,18 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'redirectAdmin'])->name('index');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
-
-
-//Admin side routes
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 //Home Page Slider Routes
-Route::get('slider', [HomeController::class, 'index']);
+Route::get('admin/slider', [HomeController::class, 'index']);
 Route::get('get-slider', [HomeController::class, 'getSlider']);
 Route::post('store-slider', [HomeController::class, 'storeSlider']);
 Route::get('edit-slider', [HomeController::class, 'editSlider']);
@@ -39,6 +38,21 @@ Route::post('update-slider', [HomeController::class, 'updateSlider']);
 Route::get('delete-slider', [HomeController::class, 'deleteSlider']);
 
 
+//News Page Routes
+Route::get('admin/news', [NewsController::class, 'index']);
+Route::get('get-news', [NewsController::class, 'getNews']);
+Route::post('store-news', [NewsController::class, 'storeNews']);
+Route::get('edit-news', [NewsController::class, 'editNews']);
+Route::post('update-news', [NewsController::class, 'updateNews']);
+Route::get('delete-news', [NewsController::class, 'deleteNews']);
+
+//Blog Page Routes
+Route::get('admin/blogs', [BlogController::class, 'index']);
+Route::get('get-blogs', [BlogController::class, 'getBlogs']);
+Route::post('store-blogs', [BlogController::class, 'storeBlogs']);
+Route::get('edit-blogs', [BlogController::class, 'editBlogs']);
+Route::post('update-blogs', [BlogController::class, 'updateBlogs']);
+Route::get('delete-blogs', [BlogController::class, 'deleteBlogs']);
 
 
 

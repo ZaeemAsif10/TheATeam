@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\News;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
     public function index()
     {
-        return view('web-side.index');
+        $sliders = Slider::all();
+        return view('web-side.index', compact('sliders'));
     }
 
     public function about()
@@ -59,12 +63,14 @@ class WebController extends Controller
 
     public function Blog()
     {
-        return view('web-side.blog');
+        $blogs = Blog::all();
+        return view('web-side.blog', compact('blogs'));
     }
 
     public function News()
     {
-        return view('web-side.news');
+        $news = News::all();
+        return view('web-side.news', compact('news'));
     }
 
     public function Gallery()

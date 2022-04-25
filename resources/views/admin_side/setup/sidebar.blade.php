@@ -31,8 +31,39 @@
                 <div class="menu-title">Slider</div>
             </a>
             <ul>
-                <li> <a href="{{ url('slider') }}">
-                        <ion-icon name="ellipse-outline"></ion-icon>View Slider
+                <li> <a href="{{ url('admin/slider') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>All Slider
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon">
+                    <ion-icon name="newspaper-sharp"></ion-icon>
+                </div>
+                <div class="menu-title">News</div>
+            </a>
+            <ul>
+                <li> <a href="{{ url('admin/news') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>All News
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon">
+                    <ion-icon name="copy-sharp"></ion-icon>
+                </div>
+                <div class="menu-title">Blogs</div>
+            </a>
+            <ul>
+                <li> <a href="{{ url('admin/blogs') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>All Blogs
                     </a>
                 </li>
             </ul>
