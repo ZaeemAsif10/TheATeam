@@ -1,6 +1,8 @@
 @extends('admin_side.setup.master')
 
 @section('content')
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+
     <!-- start page content wrapper-->
     <div class="page-content-wrapper">
         <!-- start page content-->
@@ -19,19 +21,20 @@
                                                 aria-label="home outline"></ion-icon>
                                         </a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Blogs</li>
+                                    <li class="breadcrumb-item active" aria-current="page">News Slider</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="ms-auto">
                             <div class="btn-group">
-                                <a href="{{ url('blogs/create') }}" type="button" class="btn btn-outline-primary" >Add New</a>
+                                <a href="{{ url('create-news-slider') }}" class="btn btn-outline-primary">Add New</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!--end breadcrumb-->
+
 
 
 
@@ -49,80 +52,69 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody id="blogsTable">
-
+                            <tbody id="newsSliderTable">
+                                @foreach ($news_slider as $key => $news)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $news->title }}</td>
+                                        <td>
+                                            <img src="{{ asset('storage/app/public/uploads/news/slider/' . $news->image) }}"
+                                                width="70px" height="70px" alt="">
+                                        </td>
+                                        <td>{{ $news->created_at }}</td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3 fs-6">
+                                                <a href="{{ url('edit-news-slider/'.$news->id) }}"
+                                                    class="text-warning btn_edit_news">
+                                                    <ion-icon name="pencil-sharp" role="img" class="md hydrated"
+                                                        aria-label="pencil sharp"></ion-icon>
+                                                </a>
+                                                <a href="javascript:;" class="text-danger btn_delete_news_slider"
+                                                    data-bs-toggle="tooltip" data="{{ $news->id }}" data-bs-placement="bottom" title=""
+                                                    data-bs-original-title="Delete" aria-label="Delete">
+                                                    <ion-icon name="trash-sharp" role="img" class="md hydrated"
+                                                        aria-label="trash sharp"></ion-icon>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <!--Table End-->
+
+
         </div>
         <!-- end page content-->
     </div>
     <!--end page content wrapper-->
 
+    <script type="text/javascript">
+        CKEDITOR.replace('description', {
+            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form'
+        });
+        CKEDITOR.replace('confidentail_info', {
+            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form'
+        });
 
-
+        CKEDITOR.replace('rules', {
+            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- CDN for Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(document).ready(function() {
-
-            getBlogs();
-
-            function getBlogs() {
-
-                $.ajax({
-
-                    url: '{{ url('/get-blogs') }}',
-                    type: 'get',
-                    async: false,
-                    dataType: 'json',
-
-                    success: function(data) {
-
-                        var html = '';
-                        var i;
-                        var c = 0;
-
-                        for (i = 0; i < data.length; i++) {
-
-                            c++;
-                            html += '<tr>' +
-                                '<td>' + c + '</td>' +
-                                '<td>' + data[i].title + '</td>' +
-                                '<td><img src="{{ asset('storage/app/public/uploads/blogs') }}/' +
-                                data[i].image +
-                                '" width="80px" height="80px" ></td>' +
-                                '<td>' + data[i].created_at + '</td>' +
-                                '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
-                                '<a href="{{ url('edit-blogs/') }}/'+data[i].id+'" class="text-warning btn_edit_blogs"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
-                                '<a href="javascript:;" class="text-danger btn_delete_blogs" data="' +
-                                data[i].id +
-                                '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><ion-icon name="trash-sharp" role="img" class="md hydrated" aria-label="trash sharp"></ion-icon></a>' +
-                                '</div>' +
-                                '</td>' +
-                                '</tr>';
-                        }
-
-
-                        $('#blogsTable').html(html);
-
-                    },
-                    error: function() {
-                        toastr.error('something went wrong');
-                    }
-
-                });
-            }
-
-
-            // script for delete data
-            $('#blogsTable').on('click', '.btn_delete_blogs', function(e) {
+        // script for delete data
+        $('#newsSliderTable').on('click', '.btn_delete_news_slider', function(e) {
                 e.preventDefault();
 
                 var id = $(this).attr('data');
@@ -139,7 +131,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "GET",
-                            url: "{{ url('delete-blogs') }}",
+                            url: "{{ url('delete-news-slider') }}",
                             data: {
                                 id: id
                             },
@@ -151,7 +143,9 @@
 
                                 if (response.status == 200) {
                                     toastr.success(response.message);
-                                    getBlogs();
+                                    setTimeout(() => {
+                                        window.location.reload();
+                                    }, 2000);
                                 }
                             }
                         });
@@ -159,7 +153,6 @@
                 })
 
             });
-
-        });
     </script>
+
 @endsection

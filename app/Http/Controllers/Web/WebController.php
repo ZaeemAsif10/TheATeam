@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Blog_slider;
 use App\Models\News;
+use App\Models\News_slider;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -64,13 +66,15 @@ class WebController extends Controller
     public function Blog()
     {
         $blogs = Blog::all();
-        return view('web-side.blog', compact('blogs'));
+        $blog_slider = Blog_slider::all();
+        return view('web-side.blog', compact('blogs','blog_slider'));
     }
 
     public function News()
     {
         $news = News::all();
-        return view('web-side.news', compact('news'));
+        $news_slider = News_slider::all();
+        return view('web-side.news', compact('news','news_slider'));
     }
 
     public function Gallery()

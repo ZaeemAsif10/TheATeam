@@ -1,8 +1,7 @@
 <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('public/admin_assets/images/logo.png') }}" class="logo-icon"
-                alt="logo icon">
+            <img src="{{ asset('public/admin_assets/images/logo.png') }}" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">SYN-UI</h4>
@@ -47,6 +46,9 @@
                 <div class="menu-title">News</div>
             </a>
             <ul>
+                <li> <a href="{{ url('news/slider') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>News Slider
+                    </a>
                 <li> <a href="{{ url('admin/news') }}">
                         <ion-icon name="ellipse-outline"></ion-icon>All News
                     </a>
@@ -62,6 +64,10 @@
                 <div class="menu-title">Blogs</div>
             </a>
             <ul>
+                <li> <a href="{{ url('blog/slider') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>Blog Slider
+                    </a>
+                </li>
                 <li> <a href="{{ url('admin/blogs') }}">
                         <ion-icon name="ellipse-outline"></ion-icon>All Blogs
                     </a>

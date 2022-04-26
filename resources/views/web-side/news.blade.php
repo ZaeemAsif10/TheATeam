@@ -3,48 +3,29 @@
 @section('content')
     <section class="home-section">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleFade" data-slide-to="1"></li>
+                <li data-target="#carouselExampleFade" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100 c-img img-fluid" src="{{ asset('public/assets/images/Group-1.png') }}" alt="First slide">
-                    <div class="carousel-caption">
-                        <h5 class="team">The A Team</h5>
-                        <h1 class="team3">NEWS</h1>
-                        <p class="latest">Read about the latest real estate trends, property analyses, investment
-                            opportunities and
-                            get the real
-                            market intelligence to invest and grow rich.
-                        </p>
-                        <h5 class="team mt-4">#theAnews</h5>
+                @foreach ($news_slider as $key => $news_slid)
+                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                        <img class="w-100 c-img img-fluid"
+                            src="{{ asset('storage/app/public/uploads/news/slider/' . $news_slid->image) }}"
+                            alt="First slide">
+                        <div class="carousel-caption">
+                            <h5 class="team">{{ $news_slid->title }}</h5>
+                            <h1 class="team3">NEWS</h1>
+                            <p class="latest">{!! $news_slid->desc !!}
+                            </p>
+                            <h5 class="team mt-4">#theAnews</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100 c-img img-fluid" src="{{ asset('public/assets/images/Group-1.png') }}" alt="First slide">
-                    <div class="carousel-caption">
-                        <h5 class="team">The A Team</h5>
-                        <h1 class="team3">NEWS</h1>
-                        <p class="latest">Read about the latest real estate trends, property analyses, investment
-                            opportunities and
-                            get the real
-                            market intelligence to invest and grow rich.
-                        </p>
-                        <h5 class="team mt-4">#theAnews</h5>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
         </div>
 
 
@@ -58,23 +39,25 @@
             <div class="container">
                 <div class="row">
                     @foreach ($news as $new)
-                    <div class="col-md-4">
-                        <div class="card border-0 mt-2">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('storage/app/public/uploads/news/'. $new->image) }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $new->title }}</h6>
-                                <p class="span">{{ $new->description }}
-                                </p>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">{{ \Carbon\Carbon::parse($new->created_at)->isoFormat('MMM - Do - YYYY') }}</p>
+                        <div class="col-md-4">
+                            <div class="card border-0 mt-2">
+                                <div class="card-header border-0 p-0">
+                                    <img src="{{ asset('storage/app/public/uploads/news/' . $new->image) }}"
+                                        class="img-fluid news" alt="">
+                                </div>
+                                <div class="card-body border-top-0">
+                                    <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $new->title }}</h6>
+                                    <p class="span">{!! Str::limit($new->description, 150,  '...') !!}
+                                    </p>
+                                    <a href="#" class="more">Read More</a>
+                                </div>
+                                <div class="card-footer text-center c-f">
+                                    <p class="span">
+                                        {{ \Carbon\Carbon::parse($new->created_at)->isoFormat('MMM - Do - YYYY') }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -127,7 +110,8 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <p class="loc">Office # 15 B Commercial 3 Km from Faizpur Interchange,
+                                        <p class="loc">Office # 15 B Commercial 3 Km from Faizpur
+                                            Interchange,
                                             Motorway (M2), Main Sharaqpur
                                             Road, Lahore</p>
                                     </li>

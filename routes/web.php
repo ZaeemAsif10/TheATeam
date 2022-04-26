@@ -39,18 +39,36 @@ Route::get('delete-slider', [HomeController::class, 'deleteSlider']);
 
 
 //News Page Routes
+Route::get('news/slider', [NewsController::class, 'NewsSlider']);
+Route::get('create-news-slider', [NewsController::class, 'createNewsSlider']);
+Route::post('store_news_slider', [NewsController::class, 'storeNewsSlider']);
+Route::get('edit-news-slider/{id}', [NewsController::class, 'editNewsSlider']);
+Route::post('update-news-slider', [NewsController::class, 'updateNewsSlider']);
+Route::get('delete-news-slider', [NewsController::class, 'deleteNewsSlider']);
+
+
 Route::get('admin/news', [NewsController::class, 'index']);
+Route::get('news/create', [NewsController::class, 'create']);
 Route::get('get-news', [NewsController::class, 'getNews']);
 Route::post('store-news', [NewsController::class, 'storeNews']);
-Route::get('edit-news', [NewsController::class, 'editNews']);
+Route::get('edit-news/{id}', [NewsController::class, 'editNews']);
 Route::post('update-news', [NewsController::class, 'updateNews']);
 Route::get('delete-news', [NewsController::class, 'deleteNews']);
 
+
 //Blog Page Routes
+Route::get('blog/slider', [BlogController::class, 'BlogSlider']);
+Route::get('create-blog-slider', [BlogController::class, 'createBlogSlider']);
+Route::post('store_blog_slider', [BlogController::class, 'storeBlogSlider']);
+Route::get('edit-blog-slider/{id}', [BlogController::class, 'editBlogSlider']);
+Route::post('update-blog-slider', [BlogController::class, 'updateBlogSlider']);
+Route::get('delete-blog-slider', [BlogController::class, 'deleteBlogSlider']);
+
 Route::get('admin/blogs', [BlogController::class, 'index']);
+Route::get('blogs/create', [BlogController::class, 'create']);
 Route::get('get-blogs', [BlogController::class, 'getBlogs']);
 Route::post('store-blogs', [BlogController::class, 'storeBlogs']);
-Route::get('edit-blogs', [BlogController::class, 'editBlogs']);
+Route::get('edit-blogs/{id}', [BlogController::class, 'editBlogs']);
 Route::post('update-blogs', [BlogController::class, 'updateBlogs']);
 Route::get('delete-blogs', [BlogController::class, 'deleteBlogs']);
 
