@@ -94,3 +94,6 @@ Route::get('contact', [WebController::class, 'Contact'])->name('contact');
 Route::get('annual_conference', [WebController::class, 'annualConference'])->name('annual_conference');
 Route::get('dubai_events', [WebController::class, 'dubaiEvents'])->name('dubai_events');
 
+Route::get('more/{id}', [WebController::class, 'More'])->name('more');
+
+

@@ -52,7 +52,7 @@
                                     <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $blog->title }}</h6>
                                     <p class="span">{!! Str::limit($blog->description, 150, '...') !!}
                                     </p>
-                                    <a href="#" class="more">Read More</a>
+                                    <a href="{{ url('more/'.$blog->id) }}" class="more">Read More >> </a>
                                 </div>
                                 <div class="card-footer text-center c-f">
                                     <p class="span">

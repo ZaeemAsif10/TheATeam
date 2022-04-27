@@ -96,4 +96,10 @@ class WebController extends Controller
     {
         return view('web-side.dubai_events');
     }
+
+    public function More(Request $request)
+    {
+        $more = Blog::find($request->id);
+        return view('web-side.blog_more', compact('more'));
+    }
 }

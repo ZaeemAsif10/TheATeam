@@ -798,6 +798,33 @@ footer .fot-p{
     color: #fff;
 }
 
+.detail-section{
+    padding: 70px 0px;
+}
+
+.detail-section .recent{
+    list-style: none;
+    padding: 0px 25px;
+}
+
+.detail-section .recent li{
+    padding: 7px 0px;
+}
+
+.detail-section .recent li a{
+    font-size: 15px;
+ }
+
+.detail-section p{
+    font-size: 14px;
+    color: grey;
+    text-align: justify;
+}
+
+.detail-section .post{
+    margin-left: 22px;
+}
+
 /* ABOUT Section CSS End */
 
 
@@ -834,11 +861,11 @@ footer .fot-p{
     .home-section .team1{
         font-size: 24px;
     }
-    
+
     .home-section .team2{
         font-size: 24px;
     }
-    
+
     .home-section .team3{
         font-size: 24px;
     }
@@ -929,6 +956,20 @@ footer .fot-p{
 
     .about-section .fifth .a-g{
         font-size: 20px;
+    }
+
+    .detail-section{
+        padding: 5px 0px;
+    }
+
+
+    .detail-section .recent {
+        padding: 0px 0px;
+    }
+
+    .detail-section .post{
+        margin-left: 0px;
+        margin-top: 20px;
     }
     /* About Section Media Query CSS End */
 
