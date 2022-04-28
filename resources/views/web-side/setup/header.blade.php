@@ -18,7 +18,7 @@
 
 
         <li class="nav-item dropdown" id="myDIV">
-          <a class="nav-link dropdown-toggle" href="{{ route('project') }}" id="navbarDropdown" role="button" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-haspopup="true"
             aria-expanded="false">
             PROJECTS
           </a>

@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebController;
-use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\GalleryController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -71,6 +72,45 @@ Route::post('store-blogs', [BlogController::class, 'storeBlogs']);
 Route::get('edit-blogs/{id}', [BlogController::class, 'editBlogs']);
 Route::post('update-blogs', [BlogController::class, 'updateBlogs']);
 Route::get('delete-blogs', [BlogController::class, 'deleteBlogs']);
+
+// Project Routes
+Route::get('admin/projects', [ProjectController::class, 'index']);
+Route::get('get-projects', [ProjectController::class, 'getProjects']);
+Route::post('store-projects', [ProjectController::class, 'storeProjects']);
+Route::get('edit-projects', [ProjectController::class, 'editProjects']);
+Route::post('update-projects', [ProjectController::class, 'updateProjects']);
+Route::get('delete-projects', [ProjectController::class, 'deleteProjects']);
+
+//project slider routes
+Route::get('project/slider', [ProjectController::class, 'ProjectSlider']);
+Route::get('create-project-slider', [ProjectController::class, 'createProjectSlider']);
+Route::post('store_project_slider', [ProjectController::class, 'storeProjectSlider']);
+Route::get('edit-project-slider/{id}', [ProjectController::class, 'editProjectSlider']);
+Route::post('update-project-slider', [ProjectController::class, 'updateProjectSlider']);
+Route::get('delete-project-slider', [ProjectController::class, 'deleteProjectSlider']);
+
+
+//project detail routes
+Route::get('project/details', [ProjectController::class, 'ProjectDetail']);
+Route::get('create-project-detail', [ProjectController::class, 'createProjectDetail']);
+Route::post('store_project_detail', [ProjectController::class, 'storeProjectDetail']);
+Route::get('edit-project-detail/{id}', [ProjectController::class, 'editProjectDetail']);
+Route::post('update-project-detail', [ProjectController::class, 'updateProjectDetail']);
+Route::get('delete-project-detail', [ProjectController::class, 'deleteProjectDetail']);
+
+
+//Gallery routes
+Route::get('admin/block', [GalleryController::class, 'index']);
+Route::get('get-block', [GalleryController::class, 'getBlock']);
+Route::post('store-block', [GalleryController::class, 'storeBlock']);
+Route::get('edit-block', [GalleryController::class, 'editBlock']);
+Route::post('update-block', [GalleryController::class, 'updateBlock']);
+Route::get('delete-block', [GalleryController::class, 'deleteBlock']);
+
+
+Route::get('admin/gallery', [GalleryController::class, 'Gallery']);
+Route::get('gallery/create', [GalleryController::class, 'GalleryCreate']);
+Route::post('gallery/store', [GalleryController::class, 'GalleryStore']);
 
 
 

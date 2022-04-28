@@ -75,6 +75,53 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon">
+                    <ion-icon name="copy-sharp"></ion-icon>
+                </div>
+                <div class="menu-title">Project Management</div>
+            </a>
+            <ul>
+                <li> <a href="{{ url('project/slider') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>Project Slider
+                    </a>
+                </li>
+                <li> <a href="{{ url('admin/projects') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>Projects
+                    </a>
+                </li>
+                <li> <a href="{{ url('project/details') }}">
+                    <ion-icon name="ellipse-outline"></ion-icon>Project Details
+                </a>
+            </li>
+
+            </ul>
+        </li>
+
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon">
+                    <ion-icon name="copy-sharp"></ion-icon>
+                </div>
+                <div class="menu-title">Gallery Management</div>
+            </a>
+            <ul>
+                <li> <a href="{{ url('admin/block') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>Block
+                    </a>
+                </li>
+                <li> <a href="{{ url('admin/gallery') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>Gallery
+                    </a>
+                </li>
+            </li>
+
+            </ul>
+        </li>
+
+
 
     </ul>
     <!--end navigation-->

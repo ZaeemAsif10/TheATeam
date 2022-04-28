@@ -59,6 +59,7 @@ class BlogController extends Controller
             $blogs->image = $filename;
         }
 
+
         $blogs->save();
         return back();
     }
