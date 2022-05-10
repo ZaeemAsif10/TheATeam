@@ -21,13 +21,13 @@
                                                 aria-label="home outline"></ion-icon>
                                         </a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Edit Project Slider</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Edit Event Slider</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="ms-auto">
                             <div class="btn-group">
-                                <a href="{{ url('project/slider') }}" type="button" class="btn btn-outline-primary">Back</a>
+                                <a href="{{ url('events/slider') }}" type="button" class="btn btn-outline-primary">Back</a>
                             </div>
                         </div>
                     </div>
@@ -43,52 +43,33 @@
                 <div class="card">
                     <div class="card-body">
                         <h5>Add Project Slider</h5>
-                        <form action="{{ url('update-project-slider') }}" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" name="project_slider_id" value="{{ $project_slider->id }}">
+                        <form action="{{ url('update-events-slider') }}" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="events_slider_id" value="{{ $event_slider->id }}">
                             @csrf
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="">Title</label>
-                                        <input type="text" class="form-control" name="title"
-                                            value="{{ $project_slider->title }}">
-                                        <span class="text-danger"> @error('title')
-                                                {{ $message }}
-                                            @enderror </span>
-                                    </div>
-                                </div>
 
                                 <div class="col-md-12 mt-3">
                                     <div class="form-group">
-                                        <label for="">Project Name</label>
-                                        <select name="project_id" id="" class="form-control">
-                                            <option value="" selected disabled>Choose project</option>
-                                            @foreach ($projects as $project)
-                                            <option value="{{ $project->id }}"
-                                                {{ $project_slider->project_id == $project->id ? 'selected' : '' }}
-                                            >{{ $project->name }}</option>
+                                        <label for="">Events Name</label>
+                                        <select name="event_id" id="" class="form-control">
+                                            <option value="" selected disabled>Choose events</option>
+                                            @foreach ($events as $event)
+                                            <option value="{{ $event->id }}"
+                                                {{ $event_slider->event_id == $event->id ? 'selected' : '' }}
+                                            >{{ $event->name }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="text-danger"> @error('project_id')
+                                        <span class="text-danger"> @error('event_id')
                                                 {{ $message }}
                                             @enderror </span>
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 mt-3">
-                                    <div class="form-group">
-                                        <label for="">Description</label>
-                                        <textarea name="description" class="form-control" rows="4">{{ $project_slider->description }}</textarea>
-                                        <span class="text-danger"> @error('description')
-                                                {{ $message }}
-                                            @enderror </span>
-                                    </div>
-                                </div>
                                 <div class="col-md-12 mt-3">
                                     <div class="form-group">
                                         <label for="">Image</label>
                                         <input type="file" class="form-control" name="image">
-                                        <img src="{{ asset('storage/app/public/uploads/projects/slider/' . $project_slider->image) }}"
+                                        <img src="{{ asset('storage/app/public/uploads/events/slider/' . $event_slider->image) }}"
                                             class="mt-4" width="70px" height="70px" alt="">
                                         <span class="text-danger"> @error('image')
                                                 {{ $message }}
@@ -112,22 +93,6 @@
     <!--end page content wrapper-->
 
 
-
-    <script type="text/javascript">
-        CKEDITOR.replace('description', {
-            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-        CKEDITOR.replace('confidentail_info', {
-            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-
-        CKEDITOR.replace('rules', {
-            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>

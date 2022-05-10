@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Project;
+use App\Models\Project_detail;
+use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,8 +26,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
-        //
+
     }
 }

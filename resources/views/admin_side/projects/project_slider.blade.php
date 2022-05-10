@@ -47,6 +47,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Title</th>
+                                    <th>Project Name</th>
                                     <th>Image</th>
                                     <th>Created At</th>
                                     <th>Action</th>
@@ -57,6 +58,7 @@
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $project->title }}</td>
+                                        <td>{{ $project->projects->name }}</td>
                                         <td>
                                             <img src="{{ asset('storage/app/public/uploads/projects/slider/' . $project->image) }}"
                                                 width="70px" height="70px" alt="">
@@ -145,7 +147,7 @@
                                     toastr.success(response.message);
                                     setTimeout(() => {
                                         window.location.reload();
-                                    }, 2000);
+                                    }, 1000);
                                 }
                             }
                         });

@@ -21,13 +21,13 @@
                                                  aria-label="home outline"></ion-icon>
                                          </a>
                                      </li>
-                                     <li class="breadcrumb-item active" aria-current="page">Add Gallery</li>
+                                     <li class="breadcrumb-item active" aria-current="page">Add Annual Events</li>
                                  </ol>
                              </nav>
                          </div>
                          <div class="ms-auto">
                              <div class="btn-group">
-                                 <a href="{{ url('news/slider') }}" class="btn btn-outline-primary">Back</a>
+                                 <a href="{{ url('events/slider') }}" class="btn btn-outline-primary">Back</a>
                              </div>
                          </div>
                      </div>
@@ -42,20 +42,20 @@
 
                  <div class="card">
                      <div class="card-body">
-                         <h5>Add Gallery</h5>
-                         <form action="{{ url('gallery/store') }}" method="POST" enctype="multipart/form-data">
+                         <h5>Add Annual Events</h5>
+                         <form action="{{ url('annual_event/store') }}" method="POST" enctype="multipart/form-data">
                              @csrf
                              <div class="row">
                                  <div class="col-md-12">
                                      <div class="form-group">
-                                         <label for="">Block Name</label>
-                                         <select name="block_id" class="form-control">
-                                             <option value="" selected disabled>Choose block</option>
-                                             @foreach ($blocks as $block)
-                                                 <option value="{{ $block->id }}">{{ $block->name }}</option>
+                                         <label for="">Event Name</label>
+                                         <select name="event_id" class="form-control">
+                                             <option value="" selected disabled>Choose event</option>
+                                             @foreach ($events as $event)
+                                                 <option value="{{ $event->id }}">{{ $event->name }}</option>
                                              @endforeach
                                          </select>
-                                         <span class="text-danger"> @error('block_id')
+                                         <span class="text-danger"> @error('event_id')
                                                  {{ $message }}
                                              @enderror </span>
                                      </div>

@@ -3,10 +3,17 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Annual_event;
+use App\Models\Block;
 use App\Models\Blog;
 use App\Models\Blog_slider;
+use App\Models\Event_slider;
+use App\Models\Gallery;
 use App\Models\News;
 use App\Models\News_slider;
+use App\Models\Project;
+use App\Models\Project_detail;
+use App\Models\Project_slider;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -23,19 +30,18 @@ class WebController extends Controller
         return view('web-side.about');
     }
 
-    public function project()
+    public function Projects(Request $request)
     {
-        return view('web-side.project');
+        $project_slider = Project_slider::where('project_id', $request->id)->get();
+        $project_details = Project_detail::where('project_id', $request->id)->get();
+        return view('web-side.al-jalil', compact('project_slider','project_details'));
     }
 
-    public function alNoor()
+    public function Events(Request $request)
     {
-        return view('web-side.al_noor');
-    }
-
-    public function alJalil()
-    {
-        return view('web-side.al-jalil');
+        $event_slider = Event_slider::where('event_id', $request->id)->get();
+        $annual_events = Annual_event::where('event_id', $request->id)->get();
+        return view('web-side.dubai_events', compact('event_slider','annual_events'));
     }
 
     public function westMarina()
@@ -77,9 +83,23 @@ class WebController extends Controller
         return view('web-side.news', compact('news','news_slider'));
     }
 
-    public function Gallery()
+    public function Gallery(Request $request)
     {
-        return view('web-side.gallery');
+        $blocks = Block::all();
+        $gall = Gallery::first();
+        return view('web-side.gallery', compact('blocks','gall'));
+    }
+
+    public function GalleryImages(Request $request)
+    {
+        $gallImg = Gallery::where('block_id', $request->id)->get();
+        return $gallImg;
+    }
+
+    public function AllGalleryImages()
+    {
+        $allGallery = Gallery::all();
+        return $allGallery;
     }
 
     public function Contact()
@@ -102,4 +122,5 @@ class WebController extends Controller
         $more = Blog::find($request->id);
         return view('web-side.blog_more', compact('more'));
     }
+
 }

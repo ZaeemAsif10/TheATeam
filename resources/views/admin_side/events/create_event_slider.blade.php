@@ -21,13 +21,13 @@
                                                  aria-label="home outline"></ion-icon>
                                          </a>
                                      </li>
-                                     <li class="breadcrumb-item active" aria-current="page">Add Project Slider</li>
+                                     <li class="breadcrumb-item active" aria-current="page">Add Events Slider</li>
                                  </ol>
                              </nav>
                          </div>
                          <div class="ms-auto">
                              <div class="btn-group">
-                                 <a href="{{ url('project/slider') }}" class="btn btn-outline-primary">Back</a>
+                                 <a href="{{ url('events/slider') }}" class="btn btn-outline-primary">Back</a>
                              </div>
                          </div>
                      </div>
@@ -43,43 +43,25 @@
                  <div class="card">
                      <div class="card-body">
                          <h5>Add Project Slider</h5>
-                         <form action="{{ url('store_project_slider') }}" method="POST" enctype="multipart/form-data">
+                         <form action="{{ url('store_events_slider') }}" method="POST" enctype="multipart/form-data">
                              @csrf
                              <div class="row">
-                                 <div class="col-md-12">
-                                     <div class="form-group">
-                                         <label for="">Title</label>
-                                         <input type="text" class="form-control" name="title">
-                                         <span class="text-danger"> @error('title')
-                                                 {{ $message }}
-                                             @enderror </span>
-                                     </div>
-                                 </div>
 
                                  <div class="col-md-12 mt-3">
                                     <div class="form-group">
-                                        <label for="">Project Name</label>
-                                        <select name="project_id" id="" class="form-control">
-                                            <option value="" selected disabled>Choose project</option>
-                                            @foreach ($projects as $project)
-                                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                                        <label for="">Events Name</label>
+                                        <select name="event_id" id="" class="form-control">
+                                            <option value="" selected disabled>Choose event</option>
+                                            @foreach ($events as $event)
+                                            <option value="{{ $event->id }}">{{ $event->name }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="text-danger"> @error('project_id')
+                                        <span class="text-danger"> @error('event_id')
                                                 {{ $message }}
                                             @enderror </span>
                                     </div>
                                 </div>
 
-                                 <div class="col-md-12 mt-3">
-                                     <div class="form-group">
-                                         <label for="">Description</label>
-                                         <textarea name="description" class="form-control" rows="4"></textarea>
-                                         <span class="text-danger"> @error('description')
-                                                 {{ $message }}
-                                             @enderror </span>
-                                     </div>
-                                 </div>
                                  <div class="col-md-12 mt-3">
                                      <div class="form-group">
                                          <label for="">Image</label>

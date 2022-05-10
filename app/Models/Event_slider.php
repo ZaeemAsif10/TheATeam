@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project_detail extends Model
+class Event_slider extends Model
 {
     use HasFactory;
 
-    public function projects()
+    public function events()
     {
-        return $this->belongsTo(Project::class, 'project_id', 'id');
+        return $this->belongsTo(Event::class, 'event_id', 'id');
     }
 }

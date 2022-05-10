@@ -716,10 +716,7 @@ footer .fot-p{
     cursor: pointer;
 }
 
-.about-section .fifth .g-img:hover{
-    /* transform: translateY(10px); */
-    /* transform: scaleY(1.5); */
-}
+
 
 .about-section .fifth .a-g{
     cursor: pointer;
@@ -824,6 +821,7 @@ footer .fot-p{
 .detail-section .post{
     margin-left: 22px;
 }
+
 
 /* ABOUT Section CSS End */
 

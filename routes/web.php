@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\EventController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -106,13 +107,36 @@ Route::post('store-block', [GalleryController::class, 'storeBlock']);
 Route::get('edit-block', [GalleryController::class, 'editBlock']);
 Route::post('update-block', [GalleryController::class, 'updateBlock']);
 Route::get('delete-block', [GalleryController::class, 'deleteBlock']);
-
-
 Route::get('admin/gallery', [GalleryController::class, 'Gallery']);
 Route::get('gallery/create', [GalleryController::class, 'GalleryCreate']);
 Route::post('gallery/store', [GalleryController::class, 'GalleryStore']);
 
 
+
+// Events Routes
+Route::get('admin/events', [EventController::class, 'index']);
+Route::get('get-events', [EventController::class, 'getEvents']);
+Route::post('store-events', [EventController::class, 'storeEvents']);
+Route::get('edit-events', [EventController::class, 'editEvents']);
+Route::post('update-events', [EventController::class, 'updateEvents']);
+Route::get('delete-events', [EventController::class, 'deleteEvents']);
+
+
+//Events Slider routes
+Route::get('events/slider', [EventController::class, 'EventsSlider']);
+Route::get('create-events-slider', [EventController::class, 'createEventsSlider']);
+Route::post('store_events_slider', [EventController::class, 'storeEventsSlider']);
+Route::get('edit-events-slider/{id}', [EventController::class, 'editEventsSlider']);
+Route::post('update-events-slider', [EventController::class, 'updateEventsSlider']);
+Route::get('delete-events-slider', [EventController::class, 'deleteEventsSlider']);
+
+
+//Events Annual
+Route::get('annual_event', [EventController::class, 'annualEvent']);
+Route::get('annual_event/create', [EventController::class, 'annualEventCreate']);
+Route::post('annual_event/store', [EventController::class, 'annualEventStore']);
+Route::get('annual_event/edit/{event_id}', [EventController::class, 'annualEventEdit']);
+Route::get('annual_event/update/{event_id}', [EventController::class, 'annualEventUpdate']);
 
 
 
@@ -137,3 +161,10 @@ Route::get('dubai_events', [WebController::class, 'dubaiEvents'])->name('dubai_e
 Route::get('more/{id}', [WebController::class, 'More'])->name('more');
 
 
+
+
+Route::get('projects/{id}', [WebController::class, 'Projects']);
+Route::get('events/{id}', [WebController::class, 'Events']);
+
+Route::get('gallery-images', [WebController::class, 'GalleryImages']);
+Route::get('all-gallery-images', [WebController::class, 'AllGalleryImages']);

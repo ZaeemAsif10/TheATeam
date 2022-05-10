@@ -92,9 +92,9 @@
                     </a>
                 </li>
                 <li> <a href="{{ url('project/details') }}">
-                    <ion-icon name="ellipse-outline"></ion-icon>Project Details
-                </a>
-            </li>
+                        <ion-icon name="ellipse-outline"></ion-icon>Project Details
+                    </a>
+                </li>
 
             </ul>
         </li>
@@ -116,8 +116,31 @@
                         <ion-icon name="ellipse-outline"></ion-icon>Gallery
                     </a>
                 </li>
-            </li>
+            </ul>
+        </li>
 
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon">
+                    <ion-icon name="copy-sharp"></ion-icon>
+                </div>
+                <div class="menu-title">Events Management</div>
+            </a>
+            <ul>
+                <li> <a href="{{ url('events/slider') }}">
+                    <ion-icon name="ellipse-outline"></ion-icon>Events Slider
+                </a>
+            </li>
+                <li> <a href="{{ url('admin/events') }}">
+                        <ion-icon name="ellipse-outline"></ion-icon>Events
+                    </a>
+                </li>
+
+                <li> <a href="{{ url('annual_event') }}">
+                    <ion-icon name="ellipse-outline"></ion-icon>Annual Events
+                </a>
+            </li>
             </ul>
         </li>
 

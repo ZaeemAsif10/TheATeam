@@ -3,57 +3,40 @@
 @section('content')
     <section class="about-section">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block img-fluid" src="{{ asset('public/assets/images/Dubai-Events/only-2-days-remaining.jpg') }}" alt="First slide">
-                </div>
+                @foreach ($event_slider as $key => $event)
+                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                        <img class="w-100 c-img img-fluid"
+                            src="{{ asset('storage/app/public/uploads/events/slider/' . $event->image) }}"
+                            alt="First slide">
+                    </div>
+                @endforeach
             </div>
         </div>
+
 
 
         <div class="fifth mt-5 mb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4" id="ddd">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.17-PM-1.jpeg') }}" class="img-fluid g-img"
-                            alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.13-PM-1.jpeg') }}"
-                            class="img-fluid g-img" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.13-PM-2.jpeg') }}"
-                            class="img-fluid g-img" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.13-PM.jpeg') }}" class="img-fluid g-img"
-                            alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.14-PM.jpeg') }}" class="img-fluid g-img"
-                            alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.16-PM-1.jpeg') }}"
-                            class="img-fluid g-img" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.17-PM-1.jpeg') }}"
-                            class="img-fluid g-img" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.24-PM-1.jpeg') }}"
-                            class="img-fluid g-img" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('public/assets/images/Dubai-Events/WhatsApp-Image-2022-04-06-at-2.28.23-PM.jpeg') }}" class="img-fluid g-img"
-                            alt="">
-                    </div>
+                    @foreach ($annual_events as $annual_event)
+                        <div class="col-md-4" id="ddd">
+                            <img src="{{ asset('storage/app/public/uploads/annual_events/' . $annual_event->images) }}"
+                                class="img-fluid g-img" alt="">
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
+
+
+
 
         <div class="seventh">
             <div class="container">

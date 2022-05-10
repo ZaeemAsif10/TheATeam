@@ -37,7 +37,8 @@ class ProjectController extends Controller
 
     public function createProjectSlider()
     {
-        return view('admin_side.projects.create_project_slider');
+        $projects = Project::all();
+        return view('admin_side.projects.create_project_slider', compact('projects'));
     }
 
     public function createProjectDetail()
@@ -75,12 +76,14 @@ class ProjectController extends Controller
 
         $request->validate([
             'title'=>'required',
+            'project_id'=>'required',
             'description'=>'required',
             'image'=>'required',
         ]);
 
         $projects = new Project_slider();
         $projects->title = $request->input('title');
+        $projects->project_id = $request->input('project_id');
         $projects->description = $request->input('description');
 
         if ($request->hasFile('image')) {
@@ -133,7 +136,8 @@ class ProjectController extends Controller
     public function editProjectSlider(Request $request)
     {
         $project_slider = Project_slider::find($request->id);
-        return view('admin_side.projects.edit_project_slider', compact('project_slider'));
+        $projects = Project::all();
+        return view('admin_side.projects.edit_project_slider', compact('project_slider','projects'));
     }
 
     public function editProjectDetail(Request $request)
@@ -162,6 +166,7 @@ class ProjectController extends Controller
         $project = Project_slider::find($request->project_slider_id);
 
         $project->title = $request->input('title');
+        $project->project_id = $request->input('project_id');
         $project->description = $request->input('description');
 
 

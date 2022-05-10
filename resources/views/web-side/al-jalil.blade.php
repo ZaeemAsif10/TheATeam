@@ -3,19 +3,30 @@
 @section('content')
     <section class="home-section">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100 c-img img-fluid" id="al-noor" src="{{ asset('public/assets/images/Al-Jalil/4.jpg') }}" alt="First slide">
-                    <div class="carousel-caption">
-                        <h1 class="team1 text-white">AL JALIL GARDEN</h1>
-                        <h5 class="future mt-4 text-white mb-5">A FLAGSHIP PROJECT OF AL JALIL DEVELOPERS</h5>
-                        <a href="#" class="btn btn-default btn-book">Book Now</a>
-                        <a href="#" class="btn btn-default btn-learn">Payment Plan</a>
+                @foreach ($project_slider as $key => $project_slid)
+                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                        <img class="w-100 c-img img-fluid"
+                            src="{{ asset('storage/app/public/uploads/projects/slider/' . $project_slid->image) }}"
+                            alt="First slide">
+                        <div class="carousel-caption">
+                            <h1 class="team1 text-white">{{ substr($project_slid->title, 0, 15) }}</h1>
+                            <h1 class="team2 text-white">{{ substr($project_slid->title, 15, 28) }}</h1>
+                            <h5 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h5>
+                            <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
+                            <a href="#" class="btn btn-default btn-learn">Virtual Tour</a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
 
             </div>
+
         </div>
 
 
@@ -23,21 +34,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5 class="font-weight-bold">Al JALIL GERDEN HOUSING SCHEME</h5>
-                        <p class="al mt-3 mb-3">This aesthetically designed housing scheme is a flagship project of Al
-                            Jalil
-                            Developers, a brand that has proven its commitment to quality, value, and integrity time and
-                            again. The
-                            premium gated community offers a lavish lifestyle with 24/7 security, underground electricity,
-                            LED street
-                            lights, the best health and educational institutes, and a pollution-free environment
+
+                        @foreach ($project_details as $project_detail)
+                        <h5 class="font-weight-bold">{{ $project_detail->title }}</h5>
+                        <p class="al mt-3 mb-3">
+                            {!! $project_detail->desc !!}
                         </p>
-                        <a href="#" class="btn btn-default btn-pres mt-3"><i class="fa fa-map-marker"
-                                aria-hidden="true"></i> &nbsp;
-                            Location</a>
+                        <a href="#" class="btn btn-default btn-pres mt-3"><i class="fa fa-book" aria-hidden="true"></i>
+                            &nbsp;
+                            Presentation</a>
                         <a href="#" class="btn btn-default btn-payment mt-3"><i class="fa fa-paper-plane"
                                 aria-hidden="true"></i>
-                            &nbsp; Map</a>
+                            &nbsp; Payment</a>
+
+                            @endforeach
                     </div>
                     <div class="col-md-6 text-center">
                         <iframe height="300" id="ifram" src="https://www.youtube.com/embed/WehcAdENiPo"
@@ -58,19 +68,23 @@
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-02.jpg') }}"
+                                    <img class="d-block w-100"
+                                        src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-02.jpg') }}"
                                         alt="First slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-03.jpg') }}"
+                                    <img class="d-block w-100"
+                                        src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-03.jpg') }}"
                                         alt="Second slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-04.jpg') }}"
+                                    <img class="d-block w-100"
+                                        src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-04.jpg') }}"
                                         alt="Third slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-05.jpg') }}"
+                                    <img class="d-block w-100"
+                                        src="{{ asset('public/assets/images/Al-Jalil/Al-Jalil-Gardens-SlideShow-05.jpg') }}"
                                         alt="Third slide">
                                 </div>
                             </div>
@@ -91,27 +105,33 @@
                             <h5 class="font-weight-bold">AMINITIES & SERVICES</h5>
                             <div class="row mt-4">
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/power-plant.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/power-plant.png') }}"
+                                        class="img-fluid" alt="">
                                     <p class="service-p mt-4">Water Filtration <br> Plant</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/gate.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/gate.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="service-p mt-4">Water Filtration <br> Plant</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/filtration.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/filtration.png') }}"
+                                        class="img-fluid" alt="">
                                     <p class="service-p mt-4">Water Filtration <br> Plant</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/casino-cctv.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/casino-cctv.png') }}"
+                                        class="img-fluid" alt="">
                                     <p class="service-p mt-4">24/7 CCTV <br> Surveillance</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-4">
-                                    <img src="{{ asset('public/assets/images/icon/ambulance.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/ambulance.png') }}"
+                                        class="img-fluid" alt="">
                                     <p class="service-p mt-4">Emergency <br> Healthcare Facility</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/forest.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/forest.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="service-p mt-4">Green Field Family <br> Parks</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-4">
@@ -119,23 +139,28 @@
                                     <p class="service-p mt-4">Mobile Security <br> Patrols</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/house.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/house.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="service-p mt-4">Premium Brand <br> School</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/zoo.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/zoo.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="service-p mt-4">Mini Zoo</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/soccer-player.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/soccer-player.png') }}"
+                                        class="img-fluid" alt="">
                                     <p class="service-p mt-4">Recreational Areas <br> (sports complex, <br> library)</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/door.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/door.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="service-p mt-4">E-Tag Entry for <br> Residents</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
-                                    <img src="{{ asset('public/assets/images/icon/mosque.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/icon/mosque.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="service-p mt-4">State-of-the-art <br> Jamia Masjid</p>
                                 </div>
                             </div>
@@ -168,7 +193,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="text-center">
-                            <img src="{{ asset('public/assets/images/Al-Noor/the-a-team.png') }}" class="img-fluid al-noor-logo" alt="">
+                            <img src="{{ asset('public/assets/images/Al-Noor/the-a-team.png') }}"
+                                class="img-fluid al-noor-logo" alt="">
                             <p class="mt-4">Your Agent</p>
                             <p class="contact-num">+92 341 333 3301</p>
                             <p>info@theateam.pk</p>
@@ -216,7 +242,8 @@
 
                         <div class="text-center">
                             <h6 class="mt-5 talk">TALK TO US</h6>
-                            <img src="{{ asset('public/assets/images/call-center.png') }}" class="img-fluid call" alt="">
+                            <img src="{{ asset('public/assets/images/call-center.png') }}" class="img-fluid call"
+                                alt="">
                         </div>
                         <hr class="mb-4">
                         <h6 class="mt-5 talk">SEND MESSAGE</h6>

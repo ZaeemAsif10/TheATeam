@@ -56,9 +56,9 @@
                                 @foreach ($gallery as $key => $gell)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $gell->title }}</td>
+                                        <td>{{ $gell->block->name }} </td>
                                         <td>
-                                            <img src="{{ asset('storage/app/public/uploads/gellary/' . $gell->image) }}"
+                                            <img src="{{ asset('storage/app/public/uploads/gallery/' . $gell->images) }}"
                                                 width="70px" height="70px" alt="">
                                         </td>
                                         <td>{{ $gell->created_at }}</td>

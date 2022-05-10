@@ -4,40 +4,42 @@
 
     <section class="home-section">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100 c-img img-fluid" id="al-noor" src="{{ asset('public/assets/images/slider-banner11.jpeg') }}" alt="First slide">
-                    <div class="carousel-caption">
-                        <h1 class="team1 text-white">AL NOOR ORCHARD</h1>
-                        <h1 class="team2 text-white">HOUSING SCHECME</h1>
-                        <h5 class="future mt-4 text-white mb-5">BOOK YOUR FUTURE HOME FROM 400,000/-</h5>
-                        <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
-                        <a href="#" class="btn btn-default btn-learn">Virtual Tour</a>
-                    </div>
+                @foreach ($project_slider as $key => $project_slid)
+              <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                        <img class="w-100 c-img img-fluid"
+                            src="{{ asset('storage/app/public/uploads/projects/slider/' . $project_slid->image) }}" alt="First slide">
+                            <div class="carousel-caption">
+                                <h1 class="team1 text-white">{{ substr($project_slid->title ,0, 14) }}</h1>
+                                <h1 class="team2 text-white">{{ substr($project_slid->title ,15, 28) }}</h1>
+                                <h5 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h5>
+                                <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
+                                <a href="#" class="btn btn-default btn-learn">Virtual Tour</a>
+                            </div>
                 </div>
+                @endforeach
 
             </div>
+
         </div>
+
 
 
         <div class="overview mt-5 mb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5 class="font-weight-bold">OVERVIEW AL NOOR ORCHARD HOUSING SCHECME</h5>
-                        <p class="al mt-3 mb-3">Al Noor Orchard Housing Scheme, the only LDA-approved premium housing
-                            society in
-                            West Lahore from Al
-                            Jalil Developers, is located at 3 km from Faizpur Interchange via M2 Motorway. This luxurious
-                            gated
-                            community offers everything you’d love to have in your future home. The project, which is one of
-                            its kind
-                            and connected to CPEC, is not only a great choice for living but also an ideal place for all
-                            commercial
-                            activities. This lavish society, with its flag-ship block West Marina, offers 3, 5, 10 Marla,
-                            and 1 Kanal
-                            plots on easy monthly installments.
+
+                        @foreach ($project_details as $project_detail)
+                        <h5 class="font-weight-bold">{{ $project_detail->title }}</h5>
+                        <p class="al mt-3 mb-3">
+                            {!! $project_detail->desc !!}
                         </p>
                         <a href="#" class="btn btn-default btn-pres mt-3"><i class="fa fa-book" aria-hidden="true"></i>
                             &nbsp;
@@ -45,7 +47,11 @@
                         <a href="#" class="btn btn-default btn-payment mt-3"><i class="fa fa-paper-plane"
                                 aria-hidden="true"></i>
                             &nbsp; Payment</a>
+
+                            @endforeach
                     </div>
+
+
                     <div class="col-md-6 text-center">
                         <iframe height="300" id="ifram"
                             src="https://www.youtube.com/embed/Ts5JIbTSVbs?controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=1&enablejsapi=1&origin=https%3A%2F%2Ftheateam.pk&widgetid=1">

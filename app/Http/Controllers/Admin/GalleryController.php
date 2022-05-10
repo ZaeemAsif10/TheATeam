@@ -16,7 +16,7 @@ class GalleryController extends Controller
         return view('admin_side.gallery.index');
     }
 
-    public function Gallery()
+    public function Gallery(Request $request)
     {
         $gallery = Gallery::all();
         return view('admin_side.gallery.gallery', compact('gallery'));
@@ -30,7 +30,6 @@ class GalleryController extends Controller
 
     public function GalleryStore(Request $request)
     {
-
         $c = 0;
         if ($request->has('images')) {
             $c++;
@@ -39,15 +38,16 @@ class GalleryController extends Controller
                 $uniqueid = uniqid();
                 $extension = $image->getClientOriginalExtension();
                 $name = Carbon::now()->format('Ymd') . '_' . $c . $uniqueid . '.' . $extension;
-                $path = $image->storeAs('storage/app/public/uploads/gellary/', $name);
+                $path = $image->storeAs('public/uploads/gallery/', $name);
 
                 $image = new Gallery();
                 $image->block_id = $request->block_id;
                 $image->images = $name;
                 $image->save();
-                return back();
             }
         }
+
+        return back();
     }
 
 

@@ -21,13 +21,13 @@
                                                 aria-label="home outline"></ion-icon>
                                         </a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Project Detail</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Annual Events</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="ms-auto">
                             <div class="btn-group">
-                                <a href="{{ url('create-project-detail') }}" class="btn btn-outline-primary">Add New</a>
+                                <a href="{{ url('annual_event/create') }}" class="btn btn-outline-primary">Add New</a>
                             </div>
                         </div>
                     </div>
@@ -46,33 +46,31 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Title</th>
-                                    <th>Project Name</th>
-                                    <th>Payment Plan</th>
+                                    <th>Events Name</th>
+                                    <th>Image</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody id="detailTable">
-                                @foreach ($project_detail as $key => $detail)
+                            <tbody id="galleryTable">
+                                @foreach ($annual_events as $key => $annual_event)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $detail->title }}</td>
-                                        <td>{{ $detail->projects->name }}</td>
+                                        <td>{{ $annual_event->events->name }} </td>
                                         <td>
-                                            <img src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $detail->payment_plain) }}"
+                                            <img src="{{ asset('storage/app/public/uploads/annual_events/' . $annual_event->images) }}"
                                                 width="70px" height="70px" alt="">
                                         </td>
-                                        <td>{{ $detail->created_at }}</td>
+                                        <td>{{ $annual_event->created_at }}</td>
                                         <td>
                                             <div class="d-flex align-items-center gap-3 fs-6">
-                                                <a href="{{ url('edit-project-detail/'.$detail->id) }}"
-                                                    class="text-warning btn_edit_detail_slider">
+                                                <a href="{{ url('annual_event/edit/'.$annual_event->event_id) }}"
+                                                    class="text-warning btn_edit_annual_event">
                                                     <ion-icon name="pencil-sharp" role="img" class="md hydrated"
                                                         aria-label="pencil sharp"></ion-icon>
                                                 </a>
-                                                <a href="javascript:;" class="text-danger btn_delete_project_detail"
-                                                    data-bs-toggle="tooltip" data="{{ $detail->id }}" data-bs-placement="bottom" title=""
+                                                <a href="javascript:;" class="text-danger btn_delete_annual_event_slider"
+                                                    data-bs-toggle="tooltip" data="{{ $annual_event->id }}" data-bs-placement="bottom" title=""
                                                     data-bs-original-title="Delete" aria-label="Delete">
                                                     <ion-icon name="trash-sharp" role="img" class="md hydrated"
                                                         aria-label="trash sharp"></ion-icon>
@@ -94,21 +92,6 @@
     </div>
     <!--end page content wrapper-->
 
-    <script type="text/javascript">
-        CKEDITOR.replace('description', {
-            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-        CKEDITOR.replace('confidentail_info', {
-            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-
-        CKEDITOR.replace('rules', {
-            filebrowserUploadUrl: "{{ url('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -116,7 +99,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // script for delete data
-        $('#detailTable').on('click', '.btn_delete_project_detail', function(e) {
+        $('#newsSliderTable').on('click', '.btn_delete_news_slider', function(e) {
                 e.preventDefault();
 
                 var id = $(this).attr('data');
@@ -133,7 +116,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "GET",
-                            url: "{{ url('delete-project-detail') }}",
+                            url: "{{ url('delete-news-slider') }}",
                             data: {
                                 id: id
                             },

@@ -95,9 +95,7 @@
                             html += '<tr>' +
                                 '<td>' + c + '</td>' +
                                 '<td>' + data[i].title + '</td>' +
-                                '<td><img src="{{ asset('storage/app/public/uploads/blogs') }}/' +
-                                data[i].image +
-                                '" width="80px" height="80px" ></td>' +
+                                '<td><img src="{{ asset('storage/app/public/uploads/blogs') }}/' +data[i].image +'" width="80px" height="80px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
                                 '<a href="{{ url('edit-blogs/') }}/'+data[i].id+'" class="text-warning btn_edit_blogs"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
