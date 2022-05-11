@@ -1,6 +1,11 @@
 @extends('web-side.setup.master')
 
 @section('content')
+    <style>
+        .modal-dialog{
+            width: 300px;
+        }
+    </style>
     <section class="home-section">
 
 
@@ -471,4 +476,29 @@
             </div>
         </div>
     </section>
+
+
+   <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <img src="{{ asset('public/assets/images/load.jpeg') }}" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        //auto show modal
+    $(document).ready(function(){
+        setTimeout(function(){
+            $('#exampleModalCenter').modal('show');
+        }, 1000);
+    });
+    </script>
+
 @endsection

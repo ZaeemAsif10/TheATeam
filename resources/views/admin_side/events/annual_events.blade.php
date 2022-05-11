@@ -47,36 +47,24 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Events Name</th>
-                                    <th>Image</th>
                                     <th>Created At</th>
-                                    <th>Action</th>
+                                    {{-- <th>Action</th> --}}
                                 </tr>
                             </thead>
                             <tbody id="galleryTable">
                                 @foreach ($annual_events as $key => $annual_event)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $annual_event->events->name }} </td>
-                                        <td>
-                                            <img src="{{ asset('storage/app/public/uploads/annual_events/' . $annual_event->images) }}"
-                                                width="70px" height="70px" alt="">
-                                        </td>
+                                        <td>{{ $annual_event->name }} </td>
                                         <td>{{ $annual_event->created_at }}</td>
-                                        <td>
-                                            <div class="d-flex align-items-center gap-3 fs-6">
-                                                <a href="{{ url('annual_event/edit/'.$annual_event->event_id) }}"
-                                                    class="text-warning btn_edit_annual_event">
-                                                    <ion-icon name="pencil-sharp" role="img" class="md hydrated"
-                                                        aria-label="pencil sharp"></ion-icon>
-                                                </a>
-                                                <a href="javascript:;" class="text-danger btn_delete_annual_event_slider"
-                                                    data-bs-toggle="tooltip" data="{{ $annual_event->id }}" data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete">
-                                                    <ion-icon name="trash-sharp" role="img" class="md hydrated"
-                                                        aria-label="trash sharp"></ion-icon>
-                                                </a>
-                                            </div>
-                                        </td>
+                                        {{-- <td>
+
+                                            <a href="{{ url('annual_event/edit/' . $annual_event->id) }}"
+                                                class="btn btn-primary btn-sm">
+                                                View
+                                            </a>
+
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -100,44 +88,43 @@
     <script>
         // script for delete data
         $('#newsSliderTable').on('click', '.btn_delete_news_slider', function(e) {
-                e.preventDefault();
+            e.preventDefault();
 
-                var id = $(this).attr('data');
+            var id = $(this).attr('data');
 
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to Delete this Data!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $.ajax({
-                            type: "GET",
-                            url: "{{ url('delete-news-slider') }}",
-                            data: {
-                                id: id
-                            },
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            dataType: "json",
-                            success: function(response) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to Delete this Data!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "GET",
+                        url: "{{ url('delete-news-slider') }}",
+                        data: {
+                            id: id
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        dataType: "json",
+                        success: function(response) {
 
-                                if (response.status == 200) {
-                                    toastr.success(response.message);
-                                    setTimeout(() => {
-                                        window.location.reload();
-                                    }, 2000);
-                                }
+                            if (response.status == 200) {
+                                toastr.success(response.message);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 2000);
                             }
-                        });
-                    }
-                })
+                        }
+                    });
+                }
+            })
 
-            });
+        });
     </script>
-
 @endsection

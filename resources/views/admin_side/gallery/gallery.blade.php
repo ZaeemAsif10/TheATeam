@@ -47,22 +47,21 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Block Name</th>
-                                    <th>Image</th>
                                     <th>Created At</th>
-                                    <th>Action</th>
+                                    {{-- <th>Action</th> --}}
                                 </tr>
                             </thead>
                             <tbody id="galleryTable">
                                 @foreach ($gallery as $key => $gell)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $gell->block->name }} </td>
-                                        <td>
+                                        <td>{{ $gell->name }} </td>
+                                        {{-- <td>
                                             <img src="{{ asset('storage/app/public/uploads/gallery/' . $gell->images) }}"
                                                 width="70px" height="70px" alt="">
-                                        </td>
+                                        </td> --}}
                                         <td>{{ $gell->created_at }}</td>
-                                        <td>
+                                        {{-- <td>
                                             <div class="d-flex align-items-center gap-3 fs-6">
                                                 <a href="{{ url('edit-gell-slider/'.$gell->id) }}"
                                                     class="text-warning btn_edit_gell">
@@ -76,7 +75,7 @@
                                                         aria-label="trash sharp"></ion-icon>
                                                 </a>
                                             </div>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -135,8 +136,13 @@ Route::get('delete-events-slider', [EventController::class, 'deleteEventsSlider'
 Route::get('annual_event', [EventController::class, 'annualEvent']);
 Route::get('annual_event/create', [EventController::class, 'annualEventCreate']);
 Route::post('annual_event/store', [EventController::class, 'annualEventStore']);
-Route::get('annual_event/edit/{event_id}', [EventController::class, 'annualEventEdit']);
-Route::get('annual_event/update/{event_id}', [EventController::class, 'annualEventUpdate']);
+Route::get('annual_event/edit/{id}', [EventController::class, 'annualEventEdit']);
+Route::post('annual_event/update', [EventController::class, 'annualEventUpdate']);
+
+
+//Contact Routes
+Route::post('contact-us', [ContactController::class, 'ContactUs']);
+
 
 
 

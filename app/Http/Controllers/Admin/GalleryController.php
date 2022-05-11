@@ -18,7 +18,7 @@ class GalleryController extends Controller
 
     public function Gallery(Request $request)
     {
-        $gallery = Gallery::all();
+        $gallery = Block::all();
         return view('admin_side.gallery.gallery', compact('gallery'));
     }
 

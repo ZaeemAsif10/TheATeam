@@ -165,7 +165,7 @@ class EventController extends Controller
 
     public function annualEvent()
     {
-        $annual_events = Annual_event::all();
+        $annual_events = Event::all();
         return view('admin_side.events.annual_events', compact('annual_events'));
     }
 
@@ -197,33 +197,35 @@ class EventController extends Controller
         return back();
     }
 
-    public function annualEventEdit($event_id)
+    public function annualEventEdit($id)
     {
         $events = Event::all();
-        $annual = Annual_event::where('event_id',$event_id)->get();
-        return $annual;
+        $annual = Annual_event::where('event_id',$id)->get();
         return view('admin_side.events.edit_annual_events', compact('events','annual'));
     }
 
-    // public function annualEventUpdate(Request $request)
-    // {
-    //     $c = 0;
-    //     if ($request->has('images')) {
-    //         $c++;
-    //         foreach ($request->file('images') as $image) {
+    public function annualEventUpdate(Request $request)
+    {
+        $annual = Annual_event::find($request->annual_event_id);
+        // $annual = Annual_event::where('id',$request->annual_event_id)->get();
+        // $annual->event_id = $request->input('event_id');
 
-    //             $uniqueid = uniqid();
-    //             $extension = $image->getClientOriginalExtension();
-    //             $name = Carbon::now()->format('Ymd') . '_' . $c . $uniqueid . '.' . $extension;
-    //             $path = $image->storeAs('public/uploads/annual_events/', $name);
 
-    //             $image = Annual_event::find($request->id);
-    //             $image->event_id = $request->event_id;
-    //             $image->images = $name;
-    //             $image->update();
-    //         }
-    //     }
+        if ($request->hasFile('images')) {
 
-    //     return back();
-    // }
+            $file = $request->file('images');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('storage/app/public/uploads/annual_events/', $filename);
+            $annual->images = $filename;
+
+        }
+
+        $annual->update();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Porject updated successfully',
+        ]);
+    }
 }
