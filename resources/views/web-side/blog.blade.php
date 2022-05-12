@@ -1,6 +1,8 @@
 @extends('web-side.setup.master')
 
 @section('content')
+
+
     <section class="home-section">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -11,18 +13,19 @@
             </ol>
             <div class="carousel-inner">
                 @foreach ($blog_slider as $key => $blog_slid)
-              <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
                         <img class="w-100 c-img img-fluid"
-                            src="{{ asset('storage/app/public/uploads/blogs/sider/' . $blog_slid->image) }}" alt="First slide">
-                    <div class="carousel-caption">
-                        <h5 class="team">{{ $blog_slid->title }}</h5>
-                        <h1 class="team3">BLOG</h1>
-                        <p class="latest">
-                            {!! $blog_slid->desc !!}
-                        </p>
-                        <h5 class="team mt-4">#theAnews</h5>
+                            src="{{ asset('storage/app/public/uploads/blogs/sider/' . $blog_slid->image) }}"
+                            alt="First slide">
+                        <div class="carousel-caption">
+                            <h5 class="team">{{ $blog_slid->title }}</h5>
+                            <h1 class="team3">BLOG</h1>
+                            <p class="latest">
+                                {!! $blog_slid->desc !!}
+                            </p>
+                            <h5 class="team mt-4" id="theNews">#theAnews</h5>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>
@@ -52,7 +55,7 @@
                                     <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $blog->title }}</h6>
                                     <p class="span">{!! Str::limit($blog->description, 150, '...') !!}
                                     </p>
-                                    <a href="{{ url('more/'.$blog->id) }}" class="more">Read More >> </a>
+                                    <a href="{{ url('more/' . $blog->id) }}" class="more">Read More >> </a>
                                 </div>
                                 <div class="card-footer text-center c-f">
                                     <p class="span">

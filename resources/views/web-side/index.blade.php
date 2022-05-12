@@ -13,7 +13,7 @@
             <div class="carousel-inner">
                 @foreach ($sliders as $key => $slider)
                     <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
-                        <img class="w-100 c-img img-fluid"
+                        <img class="w-100 f-img img-fluid"
                             src="{{ asset('storage/app/public/uploads/slider/' . $slider->image) }}" alt="First slide">
                     </div>
                 @endforeach

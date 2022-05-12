@@ -103,6 +103,11 @@ body {
 
 .home-section .c-img{
     background-size: cover;
+    filter: brightness(0.5);
+}
+
+.home-section .f-img{
+    background-size: cover;
 }
 
 .home-section .btn-book{
