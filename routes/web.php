@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'redirectAdmin'])->name('index');
+Route::get('/tat-admin', [App\Http\Controllers\HomeController::class, 'redirectAdmin'])->name('index');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
 
@@ -82,6 +82,10 @@ Route::post('store-projects', [ProjectController::class, 'storeProjects']);
 Route::get('edit-projects', [ProjectController::class, 'editProjects']);
 Route::post('update-projects', [ProjectController::class, 'updateProjects']);
 Route::get('delete-projects', [ProjectController::class, 'deleteProjects']);
+
+
+Route::get('all-projects', [ProjectController::class, 'AllProjects']);
+
 
 //project slider routes
 Route::get('project/slider', [ProjectController::class, 'ProjectSlider']);
@@ -147,7 +151,7 @@ Route::post('contact-us', [ContactController::class, 'ContactUs']);
 
 
 //Website Routes
-Route::get('team', [WebController::class, 'index'])->name('team');
+Route::get('/', [WebController::class, 'index'])->name('team');
 Route::get('about', [WebController::class, 'about'])->name('about');
 Route::get('project', [WebController::class, 'project'])->name('project');
 Route::get('al-noor', [WebController::class, 'alNoor'])->name('al-noor');
@@ -165,6 +169,7 @@ Route::get('annual_conference', [WebController::class, 'annualConference'])->nam
 Route::get('dubai_events', [WebController::class, 'dubaiEvents'])->name('dubai_events');
 
 Route::get('more/{id}', [WebController::class, 'More'])->name('more');
+Route::get('more/news/{id}', [WebController::class, 'MoreNews'])->name('more');
 
 
 

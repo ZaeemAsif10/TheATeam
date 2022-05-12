@@ -103,7 +103,6 @@ body {
 
 .home-section .c-img{
     background-size: cover;
-    filter: brightness(0.5);
 }
 
 .home-section .btn-book{
@@ -146,6 +145,7 @@ body {
 
 .home-section .para{
     font-size: 13px;
+    text-align: justify;
 }
 
 .home-section .today{
@@ -239,6 +239,7 @@ body {
 .home-section .forth-head{
     color: #D2AC2C;
     font-size: 45px;
+    margin-top: -30px;
 }
 
 .home-section .fourth{
@@ -249,6 +250,8 @@ body {
 .home-section .wish{
     font-size: 15px;
     color: #cecece;
+    text-align: justify;
+    padding: 0px 15px;
 }
 
 .home-section .client{
@@ -393,6 +396,11 @@ body {
     background-color: #D2AC2C;
 }
 
+.home-section .team-logo{
+    width: 75%;
+    margin-top: 50px;
+}
+
 .seventh{
     background-color: #02081A;
     padding: 0px 20px;
@@ -487,7 +495,6 @@ footer .fot-p{
 
 
 
-
 /* ABOUT Section CSS Start */
 .about-section{
     padding: 0px 0px;
@@ -517,6 +524,7 @@ footer .fot-p{
 
 .about-section .rung{
     font-size: 13px;
+    text-align: justify;
 }
 
 .about-section .first .box{
@@ -710,6 +718,14 @@ footer .fot-p{
 }
 
 .about-section .fifth .g-img{
+    width: 104%;
+    height: 350px;
+    border-radius: 8px;
+    cursor: pointer;
+    object-fit: cover;;
+}
+
+.about-section .fifth .d-img{
     width: 100%;
     height: 90%;
     border-radius: 8px;
@@ -822,6 +838,37 @@ footer .fot-p{
     margin-left: 22px;
 }
 
+
+#back{
+    background: #15243a;
+}
+
+#modalDialog {
+    width: 300px;
+}
+
+.input{
+    background: #15243a;
+}
+
+.invest{
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+#modal-icon li{
+    display: inline;
+    font-size: 30px;
+    padding: 0px 8px;
+}
+
+#modal-icon li a{
+    color: white;
+}
+
+.arslan{
+    width: 75%;
+}
 
 /* ABOUT Section CSS End */
 
@@ -969,6 +1016,7 @@ footer .fot-p{
         margin-left: 0px;
         margin-top: 20px;
     }
+
     /* About Section Media Query CSS End */
 
 }
@@ -1014,6 +1062,10 @@ footer .fot-p{
 
     .about-section .fifth .u-head{
         font-size: 18px;
+    }
+
+    .arslan{
+        width: 100%;
     }
     /* About Section Media Query CSS End */
 }

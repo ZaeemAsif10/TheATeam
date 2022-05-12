@@ -98,6 +98,32 @@
             </div>
         </div>
 
+        <div class="third">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="dot">...</h2>
+                        <h2 class="font-weight-bold">MESSAGE FROM <br> CHAIRMAN</h2>
+                        <h5 class="mt-4">EXCLUSIVE REAL ESTATE AGENT OF AL JALIL DEVELOPERS</h5>
+                        <p class="mt-4 rung">Excellence, a quality that sets the best ones apart from everyone else, is
+                            what we seek in our business
+                            and our talented team that strives for your trust, goes the extra mile to provide you the
+                            safest,
+                            securest, and most profitable investment opportunities across the country. Our mission is to
+                            help you grow
+                            your wealth, build your dream home and secure your loved ones' future. Our vision is to make the
+                            Pakistani
+                            real estate industry transparent and trustworthy.
+                        </p>
+                        <a href="{{ url('contact') }}" class="btn btn-default btn-us">Contact Us</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ asset('public/assets/images/01-Arsalan-Ghous.png.jpg') }}" class="img-fluid mt-4 arslan" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="second mb-5 mt-5">
             <div class="container">
                 <div class="row">
@@ -131,32 +157,6 @@
                                 investors with exclusive opportunities.
                             </p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="third">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="dot">...</h2>
-                        <h2 class="font-weight-bold">MESSAGE FROM <br> CHAIRMAN</h2>
-                        <h5 class="mt-4">EXCLUSIVE REAL ESTATE AGENT OF AL JALIL DEVELOPERS</h5>
-                        <p class="mt-4 rung">Excellence, a quality that sets the best ones apart from everyone else, is
-                            what we seek in our business
-                            and our talented team that strives for your trust, goes the extra mile to provide you the
-                            safest,
-                            securest, and most profitable investment opportunities across the country. Our mission is to
-                            help you grow
-                            your wealth, build your dream home and secure your loved ones' future. Our vision is to make the
-                            Pakistani
-                            real estate industry transparent and trustworthy.
-                        </p>
-                        <a href="#" class="btn btn-default btn-us">Contact Us</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{ asset('public/assets/images/01-Arsalan-Ghous.png.jpg') }}" class="img-fluid mt-4" alt="">
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The A Team</title>
     <link rel="stylesheet" href="{{ asset('public/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/owl.carousel.css') }}">
     <!-- Custom style  -->
     <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
     <!-- Googel Fonts -->
@@ -36,6 +37,7 @@
     <script src="{{ asset('public/assets/js/jquery.js') }}"></script>
     <script src="{{ asset('public/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/owl.carousel.js') }}"></script>
     <script src="{{ asset('public/assets/js/main.js') }}"></script>
 </body>
 

@@ -45,6 +45,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Project Name</th>
+                                    <th>Project Image</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
@@ -83,6 +84,12 @@
                                     <input type="text" class="form-control" name="name" required>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Project Image</label>
+                                    <input type="file" class="form-control" name="image" required>
+                                </div>
+                            </div>
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -114,6 +121,13 @@
                                 <div class="form-group">
                                     <label for="">Name</label>
                                     <input type="text" class="form-control" name="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group">
+                                    <label for="">Image</label>
+                                    <input type="file" class="form-control" name="image">
+                                    <span id="store_image"></span>
                                 </div>
                             </div>
                         </div>
@@ -159,6 +173,9 @@
                             html += '<tr>' +
                                 '<td>' + c + '</td>' +
                                 '<td>' + data[i].name + '</td>' +
+                                '<td><img src="{{ asset('storage/app/public/uploads/projects/') }}/' +
+                                data[i].image +
+                                '" width="80px" height="80px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
                                 '<a href="#" class="text-warning btn_edit_project" data="' + data[i].id +
@@ -250,6 +267,14 @@
 
                         $('input[name=project_id]').val(data.id);
                         $('input[name=name]').val(data.name);
+
+                        $('#store_image').html(
+                            '<img src="{{ asset('storage/app/public/uploads/projects/') }}/' +
+                            data.image + '" class="mt-4 ml-4" width="40px" height="70px" />'
+                            );
+                        $('#store_image').append(
+                            '<input type="hidden" name="hidden_image" value="' + data
+                            .image + '" />');
                     },
 
                     error: function() {

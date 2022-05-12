@@ -1,41 +1,46 @@
 @extends('web-side.setup.master')
 
 @section('content')
-    <section class="about-section">
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                @foreach ($event_slider as $key => $event)
-                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
-                        <img class="w-100 c-img img-fluid"
-                            src="{{ asset('storage/app/public/uploads/events/slider/' . $event->image) }}"
-                            alt="First slide">
-                    </div>
-                @endforeach
-            </div>
+<style>
+    #img-link{
+        text-decoration: none;
+        color: grey
+    }
+</style>
+    <section class="home-section">
+
+
+        <div class="mb-5 text-center mt-5">
+            <h1 class="font-weight-bold noor">All Projects</h1>
         </div>
 
 
-
-        <div class="fifth mt-5 mb-5">
+        <div class="fifth mb-5">
             <div class="container">
                 <div class="row">
-                    @foreach ($annual_events as $annual_event)
-                        <div class="col-md-4" id="ddd">
-                            <img src="{{ asset('storage/app/public/uploads/annual_events/' . $annual_event->images) }}"
-                                class="g-img mt-5" alt="">
+
+                    @foreach ($projects as $project)
+                        <div class="col-md-4">
+                            <a href="{{ url('projects/'.$project->id) }}" id="img-link">
+                                <div class="card border-0 mt-2">
+                                    <div class="card-header border-0 p-0">
+                                        <img src="{{ asset('storage/app/public/uploads/projects/' . $project->image) }}"
+                                            class="img-fluid news" alt="No Image">
+                                    </div>
+                                    <div class="card-body border-top-0 text-center">
+                                        <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $project->name }}</h6>
+                                        <p class="span">
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     @endforeach
+
                 </div>
             </div>
         </div>
-
-
 
 
         <div class="seventh">
@@ -79,7 +84,8 @@
                                 <ul class="contact-us">
                                     <li>
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <p class="loc">Corporate Office, 61xx DHA PHASE III, Lahore, Pakistan</p>
+                                        <p class="loc">Corporate Office, 61xx DHA PHASE III, Lahore, Pakistan
+                                        </p>
                                     </li>
                                     <li>
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>

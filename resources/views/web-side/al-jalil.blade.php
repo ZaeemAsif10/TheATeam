@@ -65,6 +65,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
+
+
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -99,6 +101,8 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
+
+
                     </div>
                     <div class="col-md-6">
                         <div class="text-center mt-4">

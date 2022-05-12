@@ -1,11 +1,6 @@
 @extends('web-side.setup.master')
 
 @section('content')
-    <style>
-        .modal-dialog{
-            width: 300px;
-        }
-    </style>
     <section class="home-section">
 
 
@@ -20,25 +15,9 @@
                     <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
                         <img class="w-100 c-img img-fluid"
                             src="{{ asset('storage/app/public/uploads/slider/' . $slider->image) }}" alt="First slide">
-                        <div class="carousel-caption">
-                            <h6 class="team">{{ $slider->title }}</h6>
-                            <h1 class="team1">TALENTED.</h1>
-                            <h1 class="team2">TRANSPARENT.</h1>
-                            <h1 class="team3">TRUSTWORTHY.</h1>
-                            <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
-                            <a href="#" class="btn btn-default btn-learn">Learn More</a>
-                        </div>
                     </div>
                 @endforeach
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
 
 
@@ -78,8 +57,12 @@
                             the
                             1st time.</p>
                         <div class="d-flex">
-                            <a href="#" class="btn btn-default today">Invest Today</a>
-                            <a href="#" class="btn btn-default detail">Details</a>
+                            <a href="#" class="btn btn-default today" data-toggle="modal" data-target="#leftModal">Invest
+                                Today</a>
+                            @php
+                                $navbars = App\Models\Project::first();
+                            @endphp
+                            <a href="{{ url('projects/' . $navbars->id) }}" class="btn btn-default detail">Details</a>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -160,20 +143,21 @@
                         <h1 class="font-weight-bold text-white top-pro">PROJECTS</h1>
                         <h4 class="text-white mt-3 mb-3 lead">THE A TEAM LEADS</h4>
                         <div class="row">
-                            <div class="col-md-6">
-                                <img src="{{ asset('public/assets/images/4.jpg') }}" class="img-fluid right-img" alt="">
-                                <h6 class="text-white mt-3">AL JALIL GARDEN</h6>
-                                <a href="#" class="more">Read More</a>
+                            <div class="owl-carousel owl-theme">
+                                @foreach ($project_slider as $key => $project_slid)
+                                    <div class="col-md-12">
+                                        <img src="{{ asset('storage/app/public/uploads/projects/' . $project_slid->image) }}"
+                                            class="img-fluid right-img" alt="">
+                                        <h6 class="text-white mt-3">{{ $project_slid->name }}</h6>
+                                        <a href="{{ url('projects/' . $project_slid->id) }}" class="more">Read
+                                            More >></a>
+                                    </div>
+                                @endforeach
                             </div>
-                            <div class="col-md-6">
-                                <img src="{{ asset('public/assets/images/slider-banner11.jpeg') }}"
-                                    class="img-fluid right-img" alt="">
-                                <h6 class="text-white mt-3">AL NOOR ORCHARD</h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
+
                         </div>
                         <div class="all-project">
-                            <a href="#" class="btn btn-default btn-project">All Projects</a>
+                            <a href="{{ url('all-projects') }}" class="btn btn-default btn-project">All Projects</a>
                         </div>
                     </div>
                 </div>
@@ -207,7 +191,7 @@
                         <div class="box1">
                             <div class="text-center">
                                 <h1 class="font-weight-bold forth-head">...</h1>
-                                <h1 class="text-white font-weight-bold">CLIENT'S <br> REVIEW'S</h1>
+                                <h1 class="text-white font-weight-bold mt-2">CLIENT'S <br> REVIEWS</h1>
                                 <h5 class="text-white mt-5">ELEGENT AND LUXUARY</h5>
                                 <p class="mt-5 wish">I got the best deal and the best location in Al Noor Orchard
                                     Housing
@@ -248,63 +232,29 @@
         <div class="fifth mb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card border-0">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/blue-letters-forming-word-illegal-1.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">LDA: BODY FORMED TO TRACE <br> DOWN ILLEGAL
-                                    HOUSING
-                                    <br>
-                                    SOCIETIES
-                                </h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/cover-image-94-1024x444-1.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">PM TO INAUGURATE LDA CITY <br> NAYA PAKISTAN
-                                    PROJECT
-                                    THIS
-                                    <br> WEEK
-                                </h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
+                    @foreach ($news as $new)
+                        <div class="col-md-4">
+                            <div class="card border-0 mt-2">
+                                <div class="card-header border-0 p-0">
+                                    <img src="{{ asset('storage/app/public/uploads/news/' . $new->image) }}"
+                                        class="img-fluid news" alt="">
+                                </div>
+                                <div class="card-body border-top-0">
+                                    <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $new->title }}</h6>
+                                    <a href="{{ url('more/news/' . $new->id) }}" class="more">Read More >></a>
+                                </div>
+                                <div class="card-footer text-center c-f">
+                                    <p class="span">
+                                        {{ \Carbon\Carbon::parse($new->created_at)->isoFormat('MMM - Do - YYYY') }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/digitalization-digital-transformation-concept-picture-id868037004-2.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">LDA TO DIGITIZE LAND <br> RECORDS</h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="text-center mt-4">
+                {{-- <div class="text-center mt-4">
                     <a href="#" class="btn btn-default read">Read More</a>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -327,63 +277,29 @@
         <div class="fifth mb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card border-0">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">LDA: BODY FORMED TO TRACE <br> DOWN ILLEGAL
-                                    HOUSING
-                                    <br>
-                                    SOCIETIES
-                                </h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/static-blog-buying-houses-with.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">PM TO INAUGURATE LDA CITY <br> NAYA PAKISTAN
-                                    PROJECT
-                                    THIS
-                                    <br> WEEK
-                                </h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
+                    @foreach ($blogs as $blog)
+                        <div class="col-md-4">
+                            <div class="card border-0 mt-2">
+                                <div class="card-header border-0 p-0">
+                                    <img src="{{ asset('storage/app/public/uploads/blogs/' . $blog->image) }}"
+                                        class="img-fluid news" alt="">
+                                </div>
+                                <div class="card-body border-top-0">
+                                    <h6 class="font-weight-bold mt-4 mb-4 lda">{{ $blog->title }}</h6>
+                                    <a href="{{ url('more/' . $blog->id) }}" class="more">Read More >></a>
+                                </div>
+                                <div class="card-footer text-center c-f">
+                                    <p class="span">
+                                        {{ \Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM - Do - YYYY') }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0">
-                            <div class="card-header border-0 p-0">
-                                <img src="{{ asset('public/assets/images/apartment-living.jpg') }}"
-                                    class="img-fluid news" alt="">
-                            </div>
-                            <div class="card-body border-top-0">
-                                <h6 class="font-weight-bold mt-4 mb-4 lda">LDA TO DIGITIZE LAND <br> RECORDS</h6>
-                                <a href="#" class="more">Read More</a>
-                            </div>
-                            <div class="card-footer text-center c-f">
-                                <p class="span">March 18, 2021 - No Comments</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="text-center mt-4">
+                {{-- <div class="text-center mt-4">
                     <a href="#" class="btn btn-default read">Read More</a>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -478,27 +394,99 @@
     </section>
 
 
-   <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" id="modalDialog" role="document">
 
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        <img src="{{ asset('public/assets/images/load.jpeg') }}" class="img-fluid" alt="">
-      </div>
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img src="{{ asset('public/assets/images/load.jpeg') }}" class="img-fluid" alt="">
+            </div>
+        </div>
     </div>
-  </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="leftModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="back">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100 font-weight-bold text-white" id="exampleModalLongTitle">INVEST NOW</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control input" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control input" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="email" class="form-control input" placeholder="Phone Number">
+                        </div>
+                        <select name="" id="" class="form-control input">
+                            <option value="">3 Marla</option>
+                            <option value="">5 Marla</option>
+                            <option value="">1 Kanal</option>
+                            <option value="">2 Kanal</option>
+                        </select>
+
+                        <button class="btn btn-default invest w-100 mt-3">SEND</button>
+
+                        <ul class="text-center" id="modal-icon">
+                            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
+                                        aria-hidden="true"></i></i></a></li>
+                        </ul>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         //auto show modal
-    $(document).ready(function(){
-        setTimeout(function(){
-            $('#exampleModalCenter').modal('show');
-        }, 1000);
-    });
-    </script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('#exampleModalCenter').modal('show');
+            }, 1000);
 
+
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 2,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            })
+
+        });
+    </script>
 @endsection

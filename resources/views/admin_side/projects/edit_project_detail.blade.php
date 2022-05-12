@@ -65,7 +65,7 @@
                                             <option value="" selected disabled>Choose project</option>
                                             @foreach ($projects as $project)
                                             <option value="{{ $project->id }}"
-                                                {{ $projects->project_id == $project->id ? 'selected' : '' }}
+                                                {{ $project_detail->project_id == $project->id ? 'selected' : '' }}
                                             >{{ $project->name }}</option>
                                             @endforeach
                                         </select>

@@ -19,10 +19,13 @@ use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $sliders = Slider::all();
-        return view('web-side.index', compact('sliders'));
+        $news = News::all();
+        $blogs = Blog::all();
+        $project_slider = Project::all();
+        return view('web-side.index', compact('sliders','project_slider','news','blogs'));
     }
 
     public function about()
@@ -121,6 +124,12 @@ class WebController extends Controller
     {
         $more = Blog::find($request->id);
         return view('web-side.blog_more', compact('more'));
+    }
+
+    public function MoreNews($id)
+    {
+        $more_news = News::find($id);
+        return view('web-side.news_more', compact('more_news'));
     }
 
 }

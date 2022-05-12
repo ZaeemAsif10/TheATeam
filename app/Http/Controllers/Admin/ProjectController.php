@@ -52,6 +52,7 @@ class ProjectController extends Controller
         $data = $request->all();
         $rules = array(
             'name' => 'required',
+            'image' => 'required',
 
         );
 
@@ -63,6 +64,14 @@ class ProjectController extends Controller
 
         $projects = new Project();
         $projects->name = $request->input('name');
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = $file->move('storage/app/public/uploads/projects/', $filename);
+            $projects->image = $filename;
+        }
 
         $projects->save();
         return response()->json([
@@ -152,6 +161,20 @@ class ProjectController extends Controller
 
         $projects = Project::find($request->project_id);
         $projects->name = $request->input('name');
+
+        if ($request->hasFile('image')) {
+
+            $path = 'storage/app/public/uploads/projects/' . $projects->image;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = $file->move('storage/app/public/uploads/projects/', $filename);
+            $projects->image = $filename;
+        }
 
         $projects->update();
         return response()->json([
@@ -262,5 +285,11 @@ class ProjectController extends Controller
                     'message' => 'Project detail deleted successfully',
             ]);
         }
+    }
+
+    public function AllProjects()
+    {
+        $projects = Project::all();
+        return view('web-side.all_projects', compact('projects'));
     }
 }

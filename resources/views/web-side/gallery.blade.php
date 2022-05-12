@@ -166,7 +166,7 @@
                 e.preventDefault();
 
                 AllGallery();
-                
+
             });
 
             //get Gallery All Images
@@ -191,7 +191,7 @@
                             c++;
                             html += '<div class="col-md-4">' +
                                 '<img src="{{ asset('storage/app/public/uploads/gallery/') }}/' +
-                                data[i].images + '" class="img-fluid g-img" alt="">' +
+                                data[i].images + '" class="img-fluid d-img" alt="">' +
                                 '</div>';
                         }
 
@@ -236,7 +236,7 @@
                             c++;
                             html += '<div class="col-md-4">' +
                                 '<img src="{{ asset('storage/app/public/uploads/gallery/') }}/' +
-                                data[i].images + '" class="img-fluid g-img" alt="">' +
+                                data[i].images + '" class="img-fluid d-img" alt="">' +
                                 '</div>';
                         }
 
