@@ -19,7 +19,8 @@
                             <h1 class="team1 text-white">{{ substr($project_slid->title, 0, 15) }}</h1>
                             <h1 class="team2 text-white">{{ substr($project_slid->title, 15, 28) }}</h1>
                             <h5 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h5>
-                            <a href="#" class="btn btn-default btn-book">Book Your Plot</a>
+                            <a href="#" class="btn btn-default btn-book" data-toggle="modal"
+                                data-target="#bookNowModal">Book Your Plot</a>
                             <a href="#" class="btn btn-default btn-learn">Virtual Tour</a>
                         </div>
                     </div>
@@ -36,18 +37,18 @@
                     <div class="col-md-6">
 
                         @foreach ($project_details as $project_detail)
-                        <h5 class="font-weight-bold">{{ $project_detail->title }}</h5>
-                        <p class="al mt-3 mb-3">
-                            {!! $project_detail->desc !!}
-                        </p>
-                        <a href="#" class="btn btn-default btn-pres mt-3"><i class="fa fa-book" aria-hidden="true"></i>
-                            &nbsp;
-                            Presentation</a>
-                        <a href="#" class="btn btn-default btn-payment mt-3"><i class="fa fa-paper-plane"
-                                aria-hidden="true"></i>
-                            &nbsp; Payment</a>
-
-                            @endforeach
+                            <h5 class="font-weight-bold">{{ $project_detail->title }}</h5>
+                            <p class="al mt-3 mb-3">
+                                {!! $project_detail->desc !!}
+                            </p>
+                            <a href="{{ asset('public/assets/images/Presentaion/Presentation-Al-Noor-Orchard-Updated-Jan-2021.pdf') }}" class="btn btn-default btn-pres mt-3"><i class="fa fa-book"
+                                    aria-hidden="true"></i>
+                                &nbsp;
+                                Presentation</a>
+                            <a href="#" class="btn btn-default btn-payment mt-3" data-toggle="modal"
+                                data-target="#paymentPlanModal"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                &nbsp; Payment</a>
+                        @endforeach
                     </div>
                     <div class="col-md-6 text-center">
                         <iframe height="300" id="ifram" src="https://www.youtube.com/embed/WehcAdENiPo"
@@ -211,17 +212,17 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control input" placeholder="Name">
+                                            <input type="text" class="form-control" id="input" placeholder="Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control input" placeholder="Phone Number">
+                                            <input type="text" class="form-control" id="input" placeholder="Phone Number">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control input" placeholder="Email">
+                                            <input type="text" class="form-control" id="input" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -323,6 +324,99 @@
                                     <li><i class="fa fa-youtube-play" aria-hidden="true"></i></li>
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Book Now Modal -->
+        <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" id="back">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title w-100 font-weight-bold text-white" id="exampleModalLongTitle">BOOK NOW
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control input" placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control input" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="email" class="form-control input" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="text-white">Interested In</label>
+                                <select name="" id="marla" class="form-control input">
+                                    <option value="">3 Marla</option>
+                                    <option value="">5 Marla</option>
+                                    <option value="">1 Kanal</option>
+                                    <option value="">2 Kanal</option>
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn btn-default invest w-100 mt-3">SEND</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Payment Plan Modal -->
+        <div class="modal fade bd-example-modal-lg" id="paymentPlanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="w-100 float-right">
+                        <button type="button" class="close cross" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="carouselExampleIndicatorss" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicatorss" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicatorss" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicatorss" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100"
+                                    src="{{ asset('public/assets/images/Residential-5-1.jpg') }}"
+                                    alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100"
+                                    src="{{ asset('public/assets/images/Al-Noor-Orchard-Commercial-Block-1-min.jpg') }}"
+                                    alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100"
+                                    src="{{ asset('public/assets/images/Residecial-Block-1-min.jpg') }}"
+                                    alt="First slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicatorss" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" id="arrow" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicatorss" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" id="arrow" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
                     </div>
                 </div>

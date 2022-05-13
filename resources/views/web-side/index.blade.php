@@ -73,7 +73,7 @@
                             </li>
                         </ul>
                         <div class="">
-                            <p class="para ml-4">Al Jalil Garden Housing Scheme is the main project of Al-Jalil
+                            <p id="scheme" class="ml-4">Al Jalil Garden Housing Scheme is the main project of Al-Jalil
                                 Developers
                                 which
                                 offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore with all
@@ -403,7 +403,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <img src="{{ asset('public/assets/images/load.jpeg') }}" class="img-fluid" alt="">
+                <img src="{{ asset('public/assets/images/load.jpeg') }}" class="img-fluid modal-image" alt="">
             </div>
         </div>
     </div>
@@ -432,14 +432,17 @@
                         <div class="form-group">
                             <input type="number" name="email" class="form-control input" placeholder="Phone Number">
                         </div>
-                        <select name="" id="" class="form-control input">
-                            <option value="">3 Marla</option>
-                            <option value="">5 Marla</option>
-                            <option value="">1 Kanal</option>
-                            <option value="">2 Kanal</option>
-                        </select>
+                        <div class="form-group">
+                            <label for="" class="text-white">Interested In</label>
+                            <select name="" id="marla" class="form-control input">
+                                <option value="">3 Marla</option>
+                                <option value="">5 Marla</option>
+                                <option value="">1 Kanal</option>
+                                <option value="">2 Kanal</option>
+                            </select>
+                        </div>
 
-                        <button class="btn btn-default invest w-100 mt-3">SEND</button>
+                        <button type="button" class="btn btn-default invest w-100 mt-3">SEND</button>
 
                         <ul class="text-center" id="modal-icon">
                             <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>

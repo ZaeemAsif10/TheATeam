@@ -27,6 +27,14 @@ body {
     font-weight: bold;
 }
 
+.navbar-nav li .nav-link{
+    color: #fff !important;
+}
+
+.navbar-nav li .nav-link:hover{
+    color: #B1A42C !important;
+}
+
 .navbar .btn-phone{
     background-color: #B1A42C;
     color: black;
@@ -153,12 +161,22 @@ body {
     text-align: justify;
 }
 
+.home-section #scheme{
+    font-size: 13px;
+    margin-top: 32px;
+    text-align: justify;
+}
+
 .home-section .today{
     padding: 12px 35px;
     background: black;
     border-radius: 30px;
     font-size: 12px;
     color: #fff;
+}
+
+.home-section .today:focus{
+    box-shadow: none;
 }
 
 .home-section .detail{
@@ -168,10 +186,6 @@ body {
     font-size: 12px;
     color: #fff;
     margin-left: 8px;
-}
-
-.home-section .today:hover{
-    background: #B1A42C;
 }
 
 .home-section .detail:hover{
@@ -386,7 +400,7 @@ body {
     margin-bottom: 0px;
 }
 
-.home-section .booking .input{
+.home-section .booking #input{
     padding: 15px;
 }
 
@@ -846,6 +860,7 @@ footer .fot-p{
 
 #back{
     background: #15243a;
+    width: 90%;
 }
 
 #modalDialog {
@@ -861,6 +876,11 @@ footer .fot-p{
     margin-bottom: 15px;
 }
 
+.invest:hover{
+    background-color: #15243a;
+    color: #fff;
+}
+
 #modal-icon li{
     display: inline;
     font-size: 30px;
@@ -871,8 +891,31 @@ footer .fot-p{
     color: white;
 }
 
+#modal-icon li a:hover{
+    color: #B1A42C;
+}
+
+#marla{
+    color: #fff;
+    background-color: #15243a;
+
+}
+
 .arslan{
     width: 75%;
+}
+
+.modal-image{
+    border: 10px solid white;
+    border-radius: 12px;
+}
+
+#carouselExampleControls{
+    margin-top: 125px !important;
+}
+
+.cross{
+    margin-top: -20px;
 }
 
 /* ABOUT Section CSS End */

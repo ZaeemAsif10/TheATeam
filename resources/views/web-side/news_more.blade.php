@@ -48,16 +48,8 @@
                         <ul class="recent">
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">News</a></li>
-                            <li><a href="#">Uncategorized</a></li>
                         </ul>
 
-                        <h5 class="text-secondary post mt-5">Meta</h5>
-                        <ul class="recent">
-                            <li><a href="#">Log in</a></li>
-                            <li><a href="#">Entries feed</a></li>
-                            <li><a href="#">Comments feed</a></li>
-                            <li><a href="#">WordPress.org</a></li>
-                        </ul>
 
                     </div>
 
