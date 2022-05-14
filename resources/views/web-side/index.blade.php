@@ -84,7 +84,7 @@
                         <ul class="ul">
                             <li><i class="fa fa-home icon" aria-hidden="true"></i></li>
                             <li>
-                                <h4 class="garden">Al Baari Residencia</h4>
+                                <h4 class="garden">AL BAARI RESIDENCIA</h4>
                             </li>
                         </ul>
                         <div class="">
@@ -114,7 +114,7 @@
                         <ul class="ul">
                             <li><i class="fa fa-home icon" aria-hidden="true"></i></li>
                             <li>
-                                <h4 class="garden">Al BAARI RESIDENCIA</h4>
+                                <h4 class="garden">MARINA SPORTS CITY <br> AL NOOR ORCHARD</h4>
                             </li>
                         </ul>
                         <div class="">
@@ -304,7 +304,7 @@
         </div>
 
 
-        <div class="seventh">
+        {{-- <div class="seventh">
             <div class="container">
                 <div class="row" style="padding: 105px 5px;">
                     <div class="col-md-4" id="md-5">
@@ -390,7 +390,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
 
 

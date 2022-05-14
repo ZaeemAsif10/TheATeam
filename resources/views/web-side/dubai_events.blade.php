@@ -38,7 +38,7 @@
 
 
 
-        <div class="seventh">
+        {{-- <div class="seventh">
             <div class="container">
                 <div class="row" style="padding: 105px 5px;">
                     <div class="col-md-4" id="md-5">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </section>
 @endsection

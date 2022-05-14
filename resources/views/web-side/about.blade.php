@@ -6,7 +6,8 @@
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block img-fluid top-img" src="{{ asset('public/assets/images/Al-Jalil-Gardens-SlideShow-07.jpg') }}" alt="First slide">
+                    <img class="d-block img-fluid top-img"
+                        src="{{ asset('public/assets/images/Al-Jalil-Gardens-SlideShow-07.jpg') }}" alt="First slide">
                     <div class="carousel-caption">
                         <h1 class="us">ABOUT US</h1>
                         <p>Home > About us</p>
@@ -16,7 +17,7 @@
         </div>
 
 
-        <div class="first mb-5">
+        <div class="first">
             <div class="container" id="cont">
                 <div class="row">
                     <div class="col-md-6">
@@ -64,7 +65,8 @@
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <div class="box">
-                                    <img src="{{ asset('public/assets/images/A-icon.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/A-icon.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="font-weight-bold mt-3 level">BECAME MAIN LEVEL DEALER OF AL JALIL DEVELOPERS
                                     </p>
                                 </div>
@@ -73,14 +75,16 @@
                                     <p class="font-weight-bold mt-3 level">SUCCESSFULLY LAUNCHED SIGNATURE</p>
                                 </div>
                                 <div class="box2 mt-3">
-                                    <img src="{{ asset('public/assets/images/Icon-2.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/Icon-2.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="font-weight-bold mt-3 level">WON AL AZIZ RESIDENCIA DEALERSHIPT</p>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="box3">
-                                    <img src="{{ asset('public/assets/images/Icon4.png') }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('public/assets/images/Icon4.png') }}" class="img-fluid"
+                                        alt="">
                                     <p class="font-weight-bold mt-3 level">WON GRANDY IN DEALERS <br> SUMMIT</p>
                                 </div>
                                 <div class="box4 mt-3">
@@ -88,7 +92,8 @@
                                     <p class="font-weight-bold mt-3 level">HIGHEST SELLER IN AL - NOOR ORCHARD</p>
                                 </div>
                                 <div class="box5 mt-3">
-                                    <img src="{{ asset('public/assets/images/Icon-3.png') }}" class="img-fluid hub" alt="">
+                                    <img src="{{ asset('public/assets/images/Icon-3.png') }}" class="img-fluid hub"
+                                        alt="">
                                     <p class="font-weight-bold mt-3 level">LAUNCHED THE A TEAM TRADING HUB</p>
                                 </div>
                             </div>
@@ -118,13 +123,14 @@
                         <a href="{{ url('contact') }}" class="btn btn-default btn-us">Contact Us</a>
                     </div>
                     <div class="col-md-6">
-                        <img src="{{ asset('public/assets/images/01-Arsalan-Ghous.png.jpg') }}" class="img-fluid mt-4 arslan" alt="">
+                        <img src="{{ asset('public/assets/images/01-Arsalan-Ghous.png.jpg') }}"
+                            class="img-fluid mt-4 arslan" alt="">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="second mb-5 mt-5">
+        <div class="second mb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -168,99 +174,6 @@
                 <h1 class="cl">CALL US: </h1>
                 <h1 class="num">03413333301</h1>
                 <a href="#" class="btn btn-default btn-whats">WhatsApp</a>
-            </div>
-        </div>
-
-
-
-
-
-        <div class="seventh">
-            <div class="container">
-                <div class="row" style="padding: 105px 5px;">
-                    <div class="col-md-4" id="md-5">
-
-                        <div class="text-center">
-                            <h6 class="mt-5 talk">TALK TO US</h6>
-                            <img src="{{ asset('public/assets/images/call-center.png') }}" class="img-fluid call" alt="">
-                        </div>
-                        <hr class="mb-4">
-                        <h6 class="mt-5 talk">SEND MESSAGE</h6>
-                        <form action="#">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Phone">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email">
-                            </div>
-                            <div class="form-group">
-                                <textarea cols="30" rows="4" class="form-control" placeholder="Message"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-default mb-3 send">SEND</a>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-8" id="md-8">
-                        <div>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1203.119635560383!2d74.35996931478351!3d31.470940848146206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919076225fcb8cb%3A0x1adce4db5160bb42!2sThe%20A%20Team%20Real%20Estate%20%26%20Builders%20-%20Corporate%20Office!5e0!3m2!1sen!2s!4v1640852735291!5m2!1sen!2s"
-                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6" id="md-6">
-                                <h5 class="mt-5 talk">LOCATION DETAIL</h5>
-                                <ul class="contact-us">
-                                    <li>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <p class="loc">Corporate Office, 61xx DHA PHASE III, Lahore, Pakistan
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <p class="loc">Office # 15 B Commercial 3 Km from Faizpur Interchange,
-                                            Motorway (M2), Main Sharaqpur
-                                            Road, Lahore</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        <p class="loc">Executive Office #15, Grand Boulevard Al Jalil Garden,
-                                            Faizpur Interchange, Lahore.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                        <p class="email">Phone: +92 341 333 3301</p>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                        <p class="email">Email: info@theateam.pk</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="mt-5 talk">OPENING HOURS</h5>
-                                <ul class="contact-us">
-                                    <li>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <p class="email">Monday - Sunday: 10 am to 6 pm
-                                        </p>
-                                    </li>
-                                </ul>
-                                <ul class="last-icon">
-                                    <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-youtube-play" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 

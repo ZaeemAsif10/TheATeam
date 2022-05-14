@@ -333,6 +333,7 @@ body {
 
 .home-section .overview .al{
     font-size: 14px;
+    text-align: justify !important;
 }
 
 .home-section .overview .btn-pres{
@@ -406,7 +407,7 @@ body {
 
 .home-section .booking .btn-booking{
     padding: 12px 40px;
-    background-color: #000;
+    background-color: #02081A;
     color: #fff;
     border-radius: 30px;
 }
@@ -502,7 +503,7 @@ body {
 
 footer{
     background-color: #02081A;
-    margin-top: -112px;
+    margin-top: 0px;
     padding: 105px 0px 5px 0px;
 }
 
@@ -701,7 +702,7 @@ footer .fot-p{
 }
 
 .about-section .forth .all-d:hover{
-    background-color: #0c0e093a;
+    background-color: #08080877;
 }
 
 .about-section .forth .cl{
@@ -899,10 +900,6 @@ footer .fot-p{
     color: #fff;
     background-color: #15243a;
 
-}
-
-.arslan{
-    width: 75%;
 }
 
 .modal-image{
