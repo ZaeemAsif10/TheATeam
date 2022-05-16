@@ -20,8 +20,10 @@
                             <h1 class="team2 text-white">{{ substr($project_slid->title, 15, 28) }}</h1>
                             <h5 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h5>
                             <a href="#" class="btn btn-default btn-book" data-toggle="modal"
-                                data-target="#bookNowModal">Book Your Plot</a>
-                            <a href="#" class="btn btn-default btn-learn">Virtual Tour</a>
+                                data-target="#bookNowModal"><i class="fa fa-book mr-2"
+                                aria-hidden="true"></i>Book Now</a>
+                            <a href="{{ url('http://www.aljalildevelopers.com/vtour/ano.html') }}" class="btn btn-default btn-learn"><i class="fa fa-eye mr-2"
+                                aria-hidden="true"></i>Virtual Tour</a>
                         </div>
                     </div>
                 @endforeach
@@ -209,29 +211,34 @@
                         <div class="text-center">
                             <h4 class="font-weight-bold mt-3">FOR BOOKING & DETAILS</h4>
                             <div class="container mt-4">
+                                <form action="{{ url('booking-detail') }}" method="POST">
+                                    @csrf
                                 <div class="row">
+
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="input" placeholder="Name">
+                                            <input type="text" name="name" class="form-control" id="input" placeholder="Name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="input" placeholder="Phone Number">
+                                            <input type="number" name="phone" class="form-control" id="input" placeholder="Phone Number">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="input" placeholder="Email">
+                                            <input type="text" name="email" class="form-control" id="input" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea cols="30" rows="4" class="form-control" placeholder="I WOULD LIKE MORE INFORMATION ABOUT THIS"></textarea>
+                                            <textarea cols="30" name="message" rows="4" class="form-control" placeholder="I WOULD LIKE MORE INFORMATION ABOUT THIS"></textarea>
                                         </div>
-                                        <a href="#" class="btn btn-default btn-booking">Send Message</a>
+                                        <button type="submit" class="btn btn-default btn-booking">Send Message</button>
                                     </div>
+
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -254,27 +261,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="POST">
+                        <form action="{{ url('book-now') }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control input" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control input" placeholder="Your Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="email" class="form-control input" placeholder="Email">
+                                <input type="text" name="email" class="form-control input" placeholder="Email" required>
                             </div>
                             <div class="form-group">
-                                <input type="number" name="email" class="form-control input" placeholder="Phone Number">
+                                <input type="number" name="phone" class="form-control input" placeholder="Phone Number" required>
                             </div>
                             <div class="form-group">
                                 <label for="" class="text-white">Interested In</label>
-                                <select name="" id="marla" class="form-control input">
-                                    <option value="">3 Marla</option>
-                                    <option value="">5 Marla</option>
-                                    <option value="">1 Kanal</option>
-                                    <option value="">2 Kanal</option>
+                                <select name="interest" id="interest" class="form-control input" required>
+                                    <option value="3 Marla">3 Marla</option>
+                                    <option value="5 Marla">5 Marla</option>
+                                    <option value="1 Kanal">1 Kanal</option>
+                                    <option value="2 Kanal">2 Kanal</option>
                                 </select>
                             </div>
 
-                            <button type="button" class="btn btn-default invest w-100 mt-3">SEND</button>
+                            <button type="submit" class="btn btn-default invest w-100 mt-3">SEND</button>
 
                         </form>
                     </div>

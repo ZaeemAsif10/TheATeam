@@ -146,6 +146,14 @@ Route::post('annual_event/update', [EventController::class, 'annualEventUpdate']
 
 //Contact Routes
 Route::post('contact-us', [ContactController::class, 'ContactUs']);
+//Subscribe Routes
+Route::post('subscribe', [ContactController::class, 'Subscribe']);
+//Invest Routes
+Route::post('invests', [ContactController::class, 'Invests']);
+//Book Now Routes
+Route::post('book-now', [ContactController::class, 'BookNow']);
+//Booking Detail Routes
+Route::post('booking-detail', [ContactController::class, 'BookingDetail']);
 
 
 

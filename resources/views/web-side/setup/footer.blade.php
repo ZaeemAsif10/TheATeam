@@ -1,5 +1,86 @@
 <footer>
-    <div class="text-center">
+    {{-- <div class="text-center">
       <p class="text-white fot-p">Copyright © 2021 – Tha A Team. All rights reserved.</p>
+    </div> --}}
+
+
+    <div class="container">
+
+        <i class='bi bi-messenger'></i>
+
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-white font-weight-bold us">ABOUT US</h5>
+                <p class="text-white lahore mt-4">The A Team is a Lahore-Based exclusive real estate agent of Al Jalil
+                    Developers that helps
+                    small-budget property investors grow their wealth, build their dream home, and secure their loved
+                    ones’ future.</p>
+            </div>
+            <div class="col-md-3">
+                <h5 class="text-white font-weight-bold us">PROJECTS</h5>
+                <ul class="foot-link mt-4">
+                    @php
+                        $navbars = App\Models\Project::take(3)->get();
+                    @endphp
+                    @foreach ($navbars as $navbarItem)
+                        <li> > <a href="{{ url('projects/' . $navbarItem->id) }}"
+                                class="ml-2">{{ $navbarItem->name }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="text-white font-weight-bold us">LINKS</h5>
+                <ul class="foot-link mt-4">
+                    <li> > <a href="{{ url('/') }}" class="ml-2">Home</a></li>
+                    <li> > <a href="{{ url('about') }}" class="ml-2">About Us</a></li>
+                    <li> > <a href="{{ url('contact') }}" class="ml-2">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="text-white font-weight-bold us">GET IN TOUCH</h5>
+
+                <form action="{{ url('subscribe') }}" method="POST">
+                    @csrf
+                    <div class="input-group mb-3 mt-4">
+                        <input type="text" id="email-input" name="email" class="form-control" placeholder="Email"
+                            aria-label="email" aria-describedby="basic-addon2" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-default" type="submit" id="subscribe">SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </form>
+
+                <ul class="text-center" id="modal-icon">
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </footer>
+
+
+    <div class="row mt-4">
+        <div class="underline"></div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="text-white lahore">Copyright © 2021–Tha A Team.All rights reserved.</p>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <p class="text-white lahore">Manage by Shahraan Tech Pvt Ltd</p>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+

@@ -422,27 +422,28 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="POST">
+                    <form action="{{ url('invests') }}" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control input" placeholder="Your Name">
+                            <input type="text" name="name" class="form-control input" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="email" class="form-control input" placeholder="Email">
+                            <input type="text" name="email" class="form-control input" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="email" class="form-control input" placeholder="Phone Number">
+                            <input type="number" name="phone" class="form-control input" placeholder="Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label for="" class="text-white">Interested In</label>
-                            <select name="" id="marla" class="form-control input">
-                                <option value="">3 Marla</option>
-                                <option value="">5 Marla</option>
-                                <option value="">1 Kanal</option>
-                                <option value="">2 Kanal</option>
+                            <select name="interest" id="marla" class="form-control input" required>
+                                <option value="3 Marla">3 Marla</option>
+                                <option value="5 Marla">5 Marla</option>
+                                <option value="1 Kanal">1 Kanal</option>
+                                <option value="2 Kanal">2 Kanal</option>
                             </select>
                         </div>
 
-                        <button type="button" class="btn btn-default invest w-100 mt-3">SEND</button>
+                        <button type="submit" class="btn btn-default invest w-100 mt-3">SEND</button>
 
                         <ul class="text-center" id="modal-icon">
                             <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>

@@ -119,15 +119,15 @@ body {
 }
 
 .home-section .btn-book{
-    padding: 12px 40px;
-    background: #000;
+    padding: 12px 28px;
+    background: #02081A;
     color: #fff;
     border-radius: 30px;
     font-size: 12px;
 }
 
 .home-section .btn-learn{
-    padding: 12px 45px;
+    padding: 12px 28px;
     background: #B1A42C;
     color: #fff;
     border-radius: 30px;
@@ -139,7 +139,7 @@ body {
 }
 
 .home-section .btn-learn:hover{
-    background: #000;
+    background: #02081A
 }
 
 .home-section #carousel_img{
@@ -339,7 +339,7 @@ body {
 .home-section .overview .btn-pres{
     border-radius: 25px;
     padding: 12px 18px;
-    background-color: #000;
+    background-color: #02081A;
     font-size: 13px;
     color: #fff;
 }
@@ -410,6 +410,10 @@ body {
     background-color: #02081A;
     color: #fff;
     border-radius: 30px;
+}
+
+.home-section .btn-book:focus{
+    box-shadow: none;
 }
 
 .home-section .booking .btn-booking:hover{
@@ -504,13 +508,86 @@ body {
 footer{
     background-color: #02081A;
     margin-top: 0px;
-    padding: 105px 0px 5px 0px;
+    padding: 105px 0px 3px 0px
 }
 
+footer .us{
+    border-left: 4px solid #D2AC2C;
+    padding: 2px 7px;
+}
+
+footer .lahore{
+    font-size: 12px;
+    text-align: justify;
+}
+
+footer .foot-link li{
+    list-style: none;
+    margin-left: -35px;
+    padding: 4px 0px;
+    color: #fff;
+}
+
+footer .foot-link li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
 footer .fot-p{
     margin-top: -25px;
     font-size: 12px;
 }
+
+footer #modal-icon{
+    margin-left: -120px;
+}
+
+footer #modal-icon li{
+    display: inline;
+    font-size: 30px;
+    padding: 0px 8px;
+}
+
+footer #modal-icon li a{
+    color: white;
+}
+
+footer #modal-icon li a:hover{
+    color: #B1A42C;
+}
+
+footer #subscribe{
+    font-size: 12px;
+    background-color: #D2AC2C;
+    color: #000;
+    padding: 15px 12px;
+    border-radius: 30px;
+}
+
+footer #subscribe:hover{
+    background-color: #02081A;
+    color: #fff;
+}
+
+footer #subscribe:focus{
+    box-shadow: none;
+}
+
+footer #email-input:focus{
+    box-shadow: none;
+}
+
+footer #email-input{
+    background-color: #02081A;
+    color: #fff;
+    border-radius: 30px;
+}
+
+footer .underline{
+    border-bottom: 1px solid #B1A42C;
+    width: 100%;
+}
+
 /* Home Section CSS End */
 
 
@@ -821,13 +898,13 @@ footer .fot-p{
 .about-section .send-msg{
     padding: 12px 17px;
     background-color: #D2AC2C;
-    color: #000;
+    color: #02081A;
     font-size: 12px;
     border-radius: 25px;
 }
 
 .about-section .send-msg:hover{
-    background-color: #000;
+    background-color: #02081A;
     color: #fff;
 }
 
@@ -967,6 +1044,11 @@ footer .fot-p{
     .home-section .btn-learn{
         padding: 7px 30px;
     }
+
+    .home-section .btn-learn:focus{
+        box-shadow: none;
+    }
+
     .home-section .btn-project {
         border: 2px solid #fff;
         padding: 8px 20px;

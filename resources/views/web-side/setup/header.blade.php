@@ -30,6 +30,8 @@
                         <a class="dropdown-item"
                             href="{{ url('projects/' . $navbarItem->id) }}">{{ $navbarItem->name }}</a>
                     @endforeach
+                    <a class="dropdown-item"
+                        href="{{ url('http://www.aljalildevelopers.com/vtour/ano.html') }}">VIRTUAL TOUR</a>
                 </div>
             </li>
 
@@ -58,8 +60,7 @@
                         $events = App\Models\Event::all();
                     @endphp
                     @foreach ($events as $event)
-                        <a class="dropdown-item"
-                            href="{{ url('events/' . $event->id) }}">{{ $event->name }}</a>
+                        <a class="dropdown-item" href="{{ url('events/' . $event->id) }}">{{ $event->name }}</a>
                     @endforeach
                 </div>
             </li>
