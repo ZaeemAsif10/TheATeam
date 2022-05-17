@@ -446,12 +446,12 @@
                         <button type="submit" class="btn btn-default invest w-100 mt-3">SEND</button>
 
                         <ul class="text-center" id="modal-icon">
-                            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                             </li>
-                            <li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
+                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"
                                         aria-hidden="true"></i></i></a></li>
                         </ul>
 

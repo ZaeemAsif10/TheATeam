@@ -123,13 +123,15 @@ class WebController extends Controller
     public function More(Request $request)
     {
         $more = Blog::find($request->id);
-        return view('web-side.blog_more', compact('more'));
+        $blog_detail = Blog::all();
+        return view('web-side.blog_more', compact('more','blog_detail'));
     }
 
     public function MoreNews($id)
     {
         $more_news = News::find($id);
-        return view('web-side.news_more', compact('more_news'));
+        $news_details = News::all();
+        return view('web-side.news_more', compact('more_news','news_details'));
     }
 
 }

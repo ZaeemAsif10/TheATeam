@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5 class="mt-4">" BUILDING A BETTER GROW TOGETHER</h5>
+                        <h5 class="mt-4">"BUILDING A BETTER GROW TOGETHER"</h5>
                         <h5 class="con ml-2 mt-4 mb-4">CONTACT DETAILS</h5>
                         <ul class="contact-us">
                             <li>
@@ -49,39 +49,38 @@
                             </li>
                         </ul>
                         <ul class="last-icon">
-                            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-youtube-play" aria-hidden="true"></i></li>
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                         </ul>
-                        <h5 class="con ml-2 mt-4 mb-4">LEAVE US A MESSAGE</h5>
-                        <h5 class="con ml-2 mt-4 mb-4">CONTACT US FORM</h5>
+                        <h5 class="con ml-2 mt-4 mb-4">GET IN TOUCH</h5>
                         <form action="{{ url('contact-us') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="email" placeholder="Email">
+                                        <input type="text" class="form-control" name="email" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="phone" placeholder="Phone Number">
+                                        <input type="number" class="form-control" name="phone" placeholder="Phone Number" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea cols="30" rows="4" class="form-control" name="message" placeholder="Message"></textarea>
+                                    <textarea cols="30" rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
                                 </div>
                                 <div>
                                     <button type="submit" class="btn btn-default send-msg mt-4 ml-3">Send Message</button>

@@ -344,6 +344,10 @@ body {
     color: #fff;
 }
 
+.home-section .overview .btn-pres:focus{
+    box-shadow: none;
+}
+
 .home-section .overview .btn-payment{
     border-radius: 25px;
     padding: 12px 24px;
@@ -351,6 +355,10 @@ body {
     font-size: 13px;
     color: #000;
     font-weight: bold;
+}
+
+.home-section .overview .btn-payment:focus{
+    box-shadow: none;
 }
 
 .home-section .overview .btn-payment:hover{
@@ -495,6 +503,14 @@ body {
 .seventh .last-icon li{
     padding: 0px 13px;
     cursor: pointer;
+}
+
+.last-icon li a i{
+    color: #000;
+}
+
+.last-icon li a i:hover{
+    color: #fff;
 }
 
 .seventh .last-icon li:hover{
@@ -859,7 +875,7 @@ footer .underline{
 
 .about-section .contact .contact-us li{
     list-style: none;
-    padding: 10px 0px;
+    padding: 2px 0px;
     display: flex;
 }
 
@@ -885,6 +901,10 @@ footer .underline{
 .about-section .contact .last-icon li{
     padding: 0px 13px;
     cursor: pointer;
+}
+
+.about-section .contact .last-icon li{
+    list-style: none;
 }
 
 .about-section .contact .last-icon li:hover{

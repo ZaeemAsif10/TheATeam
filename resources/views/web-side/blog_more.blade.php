@@ -23,31 +23,18 @@
                     </div>
                     <div class="col-md-4">
                         <h5 class="text-secondary post">Recent Posts</h5>
+
                         <ul class="recent">
-                            <li><a href="#">MAKE YOUR HOME MORE ECO-FRIENDLY</a></li>
-                            <li><a href="#">Buying Houses with a Limited Budget</a></li>
-                            <li><a href="#">Apartment Living vs House Living: The Right Choice</a></li>
-                            <li><a href="#">HERE’S WHY YOU SHOULD BOOK YOUR <br> VILLA IN -WEST MARINA</a></li>
-                            <li><a href="#">SHOULD YOU RENOVATE OR REBUILD?</a></li>
+                            @foreach ($blog_detail as $detail)
+                                <li><a href="{{ url('more/'.$detail->id) }}">{{ $detail->title }}</a></li>
+                            @endforeach
                         </ul>
 
-                        <h5 class="text-secondary post mt-5">Recent Comments</h5>
-                        <h5 class="text-secondary post mt-5">Archives</h5>
-                        <ul class="recent">
-                            <li><a href="#">December 2021</a></li>
-                            <li><a href="#">November 2021</a></li>
-                            <li><a href="#">October 2021</a></li>
-                            <li><a href="#">September 2021</a></li>
-                            <li><a href="#">August 2021</a></li>
-                            <li><a href="#">June 2021</a></li>
-                            <li><a href="#">April 2021</a></li>
-                            <li><a href="#">March 2021</a></li>
-                        </ul>
 
                         <h5 class="text-secondary post mt-5">Categories</h5>
                         <ul class="recent">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">News</a></li>
+                            <li><a href="{{ url('blog') }}">Blog</a></li>
+                            <li><a href="{{ url('news') }}">News</a></li>
                         </ul>
 
                     </div>
