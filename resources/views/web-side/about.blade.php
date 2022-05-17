@@ -72,7 +72,8 @@
                                 </div>
                                 <div class="box1 mt-3">
                                     <i class="fa fa-shield a-icon1" aria-hidden="true"></i>
-                                    <p class="font-weight-bold mt-3 level">SUCCESSFULLY LAUNCHED SIGNATURE</p>
+                                    <p class="font-weight-bold mt-3 level">SUCCESSFULLY LAUNCHED SIGNATURE EVENT “REALTOR
+                                        GROWTH CON” TO HELP REALTORS ACHIEVE 10X GROWTH.</p>
                                 </div>
                                 <div class="box2 mt-3">
                                     <img src="{{ asset('public/assets/images/Icon-2.png') }}" class="img-fluid"
@@ -89,7 +90,8 @@
                                 </div>
                                 <div class="box4 mt-3">
                                     <i class="fa fa-cloud a-icon2" aria-hidden="true"></i>
-                                    <p class="font-weight-bold mt-3 level">HIGHEST SELLER IN AL - NOOR ORCHARD</p>
+                                    <p class="font-weight-bold mt-3 level">HIGHEST SELLER IN AL-NOOR ORCHARD HOUSING SCHEME
+                                        LAHORE</p>
                                 </div>
                                 <div class="box5 mt-3">
                                     <img src="{{ asset('public/assets/images/Icon-3.png') }}" class="img-fluid hub"
