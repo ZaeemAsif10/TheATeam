@@ -22,8 +22,8 @@
                             <a href="#" class="btn btn-default btn-book" data-toggle="modal"
                                 data-target="#bookNowModal"><i class="fa fa-book mr-2"
                                 aria-hidden="true"></i>Book Now</a>
-                            <a href="{{ url('http://www.aljalildevelopers.com/vtour/ano.html') }}" class="btn btn-default btn-learn"><i class="fa fa-eye mr-2"
-                                aria-hidden="true"></i>Virtual Tour</a>
+                            <a href="#" data-toggle="modal"
+                            data-target="#paymentPlanModal" class="btn btn-default btn-learn"><i class="fa fa-paper-plane mr-2" aria-hidden="true"></i>Payment Plan</a>
                         </div>
                     </div>
                 @endforeach
@@ -47,9 +47,8 @@
                                     aria-hidden="true"></i>
                                 &nbsp;
                                 Presentation</a>
-                            <a href="#" class="btn btn-default btn-payment mt-3" data-toggle="modal"
-                                data-target="#paymentPlanModal"><i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                &nbsp; Payment</a>
+                            <a href="#lcoation" class="btn btn-default btn-payment mt-3"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                &nbsp; Location</a>
                         @endforeach
                     </div>
                     <div class="col-md-6 text-center">
@@ -114,12 +113,12 @@
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
                                     <img src="{{ asset('public/assets/images/icon/power-plant.png') }}"
                                         class="img-fluid" alt="">
-                                    <p class="service-p mt-4">Water Filtration <br> Plant</p>
+                                    <p class="service-p mt-4">Underground Electricity & <br>Gas</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
                                     <img src="{{ asset('public/assets/images/icon/gate.png') }}" class="img-fluid"
                                         alt="">
-                                    <p class="service-p mt-4">Water Filtration <br> Plant</p>
+                                    <p class="service-p mt-4">Egyptian Style Main<br>Gate</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
                                     <img src="{{ asset('public/assets/images/icon/filtration.png') }}"
@@ -181,13 +180,23 @@
         <div class="location mt-5 mb-5">
             <div class="container-fluid">
                 <div class="text-center">
-                    <i class="fa fa-map-marker loc-mark" aria-hidden="true"></i>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-2">
+                            <hr class="located">
+                        </div>
+                        <div class="col-md-2 mb-4"><i class="fa fa-map-marker loc-mark" aria-hidden="true"></i></div>
+                        <div class="col-md-2">
+                            <hr class="located">
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
                     <h4 class="font-weight-bold mt-3">THE LOCATION MAP</h4>
                     <p class="km text-secondary">Just 3 km from Faizpur Interchange via M2 Motorway</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <iframe
+                        <iframe id="lcoation"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.6684389326074!2d74.17969714956689!3d31.56071278126476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918e3e8db04ad19%3A0x669b0607e3b439d2!2sAl%20Noor%20Orchard%20West%20Marina%20Cottages%20and%20Villas!5e0!3m2!1sen!2s!4v1641197353566!5m2!1sen!2s"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
@@ -264,17 +273,17 @@
                         <form action="{{ url('book-now') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control input" placeholder="Your Name" required>
+                                <input type="text" name="name" id="marla" class="form-control input" placeholder="Your Name" required autocomplete="off">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="email" class="form-control input" placeholder="Email" required>
+                                <input type="text" name="email" id="marla" class="form-control input" placeholder="Email" required autocomplete="off">
                             </div>
                             <div class="form-group">
-                                <input type="number" name="phone" class="form-control input" placeholder="Phone Number" required>
+                                <input type="number" name="phone" id="marla" class="form-control input" placeholder="Phone Number" required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="" class="text-white">Interested In</label>
-                                <select name="interest" id="interest" class="form-control input" required>
+                                <select name="interest" id="marla" class="form-control input" required>
                                     <option value="3 Marla">3 Marla</option>
                                     <option value="5 Marla">5 Marla</option>
                                     <option value="1 Kanal">1 Kanal</option>

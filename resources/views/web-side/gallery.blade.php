@@ -35,7 +35,7 @@
 
 
         <div class="fifth mt-5 mb-5">
-            <h3 class="font-weight-bold mt-4 mb-4 text-center a-g">ALL GALLERY</h3>
+            <h3 class="font-weight-bold mt-4 mb-4 text-center a-g">GALLERY</h3>
 
             <div class="text-center">
                 <ul class="all-blocks">

@@ -179,6 +179,8 @@ Route::get('dubai_events', [WebController::class, 'dubaiEvents'])->name('dubai_e
 Route::get('more/{id}', [WebController::class, 'More'])->name('more');
 Route::get('more/news/{id}', [WebController::class, 'MoreNews'])->name('more');
 
+Route::get('pirvacy', [WebController::class, 'Pirvacy']);
+
 
 
 

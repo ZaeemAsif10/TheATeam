@@ -19,7 +19,7 @@
                             {!! $more_news->description !!}
                         </div>
 
-                        <a href="{{ url('/') }}" class=""> >> Previous Post</a>
+                        <a href="{{ url('news') }}" class=""> >> Previous Post</a>
                     </div>
                     <div class="col-md-4">
                         <h5 class="text-secondary post">Recent Posts</h5>

@@ -9,10 +9,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto">
-            <li class="nav-item">
+            <li class="{{ Route::is('team') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('team') }}">HOME</a>
             </li>
-            <li class="nav-item">
+            <li class="{{ Route::is('about') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('about') }}">ABOUT US</a>
             </li>
 
@@ -47,7 +47,7 @@
                     <a class="dropdown-item" href="{{ route('news') }}">NEWS</a>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="{{ Route::is('gallery') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('gallery') }}">GELLERY</a>
             </li>
             <li class="nav-item dropdown">
@@ -64,7 +64,7 @@
                     @endforeach
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="{{ Route::is('contact') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('contact') }}">CONTACT US</a>
             </li>
         </ul>

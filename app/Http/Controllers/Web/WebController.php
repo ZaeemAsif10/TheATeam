@@ -22,7 +22,7 @@ class WebController extends Controller
     public function index(Request $request)
     {
         $sliders = Slider::all();
-        $news = News::all();
+        $news = News::take(3)->get();
         $blogs = Blog::all();
         $project_slider = Project::all();
         return view('web-side.index', compact('sliders','project_slider','news','blogs'));
@@ -74,14 +74,14 @@ class WebController extends Controller
 
     public function Blog()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::paginate(3);
         $blog_slider = Blog_slider::all();
         return view('web-side.blog', compact('blogs','blog_slider'));
     }
 
     public function News()
     {
-        $news = News::all();
+        $news = News::paginate(3);
         $news_slider = News_slider::all();
         return view('web-side.news', compact('news','news_slider'));
     }
@@ -132,6 +132,12 @@ class WebController extends Controller
         $more_news = News::find($id);
         $news_details = News::all();
         return view('web-side.news_more', compact('more_news','news_details'));
+    }
+
+    public function Pirvacy()
+    {
+        $blog_detail = Blog::all();
+        return view('web-side.privacy', compact('blog_detail'));
     }
 
 }

@@ -175,7 +175,7 @@
                 <p class="font-weight-bold text-white">WANT TO INVEST WITH THE TEAM? </p>
                 <h1 class="cl">CALL US: </h1>
                 <h1 class="num">03413333301</h1>
-                <a href="#" class="btn btn-default btn-whats">WhatsApp</a>
+                <a href="tel:03413333301" class="btn btn-default btn-whats">WhatsApp</a>
             </div>
         </div>
 

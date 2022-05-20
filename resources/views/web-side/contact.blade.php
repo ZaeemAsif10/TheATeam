@@ -49,11 +49,11 @@
                             </li>
                         </ul>
                         <ul class="last-icon">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.facebook.com/theateam.pk" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/theateampk" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/theateam.pk/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/theateampk/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCpaf1VqhdpiQV11Q-brPYpQ" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                         </ul>
                         <h5 class="con ml-2 mt-4 mb-4">GET IN TOUCH</h5>
                         <form action="{{ url('contact-us') }}" method="POST">

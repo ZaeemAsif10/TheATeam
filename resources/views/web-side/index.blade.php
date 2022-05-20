@@ -3,6 +3,62 @@
 @section('content')
     <section class="home-section">
 
+        <style>
+            .animate {
+                /* height: 100vh; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .animate h3 {
+                padding: 0.5rem;
+                font-weight: bold;
+                letter-spacing: 0.1rem;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            .animate h3 span.typed-text {
+                font-weight: normal;
+                color: #dd7732;
+            }
+
+            .animate h3 span.cursor {
+                display: inline-block;
+                background-color: #ccc;
+                margin-left: 0.1rem;
+                width: 3px;
+                animation: blink 1s infinite;
+            }
+
+            .animate h3 span.cursor.typing {
+                animation: none;
+            }
+
+            @keyframes blink {
+                0% {
+                    background-color: #ccc;
+                }
+
+                49% {
+                    background-color: #ccc;
+                }
+
+                50% {
+                    background-color: transparent;
+                }
+
+                99% {
+                    background-color: transparent;
+                }
+
+                100% {
+                    background-color: #ccc;
+                }
+            }
+
+        </style>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
             <ol class="carousel-indicators">
@@ -26,8 +82,14 @@
 
 
         <div class="container">
-            <div class="text-center mb-5 mt-3 choose">
-                <h3>Choose The A Team For <span class="best">Best DealsSafest</span></h3>
+            <div class="text-center mt-5">
+
+                    <div class="animate">
+                        <h3>Choose The A Team For <span class="typed-text"></span><span class="cursor">&nbsp;</span></h3>
+                    </div>
+                    {{-- <h3 id="choose">Choose The A Team For</h3>
+                    <span class="best" id="choose" style="font-size: 30px;">Best DealsSafest</span> --}}
+
             </div>
         </div>
 
@@ -73,13 +135,13 @@
                             </li>
                         </ul>
                         <div class="">
-                            <p id="scheme" class="ml-4">Al Jalil Garden Housing Scheme is the main project of Al-Jalil
+                            <p id="scheme" class="ml-4">Al Jalil Garden Housing Scheme is the main project of
+                                Al-Jalil
                                 Developers
                                 which
-                                offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore with all
-                                facilities
-                                and
-                                offering a 3 years flexible payment plan.</p>
+                                offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore With All
+                                facilites offering a 3 year flexible payment plan The latest project of Al Noor Orchard is
+                                Marina Sports City.</p>
                         </div>
                         <ul class="ul">
                             <li><i class="fa fa-home icon" aria-hidden="true"></i></li>
@@ -93,7 +155,8 @@
                                 equally
                                 perfect option for a quality living experience offering 01, 02 Kanal, 10, 5 and 3 marla
                                 residential plot
-                                in Sheikhupura with all modern-day facilities and investment for industrial purposes</p>
+                                in Sheikhupura with all modern-day facilities and investment for industrial purposes The
+                                latest project of Al Noor Orchard is Marina Sports City.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -108,8 +171,8 @@
                                 which
                                 offering
                                 you 01 Kanal, 10, 3, and 5 marla residential plots in Lahore West with best facilities along
-                                with
-                                central commercial areas</p>
+                                with central commercial areas The latest project of Al Noor Orchard is Marina Sports City.
+                            </p>
                         </div>
                         <ul class="ul">
                             <li><i class="fa fa-home icon" aria-hidden="true"></i></li>
@@ -124,7 +187,8 @@
                                 offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore with all
                                 facilities
                                 and
-                                offering a 3 years flexible payment plan.</p>
+                                offering a 3 years flexible payment plan The latest project of Al Noor Orchard is Marina
+                                Sports City.</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +213,8 @@
                                         <img src="{{ asset('storage/app/public/uploads/projects/' . $project_slid->image) }}"
                                             class="img-fluid right-img" alt="">
                                         <h6 class="text-white mt-3">{{ $project_slid->name }}</h6>
-                                        <a href="{{ url('projects/' . $project_slid->id) }}" class="more">Read
+                                        <a href="{{ url('projects/' . $project_slid->id) }}" target="_blank"
+                                            class="more">Read
                                             More >></a>
                                     </div>
                                 @endforeach
@@ -252,9 +317,9 @@
                         </div>
                     @endforeach
                 </div>
-                {{-- <div class="text-center mt-4">
-                    <a href="#" class="btn btn-default read">Read More</a>
-                </div> --}}
+                <div class="text-center mt-4">
+                    <a href="{{ url('news') }}" class="btn btn-default read">Read More</a>
+                </div>
             </div>
         </div>
 
@@ -297,9 +362,9 @@
                         </div>
                     @endforeach
                 </div>
-                {{-- <div class="text-center mt-4">
-                    <a href="#" class="btn btn-default read">Read More</a>
-                </div> --}}
+                <div class="text-center mt-4">
+                    <a href="{{ url('blog') }}" class="btn btn-default read">Read More</a>
+                </div>
             </div>
         </div>
 
@@ -425,13 +490,16 @@
                     <form action="{{ url('invests') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control input" placeholder="Your Name" required>
+                            <input type="text" name="name" id="marla" class="form-control input" placeholder="Your Name"
+                                required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="email" class="form-control input" placeholder="Email" required>
+                            <input type="text" name="email" id="marla" class="form-control input" placeholder="Email"
+                                required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="phone" class="form-control input" placeholder="Phone Number" required>
+                            <input type="number" name="phone" id="marla" class="form-control input"
+                                placeholder="Phone Number" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="" class="text-white">Interested In</label>
@@ -446,13 +514,16 @@
                         <button type="submit" class="btn btn-default invest w-100 mt-3">SEND</button>
 
                         <ul class="text-center" id="modal-icon">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <li><a href="https://www.facebook.com/theateam.pk" target="_blank"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a>
                             </li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <li><a href="https://twitter.com/theateampk" target="_blank"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/theateam.pk/" target="_blank"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"
-                                        aria-hidden="true"></i></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/theateampk/" target="_blank"><i
+                                        class="fa fa-linkedin" aria-hidden="true"></i></i></a></li>
                         </ul>
 
                     </form>
@@ -463,6 +534,47 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+
+        const textArray = ["GREATEST RETURNS", "SAFEST INVESTMENT", "BEST DEALS"];
+        const typingDelay = 50;
+        const erasingDelay = 50;
+        const newTextDelay = 1000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+
+
         //auto show modal
         $(document).ready(function() {
             setTimeout(function() {
@@ -489,7 +601,8 @@
                         loop: false
                     }
                 }
-            })
+            });
+
 
         });
     </script>

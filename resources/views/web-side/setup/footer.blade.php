@@ -4,7 +4,7 @@
     </div> --}}
 
 
-    <div class="container">
+    <div class="container mt-4">
 
         <!-- Messenger Chat Plugin Code -->
         <div id="fb-root"></div>
@@ -81,12 +81,12 @@
                 </form>
 
                 <ul class="text-center" id="modal-icon">
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <li><a href="https://www.facebook.com/theateam.pk" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </li>
-                    <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <li><a href="https://twitter.com/theateampk" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/theateam.pk/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </li>
-                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></i></a>
+                    <li><a href="https://www.linkedin.com/company/theateampk/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></i></a>
                     </li>
                 </ul>
             </div>
@@ -99,13 +99,15 @@
     </div>
 
     <div class="container mt-4">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-4">
-                <p class="text-white lahore">Copyright © 2021–Tha A Team.All rights reserved.</p>
+                <p class="text-white lahore1">Copyright © 2021–Tha A Team.All rights reserved.</p>
             </div>
-            <div class="col-md-4"></div>
             <div class="col-md-4">
-                <p class="text-white lahore">Manage by Shahraan Tech Pvt Ltd</p>
+                <p class="text-white lahore1">Manage by Shahraan Tech Pvt Ltd</p>
+            </div>
+            <div class="col-md-4">
+                <a href="{{ url('pirvacy') }}"><p class="text-white lahore1">Privacy Policy</p></a>
             </div>
         </div>
     </div>

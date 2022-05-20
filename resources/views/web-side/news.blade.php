@@ -60,8 +60,11 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="float-right mt-4">
+                    {{ $news->links('pagination::bootstrap-4') }}
+                </div>
             </div>
-        </div>
 
+        </div>
     </section>
 @endsection
