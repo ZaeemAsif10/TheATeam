@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Detail_slider;
 use App\Models\Project;
 use App\Models\Project_detail;
 use App\Models\Project_slider;
@@ -17,10 +18,21 @@ class ProjectController extends Controller
         return view('admin_side.projects.index');
     }
 
+    public function createProjects()
+    {
+        return view('admin_side.projects.add_new_projects');
+    }
+
     public function getProjects()
     {
         $projects = Project::all();
         return response()->json($projects);
+    }
+
+    public function getDetailSlider()
+    {
+        $detail_slider = Detail_slider::all();
+        return response()->json($detail_slider);
     }
 
     public function ProjectSlider()
@@ -31,8 +43,14 @@ class ProjectController extends Controller
 
     public function ProjectDetail()
     {
-        $project_detail = Project_detail::all();
-        return view('admin_side.projects.project_detail', compact('project_detail'));
+        $detail_slider = Project_detail::all();
+        return view('admin_side.projects.detail_slider', compact('detail_slider'));
+    }
+
+    public function DetailSlider()
+    {
+        $projects = Project::all();
+        return view('admin_side.projects.detail_slider', compact('projects'));
     }
 
     public function createProjectSlider()
@@ -49,9 +67,11 @@ class ProjectController extends Controller
 
     public function storeProjects(Request $request)
     {
+        // dd($request->all());
         $data = $request->all();
         $rules = array(
             'name' => 'required',
+            'location' => 'required',
             'image' => 'required',
 
         );
@@ -64,6 +84,9 @@ class ProjectController extends Controller
 
         $projects = new Project();
         $projects->name = $request->input('name');
+        $projects->location = $request->input('location');
+        $projects->latitude = $request->input('latitude');
+        $projects->longitud = $request->input('longitud');
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
@@ -74,9 +97,41 @@ class ProjectController extends Controller
         }
 
         $projects->save();
+        return redirect('admin/projects');
+    }
+
+    public function storeDetailSlider(Request $request)
+    {
+        $data = $request->all();
+        $rules = array(
+            'title' => 'required',
+            'project_id' => 'required',
+            'image' => 'required',
+
+        );
+
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+
+            return response()->json(['errors' => $validator->errors()]);
+        }
+
+        $projects = new Detail_slider();
+        $projects->title = $request->input('title');
+        $projects->project_id = $request->input('project_id');
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = $file->move('storage/app/public/uploads/detail-slider/', $filename);
+            $projects->image = $filename;
+        }
+
+        $projects->save();
         return response()->json([
             'status' => 200,
-            'message' => 'Porject added successfully',
+            'message' => 'Detial slider added successfully',
         ]);
     }
 
@@ -139,6 +194,12 @@ class ProjectController extends Controller
     public function editProjects(Request $request)
     {
         $projects = Project::find($request->id);
+        return view('admin_side.projects.edit_projects', compact('projects'));
+    }
+
+    public function editDetailSlider(Request $request)
+    {
+        $projects = Detail_slider::find($request->id);
         return $projects;
     }
 
@@ -161,6 +222,9 @@ class ProjectController extends Controller
 
         $projects = Project::find($request->project_id);
         $projects->name = $request->input('name');
+        $projects->location = $request->input('location');
+        $projects->latitude = $request->input('latitude');
+        $projects->longitud = $request->input('longitud');
 
         if ($request->hasFile('image')) {
 
@@ -177,9 +241,34 @@ class ProjectController extends Controller
         }
 
         $projects->update();
+        return redirect('admin/projects');
+    }
+
+    public function updateDetailSlider(Request $request)
+    {
+
+        $projects = Detail_slider::find($request->detail_slider_id);
+        $projects->title = $request->input('title');
+        $projects->project_id = $request->input('project_id');
+
+        if ($request->hasFile('image')) {
+
+            $path = 'storage/app/public/uploads/detail-slider/' . $projects->image;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = $file->move('storage/app/public/uploads/detail-slider/', $filename);
+            $projects->image = $filename;
+        }
+
+        $projects->update();
         return response()->json([
             'status' => 200,
-            'message' => 'Porject updated successfully',
+            'message' => 'Detail slider updated successfully',
         ]);
     }
 
@@ -250,6 +339,25 @@ class ProjectController extends Controller
             ]);
         }
     }
+
+    public function deleteDetailSlider(Request $request)
+    {
+        $project_slider = Detail_slider::find($request->id);
+        if($project_slider)
+        {
+            $path = 'storage/app/public/uploads/detail-slider/'.$project_slider->image;
+            if(File::exists($path))
+            {
+                File::delete($path);
+            }
+            $project_slider->delete();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Detail slider deleted successfully',
+            ]);
+        }
+    }
+
 
     public function deleteProjectSlider(Request $request)
     {

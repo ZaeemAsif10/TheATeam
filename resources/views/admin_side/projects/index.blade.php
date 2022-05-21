@@ -1,6 +1,24 @@
 @extends('admin_side.setup.master')
 
 @section('content')
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY904LGu2DEpfjOloBWBtPof8Zx8e6gyQ&libraries=places&callback=initMap">
+    </script>
+    <script>
+        function initMap() {
+            var input = document.getElementById('searchMapInput');
+
+            var autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                document.getElementById('location-snap').innerHTML = place.formatted_address;
+                document.getElementById('lat-span').innerHTML = place.geometry.location.lat();
+                document.getElementById('lon-span').innerHTML = place.geometry.location.lng();
+            });
+        }
+    </script>
+
     <!-- start page content wrapper-->
     <div class="page-content-wrapper">
         <!-- start page content-->
@@ -25,8 +43,7 @@
                         </div>
                         <div class="ms-auto">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                                    data-target="#AddProjectModal">Add New</button>
+                                <a href="{{ url('create-projects') }}" class="btn btn-outline-primary">Add New</a>
                             </div>
                         </div>
                     </div>
@@ -86,6 +103,19 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <label for="">Location</label>
+
+                                    <input id="searchMapInput" class="mapControls form-control" type="text"
+                                        placeholder="Enter a location">
+                                    <ul id="geoData">
+                                        <li>Full Address: <span id="location-snap"></span></li>
+                                        <li>Latitude: <span id="lat-span"></span></li>
+                                        <li>Longitude: <span id="lon-span"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
                                     <label for="">Project Image</label>
                                     <input type="file" class="form-control" name="image" required>
                                 </div>
@@ -121,6 +151,19 @@
                                 <div class="form-group">
                                     <label for="">Name</label>
                                     <input type="text" class="form-control" name="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group">
+                                    <label for="">Location</label>
+
+                                    <input id="searchMapInput" class="mapControls form-control" name="location" type="text"
+                                        placeholder="Enter a location">
+                                    <ul id="geoData">
+                                        {{-- <li>Full Address: <span id="location-snap"></span></li> --}}
+                                        <input type="text" id="lat" name="latitude">
+                                        <input type="text" id="long" name="longitud">
+                                    </ul>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-3">
@@ -178,8 +221,7 @@
                                 '" width="80px" height="80px" ></td>' +
                                 '<td>' + data[i].created_at + '</td>' +
                                 '<td> <div class="d-flex align-items-center gap-3 fs-6">' +
-                                '<a href="#" class="text-warning btn_edit_project" data="' + data[i].id +
-                                '"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
+                                '<a href="{{ url('edit-projects') }}/' + data[i].id + '" class="text-warning"><ion-icon name="pencil-sharp" role="img" class="md hydrated" aria-label="pencil sharp"></ion-icon></a>' +
                                 '<a href="javascript:;" class="text-danger btn_delete_project" data="' +
                                 data[i].id +
                                 '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><ion-icon name="trash-sharp" role="img" class="md hydrated" aria-label="trash sharp"></ion-icon></a>' +
@@ -199,135 +241,6 @@
                 });
             }
 
-
-            //Add Slider
-            $('#Add_project_Form').on('submit', function(e) {
-                e.preventDefault();
-
-                let formData = new FormData($('#Add_project_Form')[0]);
-
-                $.ajax({
-                    type: "POST",
-                    url: "{{ url('store-projects') }}",
-                    data: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    contentType: false,
-                    processData: false,
-                    beforeSend: function() {
-                        $('.add_projects').text('Saving...');
-                        $(".add_projects").prop("disabled", true);
-                    },
-                    success: function(response) {
-
-                        if (response.status == 200) {
-                            toastr.success(response.message);
-                            $('.add_projects').text('Save');
-                            $(".add_projects").prop("disabled", false);
-                            $(".close").click();
-                            $('#Add_project_Form').find('input').val("");
-                            getProjects();
-
-                        }
-
-                        if (response.error) {
-                            toastr.error(response.error);
-                        }
-                    },
-                    error: function() {
-                        $('.add_projects').text('Save');
-                        $(".add_projects").prop("disabled", false);
-                        toastr.error('something went wrong');
-                    },
-                });
-
-            });
-
-
-            //Edit Slider
-            $('#projectTable').on('click', '.btn_edit_project', function(e) {
-                e.preventDefault();
-
-                var id = $(this).attr('data');
-
-                $('#edit_project_modal').modal('show');
-
-                $.ajax({
-
-                    type: 'ajax',
-                    method: 'get',
-                    url: '{{ url('edit-projects') }}',
-                    data: {
-                        id: id
-                    },
-                    async: false,
-                    dataType: 'json',
-                    success: function(data) {
-
-                        $('input[name=project_id]').val(data.id);
-                        $('input[name=name]').val(data.name);
-
-                        $('#store_image').html(
-                            '<img src="{{ asset('storage/app/public/uploads/projects/') }}/' +
-                            data.image + '" class="mt-4 ml-4" width="40px" height="70px" />'
-                            );
-                        $('#store_image').append(
-                            '<input type="hidden" name="hidden_image" value="' + data
-                            .image + '" />');
-                    },
-
-                    error: function() {
-
-                        toastr.error('something went wrong');
-
-                    }
-
-                });
-
-            });
-
-
-            //Update Projects
-            $('.update_projects').on('click', function(e) {
-                e.preventDefault();
-
-
-                let EditFormData = new FormData($('#Edit_project_Form')[0]);
-
-                $.ajax({
-                    type: "POST",
-                    url: "{{ url('update-projects') }}",
-                    data: EditFormData,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    contentType: false,
-                    processData: false,
-                    dataType: "json",
-                    beforeSend: function() {
-                        $('.update_projects').text('Updating...');
-                        $(".update_projects").prop("disabled", true);
-                    },
-                    success: function(response) {
-
-                        if (response.status == 200) {
-                            $('#edit_project_modal').modal('hide');
-                            $('#Edit_project_Form').find('input').val("");
-                            $('.update_projects').text('Update');
-                            $(".update_projects").prop("disabled", false);
-                            toastr.success(response.message);
-                            getProjects();
-                        }
-                    },
-                    error: function() {
-                        toastr.error('something went wrong');
-                        $('.update_projects').text('Update');
-                        $(".update_projects").prop("disabled", false);
-                    }
-                });
-
-            });
 
 
             // script for delete data

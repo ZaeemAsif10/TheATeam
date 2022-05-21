@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DetailSliderController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -78,11 +79,18 @@ Route::get('delete-blogs', [BlogController::class, 'deleteBlogs']);
 // Project Routes
 Route::get('admin/projects', [ProjectController::class, 'index']);
 Route::get('get-projects', [ProjectController::class, 'getProjects']);
+Route::get('create-projects', [ProjectController::class, 'createProjects']);
 Route::post('store-projects', [ProjectController::class, 'storeProjects']);
-Route::get('edit-projects', [ProjectController::class, 'editProjects']);
+Route::get('edit-projects/{id}', [ProjectController::class, 'editProjects']);
 Route::post('update-projects', [ProjectController::class, 'updateProjects']);
 Route::get('delete-projects', [ProjectController::class, 'deleteProjects']);
 
+
+Route::get('get-detail-slider', [ProjectController::class, 'getDetailSlider']);
+Route::post('store-detial-slider', [ProjectController::class, 'storeDetailSlider']);
+Route::get('edit-detail-slider', [ProjectController::class, 'editDetailSlider']);
+Route::post('update-detail-slider', [ProjectController::class, 'updateDetailSlider']);
+Route::get('delete-detail-slider', [ProjectController::class, 'deleteDetailSlider']);
 
 Route::get('all-projects', [ProjectController::class, 'AllProjects']);
 
@@ -98,6 +106,11 @@ Route::get('delete-project-slider', [ProjectController::class, 'deleteProjectSli
 
 //project detail routes
 Route::get('project/details', [ProjectController::class, 'ProjectDetail']);
+
+
+Route::get('details/slider', [ProjectController::class, 'DetailSlider']);
+
+
 Route::get('create-project-detail', [ProjectController::class, 'createProjectDetail']);
 Route::post('store_project_detail', [ProjectController::class, 'storeProjectDetail']);
 Route::get('edit-project-detail/{id}', [ProjectController::class, 'editProjectDetail']);

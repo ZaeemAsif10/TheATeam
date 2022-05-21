@@ -82,7 +82,7 @@
                                  </div>
                                  <div class="col-md-12 mt-3">
                                      <div class="form-group">
-                                         <label for="">Payment Plan</label>
+                                         <label for="">Video</label>
                                          <input type="file" class="form-control" name="payment_plain">
                                          <span class="text-danger"> @error('payment_plain')
                                                  {{ $message }}

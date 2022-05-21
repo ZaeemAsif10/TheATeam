@@ -1,7 +1,7 @@
 @extends('admin_side.setup.master')
 
 @section('content')
-<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
 
     <!-- start page content wrapper-->
     <div class="page-content-wrapper">
@@ -27,7 +27,8 @@
                         </div>
                         <div class="ms-auto">
                             <div class="btn-group">
-                                <a href="{{ url('project/slider') }}" type="button" class="btn btn-outline-primary">Back</a>
+                                <a href="{{ url('project/slider') }}" type="button"
+                                    class="btn btn-outline-primary">Back</a>
                             </div>
                         </div>
                     </div>
@@ -64,9 +65,9 @@
                                         <select name="project_id" id="" class="form-control">
                                             <option value="" selected disabled>Choose project</option>
                                             @foreach ($projects as $project)
-                                            <option value="{{ $project->id }}"
-                                                {{ $project_detail->project_id == $project->id ? 'selected' : '' }}
-                                            >{{ $project->name }}</option>
+                                                <option value="{{ $project->id }}"
+                                                    {{ $project_detail->project_id == $project->id ? 'selected' : '' }}>
+                                                    {{ $project->name }}</option>
                                             @endforeach
                                         </select>
                                         <span class="text-danger"> @error('project_id')
@@ -88,8 +89,9 @@
                                     <div class="form-group">
                                         <label for="">Payment Plan</label>
                                         <input type="file" class="form-control" name="payment_plain">
-                                        <img src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}"
-                                            class="mt-4" width="70px" height="70px" alt="">
+                                        <video class="mt-4" width="70px" height="70px"
+                                            src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}"
+                                            controls></video>
                                         <span class="text-danger"> @error('image')
                                                 {{ $message }}
                                             @enderror </span>
@@ -132,10 +134,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         @if (Session::has('message'))
-            toastr.options =
-            {
-            "closeButton" : true,
-            "progressBar" : true
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
             }
             toastr.success("{{ session('message') }}");
         @endif

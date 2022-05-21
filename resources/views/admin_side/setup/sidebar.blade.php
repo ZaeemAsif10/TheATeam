@@ -96,6 +96,11 @@
                     </a>
                 </li>
 
+                <li> <a href="{{ url('details/slider') }}">
+                    <ion-icon name="ellipse-outline"></ion-icon>Details Slider
+                </a>
+            </li>
+
             </ul>
         </li>
 

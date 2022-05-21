@@ -7,6 +7,7 @@ use App\Models\Annual_event;
 use App\Models\Block;
 use App\Models\Blog;
 use App\Models\Blog_slider;
+use App\Models\Detail_slider;
 use App\Models\Event_slider;
 use App\Models\Gallery;
 use App\Models\News;
@@ -37,7 +38,9 @@ class WebController extends Controller
     {
         $project_slider = Project_slider::where('project_id', $request->id)->get();
         $project_details = Project_detail::where('project_id', $request->id)->get();
-        return view('web-side.al-jalil', compact('project_slider','project_details'));
+        $detail_slider = Detail_slider::where('project_id', $request->id)->get();
+        $projects = Project::where('id', $request->id)->get();
+        return view('web-side.al-jalil', compact('project_slider','project_details','detail_slider','projects'));
     }
 
     public function Events(Request $request)

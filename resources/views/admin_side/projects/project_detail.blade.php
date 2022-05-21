@@ -48,7 +48,7 @@
                                     <th>#</th>
                                     <th>Title</th>
                                     <th>Project Name</th>
-                                    <th>Payment Plan</th>
+                                    <th>Video</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
@@ -60,20 +60,22 @@
                                         <td>{{ $detail->title }}</td>
                                         <td>{{ $detail->projects->name }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $detail->payment_plain) }}"
-                                                width="70px" height="70px" alt="">
+                                            <video width="70px" height="70px"
+                                                src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $detail->payment_plain) }}"
+                                                controls></video>
                                         </td>
                                         <td>{{ $detail->created_at }}</td>
                                         <td>
                                             <div class="d-flex align-items-center gap-3 fs-6">
-                                                <a href="{{ url('edit-project-detail/'.$detail->id) }}"
+                                                <a href="{{ url('edit-project-detail/' . $detail->id) }}"
                                                     class="text-warning btn_edit_detail_slider">
                                                     <ion-icon name="pencil-sharp" role="img" class="md hydrated"
                                                         aria-label="pencil sharp"></ion-icon>
                                                 </a>
                                                 <a href="javascript:;" class="text-danger btn_delete_project_detail"
-                                                    data-bs-toggle="tooltip" data="{{ $detail->id }}" data-bs-placement="bottom" title=""
-                                                    data-bs-original-title="Delete" aria-label="Delete">
+                                                    data-bs-toggle="tooltip" data="{{ $detail->id }}"
+                                                    data-bs-placement="bottom" title="" data-bs-original-title="Delete"
+                                                    aria-label="Delete">
                                                     <ion-icon name="trash-sharp" role="img" class="md hydrated"
                                                         aria-label="trash sharp"></ion-icon>
                                                 </a>
@@ -117,44 +119,43 @@
     <script>
         // script for delete data
         $('#detailTable').on('click', '.btn_delete_project_detail', function(e) {
-                e.preventDefault();
+            e.preventDefault();
 
-                var id = $(this).attr('data');
+            var id = $(this).attr('data');
 
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to Delete this Data!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $.ajax({
-                            type: "GET",
-                            url: "{{ url('delete-project-detail') }}",
-                            data: {
-                                id: id
-                            },
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            dataType: "json",
-                            success: function(response) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to Delete this Data!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "GET",
+                        url: "{{ url('delete-project-detail') }}",
+                        data: {
+                            id: id
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        dataType: "json",
+                        success: function(response) {
 
-                                if (response.status == 200) {
-                                    toastr.success(response.message);
-                                    setTimeout(() => {
-                                        window.location.reload();
-                                    }, 2000);
-                                }
+                            if (response.status == 200) {
+                                toastr.success(response.message);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 2000);
                             }
-                        });
-                    }
-                })
+                        }
+                    });
+                }
+            })
 
-            });
+        });
     </script>
-
 @endsection
