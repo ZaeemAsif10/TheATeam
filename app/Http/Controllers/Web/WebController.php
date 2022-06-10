@@ -24,7 +24,7 @@ class WebController extends Controller
     {
         $sliders = Slider::all();
         $news = News::take(3)->get();
-        $blogs = Blog::all();
+        $blogs = Blog::take(3)->get();;
         $project_slider = Project::all();
         return view('web-side.index', compact('sliders','project_slider','news','blogs'));
     }

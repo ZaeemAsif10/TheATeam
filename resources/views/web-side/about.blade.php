@@ -23,14 +23,14 @@
                     <div class="col-md-6">
                         <h1 class="font-weight-bold">THE A TEAM</h1>
                         <h5 class="mt-4">EXCLUSIVE REAL ESTATE AGENT OF AL JALIL DEVELOPERS</h5>
-                        <p class="mt-4 rung">The A Team is a Lahore-Based exclusive real estate agent of Al Jalil
+                        <p class="mt-4 rung">The A Team is a Lahore-Based exclusive real estate and main authorized dealer of Al Jalil
                             Developers that
                             helps
-                            small-budget property investors grow their wealth, build their dream home, and secure their
+                            small-budget property investors to grow & to build their wealth, build their dream home, and secure their
                             loved ones’
                             future.
                         </p>
-                        <p class="mt-4 rung">The A Team entered the Pakistani Real Estate Market around 1.5 years ago
+                        <p class="mt-4 rung">The A Team entered the Pakistani Real Estate Market around 2 years ago
                             when
                             experienced
                             professionals from diverse businesses teamed up to make property investment simple, transparent,
@@ -40,17 +40,17 @@
                         <p class="mt-4 rung">The A Team scaled to the main dealer level in just two months and became
                             the
                             second-highest
-                            seller of Al-Noor Orchard Housing Scheme Lahore with the biggest contribution from Block D. It
+                            seller of Al-Noor Orchard Housing Scheme Lahore with the biggest contribution in Block D. We
                             won a
-                            Grandy
+                            Toyota Corolla Grande Car   
                             at the 2021 Dealers Summit and Dealership for Al Aziz Residencia. The company achieved the
                             milestone of
                             launching Pakistan’s first Property Trading Hub in DHA in February 2021.
                         </p>
                         <p class="mt-4 rung">The decade-long companionship of its members, expertise in real estate,
                             construction,
-                            sales,
-                            and marketing, and its vision to revolutionize the Pakistani real estate industry for trust and
+                            Sales,
+                            & Marketing, and its vision to revolutionize the Pakistani real estate industry for trust and
                             transparency
                             and to elevate the living standards of Pakistanis is what makes the team, The A Team.
                         </p>
@@ -73,7 +73,7 @@
                                 <div class="box1 mt-3">
                                     <i class="fa fa-shield a-icon1" aria-hidden="true"></i>
                                     <p class="font-weight-bold mt-3 level">SUCCESSFULLY LAUNCHED SIGNATURE EVENT “REALTOR
-                                        GROWTH CON” TO HELP REALTORS ACHIEVE 10X GROWTH.</p>
+                                        GROWTH CON” TO HELP REALTORS ACHIEVE 10X GROWTH EVERY YEAR.</p>
                                 </div>
                                 <div class="box2 mt-3">
                                     <img src="{{ asset('public/assets/images/Icon-2.png') }}" class="img-fluid"
@@ -86,7 +86,7 @@
                                 <div class="box3">
                                     <img src="{{ asset('public/assets/images/Icon4.png') }}" class="img-fluid"
                                         alt="">
-                                    <p class="font-weight-bold mt-3 level">WON GRANDY IN DEALERS <br> SUMMIT</p>
+                                    <p class="font-weight-bold mt-3 level">WON TOYOTA COROLLA GRANDE IN DEALERS <br> SUMMIT</p>
                                 </div>
                                 <div class="box4 mt-3">
                                     <i class="fa fa-cloud a-icon2" aria-hidden="true"></i>
@@ -96,7 +96,7 @@
                                 <div class="box5 mt-3">
                                     <img src="{{ asset('public/assets/images/Icon-3.png') }}" class="img-fluid hub"
                                         alt="">
-                                    <p class="font-weight-bold mt-3 level">LAUNCHED THE A TEAM TRADING HUB</p>
+                                    <p class="font-weight-bold mt-3 level">THE A TEAM REAL ESTATE TRADING HUB IN DHA</p>
                                 </div>
                             </div>
                         </div>
@@ -111,16 +111,16 @@
                     <div class="col-md-6">
                         <h2 class="dot">...</h2>
                         <h2 class="font-weight-bold">MESSAGE FROM <br> CHAIRMAN</h2>
-                        <h5 class="mt-4">EXCLUSIVE REAL ESTATE AGENT OF AL JALIL DEVELOPERS</h5>
+                        <h5 class="mt-4">MAIN DEALHOLDERS OF AL JALIL DEVELOPERS</h5>
                         <p class="mt-4 rung">Excellence, a quality that sets the best ones apart from everyone else, is
                             what we seek in our business
-                            and our talented team that strives for your trust, goes the extra mile to provide you the
+                            and Our talented team that strives for your trust, goes the extra mile to provide you the
                             safest,
-                            securest, and most profitable investment opportunities across the country. Our mission is to
-                            help you grow
+                            securest, and the most profitable investment opportunities across the country. Our mission is to
+                            help to grow
                             your wealth, build your dream home and secure your loved ones' future. Our vision is to make the
                             Pakistani
-                            real estate industry transparent and trustworthy.
+                            real estate  industry transparent and trustworthy.
                         </p>
                         <a href="{{ url('contact') }}" class="btn btn-default btn-us">Contact Us</a>
                     </div>
@@ -139,10 +139,10 @@
                         <div class="box text-center mt-3">
                             <i class="fa fa-star star" aria-hidden="true"></i>
                             <h5 class="mt-4 state">REAL ESTATE <br> CONSULTANCY</h5>
-                            <p class="mt-4 help">Our experienced team of investment consultants help you enhance your
+                            <p class="mt-4 help">Our experienced team of investment consultants helps  you enhance your
                                 decision making
                                 perspective by
-                                providing authentic information so that you make the right investment decision.
+                                providing authentic information, so that you make the right investment decision.
                             </p>
                         </div>
                     </div>
@@ -172,10 +172,10 @@
 
         <div class="forth mt-5">
             <div class="text-center all-d">
-                <p class="font-weight-bold text-white">WANT TO INVEST WITH THE TEAM? </p>
+                <p class="font-weight-bold text-white">WANT TO INVEST WITH THE A TEAM? </p>
                 <h1 class="cl">CALL US: </h1>
                 <h1 class="num">03413333301</h1>
-                <a href="tel:03413333301" class="btn btn-default btn-whats">WhatsApp</a>
+                <a href="https://api.whatsapp.com/send?phone=03413333301" target="_blank" class="btn btn-default btn-whats">WhatsApp</a>
             </div>
         </div>
 

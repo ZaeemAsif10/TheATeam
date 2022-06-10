@@ -18,7 +18,7 @@
                         <div class="carousel-caption">
                             <h1 class="team1 text-white">{{ substr($project_slid->title, 0, 15) }}</h1>
                             <h1 class="team2 text-white">{{ substr($project_slid->title, 15, 28) }}</h1>
-                            <h5 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h5>
+                            <h6 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h6>
                             <a href="#" class="btn btn-default btn-book" data-toggle="modal" data-target="#bookNowModal"><i
                                     class="fa fa-book mr-2" aria-hidden="true"></i>Book Now</a>
                             <a href="#" data-toggle="modal" data-target="#paymentPlanModal"
@@ -103,7 +103,7 @@
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
                                     <img src="{{ asset('public/assets/images/icon/power-plant.png') }}"
                                         class="img-fluid" alt="">
-                                    <p class="service-p mt-4">Underground Electricity & <br>Gas</p>
+                                    <p class="service-p mt-4">Underground electricity</p>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
                                     <img src="{{ asset('public/assets/images/icon/gate.png') }}" class="img-fluid"
@@ -189,9 +189,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         @foreach ($projects as $project)
-                        <iframe id="lcoation"
-                        src="https://www.google.com/maps?q={{ $project->latitude }},{{ $project->longitud }}&hl=es;z=1&output=embed"
-                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe id="lcoation"
+                                src="https://www.google.com/maps?q={{ $project->latitude }},{{ $project->longitud }}&hl=es;z=1&output=embed"
+                                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         @endforeach
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <input type="number" name="phone" class="form-control" id="input"
-                                                    placeholder="Phone Number">
+                                                    placeholder="Phone Number" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -238,7 +238,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea cols="30" name="message" rows="4" class="form-control"
+                                                <textarea cols="30" name="message" rows="4" class="form-control" required
                                                     placeholder="I WOULD LIKE MORE INFORMATION ABOUT THIS"></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-default btn-booking">Send Message</button>
@@ -274,7 +274,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" name="email" id="marla" class="form-control input" placeholder="Email"
-                                    required autocomplete="off">
+                                    autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <input type="number" name="phone" id="marla" class="form-control input"

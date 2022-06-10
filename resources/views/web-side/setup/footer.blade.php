@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-md-3">
                 <h5 class="text-white font-weight-bold us">ABOUT US</h5>
-                <p class="text-white lahore mt-4">The A Team is a Lahore-Based exclusive real estate agent of Al Jalil
+                <p class="text-white lahore mt-4">The A Team is a Lahore-Based main authorized dealer of Al Jalil
                     Developers that helps
                     small-budget property investors grow their wealth, build their dream home, and secure their loved
                     ones’ future.</p>
@@ -87,6 +87,8 @@
                     <li><a href="https://www.instagram.com/theateam.pk/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </li>
                     <li><a href="https://www.linkedin.com/company/theateampk/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></i></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/c/TheATeamPk/" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></i></a>
                     </li>
                 </ul>
             </div>

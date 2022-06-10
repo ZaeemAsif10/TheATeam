@@ -57,7 +57,6 @@
                     background-color: #ccc;
                 }
             }
-
         </style>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -84,10 +83,11 @@
         <div class="container">
             <div class="text-center mt-5">
 
-                    <div class="animate">
-                        <h3>Choose The A Team For <span class="typed-text"></span><span class="cursor">&nbsp;</span></h3>
-                    </div>
-                    {{-- <h3 id="choose">Choose The A Team For</h3>
+                <div class="animate">
+                    <h3>Choose The A Team For <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                    </h3>
+                </div>
+                {{-- <h3 id="choose">Choose The A Team For</h3>
                     <span class="best" id="choose" style="font-size: 30px;">Best DealsSafest</span> --}}
 
             </div>
@@ -112,7 +112,8 @@
                             project in Lahore. Our running multiple successful projects are at Al Noor Orchard Housing
                             Scheme &
                             Al
-                            Baari Residencia. Al Noor Orchard West Marina Cottages & Villas providing you readymade 5 Marla
+                            Baari Residencia. West Marina in Al Noor Orchard is the Signature block of Al Noor. In Our
+                            readymade housing plan Villas providing you readymade 5 Marla
                             house in
                             Lahore and West Marina Executive Block is providing you 4 Kanal residential plots in West Lahore
                             for
@@ -140,8 +141,10 @@
                                 Developers
                                 which
                                 offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore With All
-                                facilites offering a 3 year flexible payment plan The latest project of Al Noor Orchard is
-                                Marina Sports City.</p>
+                                facilites & amenities and offering a 3 year flexible payment plan The latest project of Al
+                                Jalil Developers is
+                                Marina Sports City. The endeavor of Al Jalil Developers is to deliver a better living with
+                                all modern world facilities.</p>
                         </div>
                         <ul class="ul">
                             <li><i class="fa fa-home icon" aria-hidden="true"></i></li>
@@ -155,8 +158,8 @@
                                 equally
                                 perfect option for a quality living experience offering 01, 02 Kanal, 10, 5 and 3 marla
                                 residential plot
-                                in Sheikhupura with all modern-day facilities and investment for industrial purposes The
-                                latest project of Al Noor Orchard is Marina Sports City.</p>
+                                in Sheikhupura with all modern-day facilities and investment for industrial purposes. The
+                                latest block of Al Noor Orchard is Marina Sports City.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -171,24 +174,21 @@
                                 which
                                 offering
                                 you 01 Kanal, 10, 3, and 5 marla residential plots in Lahore West with best facilities along
-                                with central commercial areas The latest project of Al Noor Orchard is Marina Sports City.
+                                with central commercial areas. The latest project of Al Noor Orchard is Marina Sports City.
                             </p>
                         </div>
-                        <ul class="ul">
+                        <ul class="ul1">
                             <li><i class="fa fa-home icon" aria-hidden="true"></i></li>
                             <li>
                                 <h4 class="garden">MARINA SPORTS CITY <br> AL NOOR ORCHARD</h4>
                             </li>
                         </ul>
                         <div class="">
-                            <p class="para ml-4">Al Jalil Garden Housing Scheme is the main project of Al-Jalil
-                                Developers
-                                which
-                                offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore with all
-                                facilities
-                                and
-                                offering a 3 years flexible payment plan The latest project of Al Noor Orchard is Marina
-                                Sports City.</p>
+                            <p class="para5 ml-4">MARINA SPORTS CITY AL NOOR ORCHARD
+                                The new project of Al Noor Orchard provides you the best opportunity in Lahore, to build
+                                your dream house at a very low price. Marina Sports City is a new and modern housing project
+                                by Al Jalil Developers which offers you 1 Kanal, 3 Marla, 10 Marla, and 5 Marla residential
+                                plots with the best amenities and facilities in Lahore west.</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +231,7 @@
 
         <div class="mb-5 text-center">
             <h1 class="font-weight-bold forth-head">...</h1>
-            <h1 class="font-weight-bold noor">AL NOOR ORCHARD'S BLOCKS</h1>
+            <h4 class="font-weight-bold  mt-3 mb-3">DO NOT WAIT TO BUY REAL ESTATE, BUY REAL ESTATE AND WAIT</h3>
         </div>
 
         <div class="fourth mb-5">
@@ -278,7 +278,7 @@
                                     Scheme Lahore.
                                     I recommend The A Team for best deals in Al Noor Orchard.
                                 </p>
-                                <h5 class="text-white mt-5">NADEEM AHMAD</h5>
+                                <h5 class="text-white mt-5">MUHAMMAD SHOIB</h5>
                                 <h6 class="client">CLIENT - THE A TEAM</h6>
                             </div>
                         </div>
@@ -460,7 +460,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    {{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" id="modalDialog" role="document">
 
@@ -471,7 +471,7 @@
                 <img src="{{ asset('public/assets/images/load.jpeg') }}" class="img-fluid modal-image" alt="">
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 
@@ -495,7 +495,7 @@
                         </div>
                         <div class="form-group">
                             <input type="text" name="email" id="marla" class="form-control input" placeholder="Email"
-                                required autocomplete="off">
+                                autocomplete="off">
                         </div>
                         <div class="form-group">
                             <input type="number" name="phone" id="marla" class="form-control input"

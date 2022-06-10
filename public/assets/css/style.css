@@ -1,51 +1,70 @@
-html {
+@import url('http://fonts.cdnfonts.com/css/lemon-milk');
+
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto:wght@300&display=swap') html {
     overflow-x: hidden;
 }
 
 body {
-    overflow-x : hidden;
-    box-sizing : border-box;
-    font-family: 'ABeeZee', sans-serif;
-    margin     : 0px;
-    padding    : 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link {
+    color: #B1A42C;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'LEMON MILK', sans-serif;
+}
+
+p,
+.para {
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
-    padding         : 20px 30px;
+    padding: 20px 30px;
     background-color: #02081A;
 }
 
 .navbar .logo {
-    width : 65px;
+    width: 65px;
     height: 58px;
 }
 
 .navbar-nav li {
-    padding    : 10px 8px;
-    font-size  : 14px;
+    padding: 10px 8px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .navbar-nav>.active>a {
-    background-color: #B1A42C;
-    border-radius   : 30px;
+    color: #B1A42C;
+    border-radius: 10px;
 }
 
-.navbar-nav li .nav-link {
+/* .navbar-nav li .nav-link {
     color: #fff !important;
-}
+} */
 
-.navbar-nav li .nav-link:hover {
+/* .navbar-nav li .nav-link:hover {
     color: #B1A42C !important;
-}
+} */
 
 .navbar .btn-phone {
     background-color: #B1A42C;
-    color           : black;
-    font-weight     : bold;
-    padding         : 10px 20px;
-    border-radius   : 22px;
-    margin-top      : 14px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 22px;
+    margin-top: 14px;
 }
 
 .navbar .btn-phone:focus {
@@ -65,38 +84,38 @@ body {
 }
 
 .navbar #projectMenu a {
-    padding    : 10px 25px;
+    padding: 10px 25px;
     font-weight: 600;
-    font-size  : 14px;
+    font-size: 14px;
 }
 
 .navbar #projectMenu a:hover {
     background-color: #02081A;
-    color           : #B1A42C;
-    transition      : background-color 0.9s;
+    color: #B1A42C;
+    transition: background-color 0.9s;
 }
 
 .navbar #mediaMenu a {
-    padding    : 10px 25px;
+    padding: 10px 25px;
     font-weight: 600;
-    font-size  : 14px;
+    font-size: 14px;
 }
 
 .navbar #mediaMenu a:hover {
     background-color: #02081A;
-    color           : #B1A42C;
-    transition      : background-color 0.9s;
+    color: #B1A42C;
+    transition: background-color 0.9s;
 }
 
 /* Home Section CSS Start */
 .home-section .carousel-caption {
-    width      : 552px;
-    left       : 9%;
-    top        : 42% !important;
-    transform  : translateY(-50%);
-    text-align : left;
-    bottom     : initial;
-    color      : #d6e4f4;
+    width: 552px;
+    left: 9%;
+    top: 42% !important;
+    transform: translateY(-50%);
+    text-align: left;
+    bottom: initial;
+    color: #d6e4f4;
     font-weight: bold;
 }
 
@@ -114,12 +133,12 @@ body {
 
 .home-section .team3 {
     font-weight: bold;
-    color      : #B1A42C;
+    color: #B1A42C;
 }
 
 .home-section .c-img {
     background-size: cover;
-    filter         : brightness(0.5);
+    filter: brightness(0.5);
 }
 
 .home-section .f-img {
@@ -127,19 +146,19 @@ body {
 }
 
 .home-section .btn-book {
-    padding      : 12px 28px;
-    background   : #15243a;
-    color        : #fff;
+    padding: 12px 28px;
+    background: #15243a;
+    color: #fff;
     border-radius: 30px;
-    font-size    : 12px;
+    font-size: 12px;
 }
 
 .home-section .btn-learn {
-    padding      : 12px 28px;
-    background   : #B1A42C;
-    color        : #fff;
+    padding: 12px 28px;
+    background: #B1A42C;
+    color: #fff;
     border-radius: 30px;
-    font-size    : 12px;
+    font-size: 12px;
 }
 
 .home-section .btn-book:hover {
@@ -151,7 +170,7 @@ body {
 }
 
 .home-section #carousel_img {
-    margin-top   : -10rem;
+    margin-top: -10rem;
     margin-bottom: 2rem;
 }
 
@@ -161,26 +180,32 @@ body {
 
 .home-section .second {
     background-color: #F7F7F7;
-    padding         : 10px 10px;
+    padding: 10px 10px;
 }
 
 .home-section .para {
-    font-size : 13px;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.home-section .para5 {
+    margin-top: -9px;
+    font-size: 13px;
     text-align: justify;
 }
 
 .home-section #scheme {
-    font-size : 13px;
+    font-size: 13px;
     margin-top: 32px;
     text-align: justify;
 }
 
 .home-section .today {
-    padding      : 12px 35px;
-    background   : #15243a;
+    padding: 12px 35px;
+    background: #15243a;
     border-radius: 30px;
-    font-size    : 12px;
-    color        : #fff;
+    font-size: 12px;
+    color: #fff;
 }
 
 .home-section .today:focus {
@@ -188,12 +213,12 @@ body {
 }
 
 .home-section .detail {
-    padding      : 12px 50px;
-    background   : #B1A42C;
+    padding: 12px 50px;
+    background: #B1A42C;
     border-radius: 30px;
-    font-size    : 12px;
-    color        : #fff;
-    margin-left  : 8px;
+    font-size: 12px;
+    color: #fff;
+    margin-left: 8px;
 }
 
 .home-section .detail:hover {
@@ -201,19 +226,19 @@ body {
 }
 
 .home-section .icon {
-    border       : 1px solid #B1A42C;
-    font-size    : 35px;
-    margin-top   : 66px;
-    margin-left  : -46px;
-    padding      : 3px 5px;
+    border: 1px solid #B1A42C;
+    font-size: 35px;
+    margin-top: 66px;
+    margin-left: -46px;
+    padding: 3px 5px;
     border-radius: 45px;
-    color        : #B1A42C;
+    color: #B1A42C;
 }
 
 .home-section .garden {
-    margin-top : 68px;
+    margin-top: 78px;
     margin-left: 7px;
-    font-size  : 20px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -221,64 +246,78 @@ body {
     list-style: none;
 }
 
+.home-section .ul1 li {
+    list-style: none;
+}
+
 .home-section .ul {
-    display        : flex;
-    flex-direction : row;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+}
+
+.home-section .ul1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.home-section .ul1 {
+    margin-top: 35px;
 }
 
 .home-section .third {
     background-color: #02081A;
-    padding         : 60px 0px;
+    padding: 60px 0px;
 }
 
 .home-section .right-head {
-    color    : #D2AC2C;
+    color: #D2AC2C;
     font-size: 50px;
 
 }
 
 .home-section .right-img {
-    width        : 100%;
-    height       : 70%;
+    width: 100%;
+    height: 70%;
     border-radius: 3px;
 }
 
 .home-section .more {
-    color    : #D2AC2C;
+    color: #D2AC2C;
     font-size: 13px;
 }
 
 .home-section .btn-project {
-    border       : 2px solid #fff;
-    padding      : 12px 30px;
+    border: 2px solid #fff;
+    padding: 12px 30px;
     border-radius: 25px;
-    color        : #fff;
-    margin-top   : 30px;
+    color: #fff;
+    margin-top: 30px;
 }
 
 .home-section .btn-project:hover {
     background: #D2AC2C;
-    color     : #000;
-    border    : 1px solid #D2AC2C;
+    color: #000;
+    border: 1px solid #D2AC2C;
 }
 
 .home-section .forth-head {
-    color     : #D2AC2C;
-    font-size : 45px;
+    color: #D2AC2C;
+    font-size: 45px;
     margin-top: -30px;
 }
 
 .home-section .fourth {
     background-color: #02081A;
-    padding         : 60px 0px;
+    padding: 60px 0px;
 }
 
 .home-section .wish {
-    font-size : 15px;
-    color     : #cecece;
+    font-size: 15px;
+    color: #cecece;
     text-align: justify;
-    padding   : 0px 15px;
+    padding: 0px 15px;
 }
 
 .home-section .client {
@@ -286,8 +325,8 @@ body {
 }
 
 .home-section .box {
-    margin-top  : 10rem;
-    border-left : 0.1px solid #fff;
+    margin-top: 10rem;
+    border-left: 0.1px solid #fff;
     border-right: 0.1px solid #fff;
 }
 
@@ -296,12 +335,12 @@ body {
 }
 
 .home-section .span {
-    color    : #b2b2b2;
+    color: #b2b2b2;
     font-size: 12px;
 }
 
 .home-section .card {
-    height    : 100%;
+    height: 100%;
     box-shadow: 0 1px 10px 0 rgb(0 0 0 / 18%);
 }
 
@@ -311,45 +350,45 @@ body {
 
 .home-section .read {
     background-color: #D2AC2C;
-    color           : #000;
-    font-weight     : bold;
-    padding         : 11px 32px;
-    margin-top      : 15px;
-    border-radius   : 26px;
+    color: #000;
+    font-weight: bold;
+    padding: 11px 32px;
+    margin-top: 15px;
+    border-radius: 26px;
 }
 
 .home-section .read:hover {
     background-color: #000;
-    color           : #fff;
+    color: #fff;
 }
 
 .home-section .news {
-    width : 100%;
+    width: 100%;
     height: 170px;
 }
 
 .home-section .sixth {
     background-color: #02081A;
-    padding         : 30px 0px;
+    padding: 30px 0px;
 }
 
 .home-section .near {
-    height    : 26rem;
-    width     : 78%;
+    height: 26rem;
+    width: 78%;
     margin-top: 15px;
 }
 
 .home-section .overview .al {
-    font-size : 14px;
+    font-size: 14px;
     text-align: justify !important;
 }
 
 .home-section .overview .btn-pres {
-    border-radius   : 25px;
-    padding         : 12px 18px;
+    border-radius: 25px;
+    padding: 12px 18px;
     background-color: #15243a;
-    font-size       : 13px;
-    color           : #fff;
+    font-size: 13px;
+    color: #fff;
 }
 
 .home-section .overview .btn-pres:focus {
@@ -357,12 +396,12 @@ body {
 }
 
 .home-section .overview .btn-payment {
-    border-radius   : 25px;
-    padding         : 12px 24px;
+    border-radius: 25px;
+    padding: 12px 24px;
     background-color: #D2AC2C;
-    font-size       : 13px;
-    color           : #000;
-    font-weight     : bold;
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
 }
 
 .home-section .overview .btn-payment:focus {
@@ -371,12 +410,12 @@ body {
 
 .home-section .overview .btn-payment:hover {
     background-color: #15243a;
-    color           : #fff;
+    color: #fff;
 }
 
 .home-section .overview .btn-pres:hover {
     background-color: #D2AC2C;
-    color           : #000;
+    color: #000;
 }
 
 .home-section .overview #ifram {
@@ -401,7 +440,7 @@ body {
 
 .home-section .location .loc-mark {
     font-size: 50px;
-    color    : #D2AC2C;
+    color: #D2AC2C;
 }
 
 .home-section .location .km {
@@ -413,7 +452,7 @@ body {
 }
 
 .home-section .booking .contact-num {
-    margin-top   : -15px;
+    margin-top: -15px;
     margin-bottom: 0px;
 }
 
@@ -422,10 +461,10 @@ body {
 }
 
 .home-section .booking .btn-booking {
-    padding         : 12px 40px;
+    padding: 12px 40px;
     background-color: #02081A;
-    color           : #fff;
-    border-radius   : 30px;
+    color: #fff;
+    border-radius: 30px;
 }
 
 .home-section .btn-book:focus {
@@ -437,13 +476,13 @@ body {
 }
 
 .home-section .team-logo {
-    width     : 75%;
+    width: 75%;
     margin-top: 50px;
 }
 
 .seventh {
     background-color: #02081A;
-    padding         : 0px 20px;
+    padding: 0px 20px;
 }
 
 .seventh #md-5 {
@@ -467,17 +506,17 @@ body {
 }
 
 .seventh .send {
-    padding      : 10px 62px;
-    background   : #fff;
+    padding: 10px 62px;
+    background: #fff;
     border-radius: 30px;
-    color        : #000;
-    font-weight  : bold;
-    font-size    : 13px;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .seventh .send:hover {
     background-color: #000;
-    color           : #fff;
+    color: #fff;
 }
 
 .seventh .contact-us {
@@ -486,31 +525,31 @@ body {
 
 .seventh .contact-us li {
     list-style: none;
-    padding   : 10px 0px;
-    display   : flex;
+    padding: 10px 0px;
+    display: flex;
 }
 
 .seventh .contact-us li .loc {
     margin-left: 10px;
-    font-size  : 13px;
-    margin-top : -8px;
+    font-size: 13px;
+    margin-top: -8px;
 }
 
 .seventh .contact-us li .email {
     margin-left: 10px;
-    font-size  : 13px;
+    font-size: 13px;
 }
 
 .seventh .last-icon {
-    list-style    : none;
-    display       : flex;
+    list-style: none;
+    display: flex;
     flex-direction: row;
-    margin-left   : -40px;
+    margin-left: -40px;
 }
 
 .seventh .last-icon li {
     padding: 0px 13px;
-    cursor : pointer;
+    cursor: pointer;
 }
 
 .last-icon li a i {
@@ -523,26 +562,26 @@ body {
 
 .seventh .last-icon li:hover {
     background-color: #000;
-    color           : #fff;
-    padding         : 6px 15px;
-    border-radius   : 10px;
-    transition      : background-color 0.9s;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 10px;
+    transition: background-color 0.9s;
 }
 
 footer {
     background-color: #02081A;
-    margin-top      : 0px;
-    padding         : 80px 0px 3px 0px;
-    margin-top      : 75px;
+    margin-top: 0px;
+    padding: 80px 0px 3px 0px;
+    margin-top: 75px;
 }
 
 footer .us {
     border-left: 4px solid #D2AC2C;
-    padding    : 2px 7px;
+    padding: 2px 7px;
 }
 
 footer .lahore {
-    font-size : 12px;
+    font-size: 12px;
     text-align: justify;
 }
 
@@ -552,36 +591,36 @@ footer #privacy {
 
 footer .lahore1 {
     text-align: center !important;
-    font-size : 12px;
+    font-size: 12px;
     text-align: justify;
 }
 
 footer .foot-link li {
-    list-style : none;
+    list-style: none;
     margin-left: -35px;
-    padding    : 4px 0px;
-    color      : #fff;
+    padding: 4px 0px;
+    color: #fff;
 }
 
 footer .foot-link li a {
     text-decoration: none;
-    color          : #fff;
-    font-size      : 12px;
+    color: #fff;
+    font-size: 12px;
 }
 
 footer .fot-p {
     margin-top: -25px;
-    font-size : 12px;
+    font-size: 12px;
 }
 
 footer #modal-icon {
-    margin-left: -120px;
+    margin-left: -70px;
 }
 
 footer #modal-icon li {
-    display  : inline;
+    display: inline;
     font-size: 30px;
-    padding  : 0px 8px;
+    padding: 0px 8px;
 }
 
 footer #modal-icon li a {
@@ -593,16 +632,16 @@ footer #modal-icon li a:hover {
 }
 
 footer #subscribe {
-    font-size       : 12px;
+    font-size: 12px;
     background-color: #D2AC2C;
-    color           : #000;
-    padding         : 15px 12px;
-    border-radius   : 30px;
+    color: #000;
+    padding: 15px 12px;
+    border-radius: 30px;
 }
 
 footer #subscribe:hover {
     background-color: #02081A;
-    color           : #fff;
+    color: #fff;
 }
 
 footer #subscribe:focus {
@@ -615,13 +654,13 @@ footer #email-input:focus {
 
 footer #email-input {
     background-color: #02081A;
-    color           : #fff;
-    border-radius   : 30px;
+    color: #fff;
+    border-radius: 30px;
 }
 
 footer .underline {
     border-bottom: 1px solid #B1A42C;
-    width        : 100%;
+    width: 100%;
 }
 
 /* Home Section CSS End */
@@ -634,95 +673,95 @@ footer .underline {
 }
 
 .about-section .top-img {
-    width          : 100%;
-    height         : 470px;
+    width: 100%;
+    height: 470px;
     background-size: cover;
-    filter         : brightness(0.7);
+    filter: brightness(0.7);
 }
 
 .about-section .carousel-caption {
     position: absolute;
-    top     : 200px;
+    top: 200px;
 }
 
 .about-section .us {
-    font-size  : 60px;
+    font-size: 60px;
     font-weight: bold;
 }
 
 .about-section #cont {
     margin-top: 90px;
-    color     : #000;
+    color: #000;
 }
 
 .about-section .rung {
-    font-size : 13px;
+    font-size: 13px;
     text-align: justify;
 }
 
 .about-section .first .box {
     background-color: #D2AC2C;
-    padding         : 40px 20px;
-    border-radius   : 6px;
-    cursor          : pointer;
+    padding: 40px 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .about-section .first .box1 {
     background-color: #02081A;
-    padding         : 52px 20px;
-    color           : #fff;
-    border-radius   : 6px;
-    cursor          : pointer;
+    padding: 52px 20px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .about-section .first .box1:hover {
     background-color: #D2AC2C;
-    transition      : background-color 0.4s;
+    transition: background-color 0.4s;
 }
 
 .about-section .first .box2 {
     background-color: #D2AC2C;
-    padding         : 52px 20px;
-    border-radius   : 6px;
-    cursor          : pointer;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .about-section .first .box3 {
     background-color: #02081A;
-    color           : #fff;
-    padding         : 52px 20px;
-    border-radius   : 6px;
-    cursor          : pointer;
+    color: #fff;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .about-section .first .box3:hover {
     background-color: #D2AC2C;
-    transition      : background-color 0.4s;
+    transition: background-color 0.4s;
 }
 
 .about-section .first .box4 {
     background-color: #D2AC2C;
-    padding         : 52px 20px;
-    border-radius   : 6px;
-    cursor          : pointer;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .about-section .first .box5 {
     background-color: #02081A;
-    color           : #fff;
-    padding         : 52px 20px;
-    border-radius   : 6px;
-    cursor          : pointer;
+    color: #fff;
+    padding: 52px 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .about-section .first .box5:hover {
     background-color: #D2AC2C;
-    transition      : background-color 0.4s;
+    transition: background-color 0.4s;
 }
 
 .about-section .a-icon1 {
     font-size: 55px;
-    color    : #fff;
+    color: #fff;
 }
 
 .about-section .a-icon2 {
@@ -735,60 +774,60 @@ footer .underline {
 
 .about-section .second .box {
     background-color: #02081A;
-    padding         : 20px 30px;
-    border-radius   : 5px;
-    cursor          : pointer;
+    padding: 20px 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .about-section .second .box1 {
     background-color: #D2AC2C;
-    padding         : 41px 30px;
-    border-radius   : 5px;
-    cursor          : pointer;
+    padding: 41px 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .about-section .second .box2 {
     background-color: #02081A;
-    padding         : 41px 30px;
-    border-radius   : 5px;
-    cursor          : pointer;
+    padding: 41px 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .about-section .second .box:hover {
     background-color: #D2AC2C;
-    transition      : background-color 0.4s;
+    transition: background-color 0.4s;
 }
 
 .about-section .second .box1:hover {
     background-color: #02081A;
-    transition      : background-color 0.4s;
+    transition: background-color 0.4s;
 }
 
 .about-section .second .box2:hover {
     background-color: #D2AC2C;
-    transition      : background-color 0.4s;
+    transition: background-color 0.4s;
 }
 
 .about-section .second .state {
     font-weight: bold;
-    color      : #000;
-    color      : #fff;
+    color: #000;
+    color: #fff;
 }
 
 .located {
-    border    : 0.5px solid #d6d6d6;
+    border: 0.5px solid #d6d6d6;
     margin-top: 45px;
 }
 
 .about-section .second .help {
     font-size: 14px;
-    color    : #fff;
+    color: #fff;
 }
 
 .about-section .second .star {
-    font-size : 40px;
+    font-size: 40px;
     margin-top: 25px;
-    color     : #fff;
+    color: #fff;
 }
 
 .about-section .third {
@@ -797,26 +836,26 @@ footer .underline {
 
 .about-section .third .dot {
     font-weight: bold;
-    color      : #D2AC2C;
-    font-size  : 50px;
+    color: #D2AC2C;
+    font-size: 50px;
 }
 
 .about-section .third .btn-us {
-    padding         : 12px 35px;
+    padding: 12px 35px;
     background-color: #D2AC2C;
-    color           : #000;
-    border-radius   : 30px;
+    color: #000;
+    border-radius: 30px;
 }
 
 .about-section .third .btn-us:hover {
     background-color: #000;
-    color           : #D2AC2C;
+    color: #D2AC2C;
 }
 
 .about-section .forth {
     background-image: url('../images/Al-NoorOrchard-GalleryPic08.jpg');
-    background-size : cover;
-    padding         : 260px 0px;
+    background-size: cover;
+    padding: 260px 0px;
 }
 
 .about-section .forth .all-d:hover {
@@ -825,19 +864,19 @@ footer .underline {
 
 .about-section .forth .cl {
     font-weight: bold;
-    color      : #fff;
+    color: #fff;
 }
 
 .about-section .forth .num {
-    color      : #D2AC2C;
+    color: #D2AC2C;
     font-weight: bold;
 }
 
 .about-section .forth .btn-whats {
-    padding         : 10px 43px;
+    padding: 10px 43px;
     background-color: #D2AC2C;
-    color           : #000;
-    border-radius   : 30px;
+    color: #000;
+    border-radius: 30px;
 }
 
 .about-section .forth .btn-whats:focus {
@@ -846,33 +885,33 @@ footer .underline {
 
 .about-section .forth .btn-whats:hover {
     background-color: #000;
-    color           : #D2AC2C;
+    color: #D2AC2C;
 }
 
 .about-section .fifth .more {
-    color    : #D2AC2C;
+    color: #D2AC2C;
     font-size: 13px;
 }
 
 .about-section .fifth .p-img {
-    width : 100%;
+    width: 100%;
     height: 72%;
 }
 
 .about-section .fifth .g-img {
-    width        : 104%;
-    height       : 350px;
+    width: 104%;
+    height: 350px;
     border-radius: 8px;
-    cursor       : pointer;
-    object-fit   : cover;
+    cursor: pointer;
+    object-fit: cover;
     ;
 }
 
 .about-section .fifth .d-img {
-    width        : 100%;
-    height       : 90%;
+    width: 100%;
+    height: 90%;
     border-radius: 8px;
-    cursor       : pointer;
+    cursor: pointer;
 }
 
 
@@ -886,13 +925,13 @@ footer .underline {
 }
 
 .about-section .youtube .video {
-    width : 100%;
+    width: 100%;
     height: auto;
 }
 
 .about-section .con {
     font-weight: bold;
-    color      : #000;
+    color: #000;
 }
 
 .about-section .contact .contact-us {
@@ -905,32 +944,32 @@ footer .underline {
 
 .about-section .contact .contact-us li {
     list-style: none;
-    padding   : 2px 0px;
-    display   : flex;
+    padding: 2px 0px;
+    display: flex;
 }
 
 .about-section .contact-us li .loc {
     margin-left: 10px;
-    font-size  : 13px;
-    margin-top : -4px;
+    font-size: 13px;
+    margin-top: -4px;
 }
 
 .about-section .contact-us li .email {
     margin-left: 10px;
-    font-size  : 13px;
+    font-size: 13px;
 }
 
 .about-section .contact .last-icon {
-    margin-top    : -15px;
-    list-style    : none;
-    display       : flex;
+    margin-top: -15px;
+    list-style: none;
+    display: flex;
     flex-direction: row;
-    margin-left   : -40px;
+    margin-left: -40px;
 }
 
 .about-section .contact .last-icon li {
     padding: 0px 13px;
-    cursor : pointer;
+    cursor: pointer;
 }
 
 .about-section .contact .last-icon li {
@@ -939,23 +978,23 @@ footer .underline {
 
 .about-section .contact .last-icon li:hover {
     background-color: #000;
-    color           : #fff;
-    padding         : 6px 15px;
-    border-radius   : 10px;
-    transition      : background-color 0.9s;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 10px;
+    transition: background-color 0.9s;
 }
 
 .about-section .send-msg {
-    padding         : 12px 17px;
+    padding: 12px 17px;
     background-color: #D2AC2C;
-    color           : #02081A;
-    font-size       : 12px;
-    border-radius   : 25px;
+    color: #02081A;
+    font-size: 12px;
+    border-radius: 25px;
 }
 
 .about-section .send-msg:hover {
     background-color: #02081A;
-    color           : #fff;
+    color: #fff;
 }
 
 .detail-section {
@@ -964,7 +1003,7 @@ footer .underline {
 
 .detail-section .recent {
     list-style: none;
-    padding   : 0px 25px;
+    padding: 0px 25px;
 }
 
 .detail-section .recent li {
@@ -976,8 +1015,8 @@ footer .underline {
 }
 
 .detail-section p {
-    font-size : 14px;
-    color     : grey;
+    font-size: 14px;
+    color: grey;
     text-align: justify;
 }
 
@@ -988,7 +1027,7 @@ footer .underline {
 
 #back {
     background: #15243a;
-    width     : 90%;
+    width: 90%;
 }
 
 #modalDialog {
@@ -1006,13 +1045,13 @@ footer .underline {
 
 .invest:hover {
     background-color: #15243a;
-    color           : #fff;
+    color: #fff;
 }
 
 #modal-icon li {
-    display  : inline;
+    display: inline;
     font-size: 30px;
-    padding  : 0px 8px;
+    padding: 0px 8px;
 }
 
 #modal-icon li a {
@@ -1024,13 +1063,13 @@ footer .underline {
 }
 
 #marla {
-    color           : #fff;
+    color: #fff;
     background-color: #15243a;
 
 }
 
 .modal-image {
-    border       : 10px solid white;
+    border: 10px solid white;
     border-radius: 12px;
 }
 
@@ -1048,8 +1087,8 @@ footer .underline {
 
 .nice {
     position: absolute;
-    top     : 115px;
-    left    : 0px;
+    top: 115px;
+    left: 0px;
     background-color: #000;
     padding: 8px 30px;
     border-radius: 5px;
@@ -1081,13 +1120,13 @@ footer .underline {
 
     /* Home Section Media Query CSS Start */
     .home-section #carousel_img {
-        margin-top   : 0rem;
+        margin-top: 0rem;
         margin-bottom: 5rem;
     }
 
     .home-section #carousel_img img {
         padding: 25px 1px;
-        width  : 75%;
+        width: 75%;
     }
 
     .home-section .team1 {
@@ -1115,9 +1154,9 @@ footer .underline {
     }
 
     .home-section .btn-project {
-        border    : 2px solid #fff;
-        padding   : 8px 20px;
-        font-size : 11px;
+        border: 2px solid #fff;
+        padding: 8px 20px;
+        font-size: 11px;
         margin-top: 30px !important;
     }
 
@@ -1130,12 +1169,12 @@ footer .underline {
     }
 
     .home-section .box {
-        border-left : none;
+        border-left: none;
         border-right: none;
     }
 
     .home-section .noor {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .home-section .read {
@@ -1174,17 +1213,17 @@ footer .underline {
     }
 
     .about-section .top-img {
-        width : 100%;
+        width: 100%;
         height: 275px;
     }
 
     .about-section .carousel-caption {
         position: absolute;
-        top     : 100px;
+        top: 100px;
     }
 
     .about-section .achive {
-        font-size : 25px;
+        font-size: 25px;
         margin-top: 30px;
     }
 
@@ -1207,7 +1246,7 @@ footer .underline {
 
     .detail-section .post {
         margin-left: 0px;
-        margin-top : 20px;
+        margin-top: 20px;
     }
 
     .located {
@@ -1299,8 +1338,8 @@ footer .underline {
     }
 
     .home-section .near {
-        height    : 22rem;
-        width     : 84%;
+        height: 22rem;
+        width: 84%;
         margin-top: 15px;
     }
 

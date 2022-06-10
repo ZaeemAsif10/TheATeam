@@ -59,7 +59,7 @@
         <div class="youtube mt-5 mb-5">
             <div class="container">
                 <video controls class="video">
-                    <source src="video/WhatsApp-Video-2021-07-09-at-3.24.37-PM-1.mp4" type="video/mp4">
+                    <source src="{{ asset('public/assets/video/WhatsApp-Video-2021-07-09-at-3.24.37-PM-1.mp4') }}" type="video/mp4">
                 </video>
             </div>
         </div>
