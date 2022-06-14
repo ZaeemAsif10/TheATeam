@@ -12,6 +12,7 @@ use App\Models\Event_slider;
 use App\Models\Gallery;
 use App\Models\News;
 use App\Models\News_slider;
+use App\Models\Payment_plan;
 use App\Models\Project;
 use App\Models\Project_detail;
 use App\Models\Project_slider;
@@ -39,7 +40,7 @@ class WebController extends Controller
         $project_slider = Project_slider::where('project_id', $request->id)->get();
         $project_details = Project_detail::where('project_id', $request->id)->get();
         $detail_slider = Detail_slider::where('project_id', $request->id)->get();
-        $projects = Project::where('id', $request->id)->get();
+        $projects = Project::where('id', $request->id)->first();
         return view('web-side.al-jalil', compact('project_slider','project_details','detail_slider','projects'));
     }
 

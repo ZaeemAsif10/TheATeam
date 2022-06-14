@@ -21,8 +21,8 @@
             <div class="container" id="cont">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="font-weight-bold">THE A TEAM</h1>
-                        <h5 class="mt-4">EXCLUSIVE REAL ESTATE AGENT OF AL JALIL DEVELOPERS</h5>
+                        <h1 class="font-weight-bold mt-3 mb-3 a_team">THE A TEAM</h1>
+                        <h5 class="mt-4">MAIN AUTHORIZED DSEALER OF AL JALIL DEVELOPERS</h5>
                         <p class="mt-4 rung">The A Team is a Lahore-Based exclusive real estate and main authorized dealer of Al Jalil
                             Developers that
                             helps
@@ -61,7 +61,7 @@
                         </p>
                     </div>
                     <div class="col-md-6 text-center">
-                        <h1 class="font-weight-bold">ACHIEVEMENTS</h1>
+                        <h1 class="font-weight-bold mt-3 mb-3 a_team">ACHIEVEMENTS</h1>
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <div class="box">
@@ -110,11 +110,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h2 class="dot">...</h2>
-                        <h2 class="font-weight-bold">MESSAGE FROM <br> CHAIRMAN</h2>
+                        <h2 class="font-weight-bold charman">MESSAGE FROM <br> CHAIRMAN</h2>
                         <h5 class="mt-4">MAIN DEALHOLDERS OF AL JALIL DEVELOPERS</h5>
                         <p class="mt-4 rung">Excellence, a quality that sets the best ones apart from everyone else, is
-                            what we seek in our business
-                            and Our talented team that strives for your trust, goes the extra mile to provide you the
+                            what we seek in our business. Our talented team that strives for your trust, goes the extra mile to provide you the
                             safest,
                             securest, and the most profitable investment opportunities across the country. Our mission is to
                             help to grow
@@ -139,7 +138,7 @@
                         <div class="box text-center mt-3">
                             <i class="fa fa-star star" aria-hidden="true"></i>
                             <h5 class="mt-4 state">REAL ESTATE <br> CONSULTANCY</h5>
-                            <p class="mt-4 help">Our experienced team of investment consultants helps  you enhance your
+                            <p class="mt-4 help">Our experienced team of investment consultants helps to you enhance your
                                 decision making
                                 perspective by
                                 providing authentic information, so that you make the right investment decision.

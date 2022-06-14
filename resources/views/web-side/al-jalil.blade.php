@@ -3,12 +3,14 @@
 @section('content')
     <section class="home-section">
 
+        <style>
+            iframe {
+                width: 100%;
+                height: 315px;
+            }
+        </style>
+
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
             <div class="carousel-inner">
                 @foreach ($project_slider as $key => $project_slid)
                     <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
@@ -16,14 +18,17 @@
                             src="{{ asset('storage/app/public/uploads/projects/slider/' . $project_slid->image) }}"
                             alt="First slide">
                         <div class="carousel-caption">
-                            <h1 class="team1 text-white">{{ substr($project_slid->title, 0, 15) }}</h1>
-                            <h1 class="team2 text-white">{{ substr($project_slid->title, 15, 28) }}</h1>
+                            <h1 class="team1 text-white">{{ $project_slid->title }}</h1>
+                            <!--<h1 class="team2 text-white">{{ substr($project_slid->title, 15, 28) }}</h1>-->
                             <h6 class="future mt-4 text-white mb-5">{!! $project_slid->description !!}</h6>
                             <a href="#" class="btn btn-default btn-book" data-toggle="modal" data-target="#bookNowModal"><i
                                     class="fa fa-book mr-2" aria-hidden="true"></i>Book Now</a>
-                            <a href="#" data-toggle="modal" data-target="#paymentPlanModal"
-                                class="btn btn-default btn-learn"><i class="fa fa-paper-plane mr-2"
-                                    aria-hidden="true"></i>Payment Plan</a>
+
+
+                            @foreach ($project_details as $project_detail)
+                                <a href="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}" target="_blank" class="btn btn-default btn-learn"><i class="fa fa-paper-plane mr-2" aria-hidden="true"></i>Payment Plan</a>
+                            @endforeach
+
                         </div>
                     </div>
                 @endforeach
@@ -39,11 +44,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h5 class="font-weight-bold">{{ $project_detail->title }}</h5>
-                            <p class="al mt-3 mb-3">
+                            <h6 class="al mt-3 mb-3 detaillll">
                                 {!! $project_detail->desc !!}
-                            </p>
-                            <a href="{{ asset('public/assets/images/Presentaion/Presentation-Al-Noor-Orchard-Updated-Jan-2021.pdf') }}"
-                                class="btn btn-default btn-pres mt-3"><i class="fa fa-book" aria-hidden="true"></i>
+                            </h6>
+                            <a href="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}"
+                                target="_black" class="btn btn-default btn-pres mt-3"><i class="fa fa-book"
+                                    aria-hidden="true"></i>
                                 &nbsp;
                                 Presentation</a>
                             <a href="#lcoation" class="btn btn-default btn-payment mt-3"><i class="fa fa-paper-plane"
@@ -52,9 +58,7 @@
 
                         </div>
                         <div class="col-md-6 text-center">
-                            <video height="300" id="ifram"
-                                src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}"
-                                controls></video>
+                            <x-embed url="https://www.youtube.com/watch?v={{ $project_detail->link }}" />
                         </div>
                     </div>
                 @endforeach
@@ -98,7 +102,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="text-center mt-4">
-                            <h5 class="font-weight-bold">AMINITIES & SERVICES</h5>
+                            <h5 class="font-weight-bold">Amenities & Facilities</h5>
                             <div class="row mt-4">
                                 <div class="col-lg-3 col-md-4 col-6 mt-3">
                                     <img src="{{ asset('public/assets/images/icon/power-plant.png') }}"
@@ -182,17 +186,14 @@
                         <div class="col-md-3"></div>
                     </div>
                     <h4 class="font-weight-bold mt-3">THE LOCATION MAP</h4>
-                    @foreach ($projects as $project)
-                        <p class="km text-secondary">{{ $project->location }}</p>
-                    @endforeach
+
+                    <p class="km text-secondary">{{ $projects->location }}</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        @foreach ($projects as $project)
-                            <iframe id="lcoation"
-                                src="https://www.google.com/maps?q={{ $project->latitude }},{{ $project->longitud }}&hl=es;z=1&output=embed"
-                                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        @endforeach
+                        <iframe id="lcoation"
+                            src="https://www.google.com/maps?q={{ $projects->latitude }},{{ $projects->longitud }}&hl=es;z=1&output=embed"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -300,7 +301,7 @@
 
 
         <!-- Payment Plan Modal -->
-        <div class="modal fade bd-example-modal-lg" id="paymentPlanModal" tabindex="-1" role="dialog"
+        {{-- <div class="modal fade bd-example-modal-lg" id="paymentPlanModal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -318,20 +319,13 @@
                                 <li data-target="#carouselExampleIndicatorss" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100"
-                                        src="{{ asset('public/assets/images/Residential-5-1.jpg') }}" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100"
-                                        src="{{ asset('public/assets/images/Al-Noor-Orchard-Commercial-Block-1-min.jpg') }}"
-                                        alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100"
-                                        src="{{ asset('public/assets/images/Residecial-Block-1-min.jpg') }}"
-                                        alt="First slide">
-                                </div>
+                                @foreach ($payment_plans as $key => $payment_plan)
+                                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                                        <img class="d-block w-100"
+                                            src="{{ asset('storage/app/public/uploads/detail/payment_plan/'.$payment_plan->payment_plan) }}"
+                                            alt="First slide">
+                                    </div>
+                                @endforeach
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicatorss" role="button"
                                 data-slide="prev">
@@ -347,7 +341,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </section>
 @endsection

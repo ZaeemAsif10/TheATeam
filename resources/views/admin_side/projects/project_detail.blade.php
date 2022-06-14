@@ -48,7 +48,7 @@
                                     <th>#</th>
                                     <th>Title</th>
                                     <th>Project Name</th>
-                                    <th>Video</th>
+                                    <th>Payment Plan</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
@@ -60,9 +60,7 @@
                                         <td>{{ $detail->title }}</td>
                                         <td>{{ $detail->projects->name }}</td>
                                         <td>
-                                            <video width="70px" height="70px"
-                                                src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $detail->payment_plain) }}"
-                                                controls></video>
+                                            <iframe width="70px" height="70px" src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $detail->payment_plain) }}"></iframe>                                             
                                         </td>
                                         <td>{{ $detail->created_at }}</td>
                                         <td>

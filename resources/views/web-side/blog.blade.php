@@ -44,8 +44,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($blogs as $blog)
-                        <div class="col-md-4">
-
+                        <div class="col-md-4 mt-3">
                             <div class="card border-0 mt-2">
                                 <div class="card-header border-0 p-0">
                                     <img src="{{ asset('storage/app/public/uploads/blogs/' . $blog->image) }}"

@@ -101,7 +101,7 @@
                 </div>
                 <div class="row mt-5">
                     <h4 class="text-center font-weight-bold w-100 mt-4 mb-4">THE A TEAM</h4>
-                    <iframe width="100%" height="400"
+                    <iframe width="100%" height="400" style="margin: 0px 12px;"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1203.119635560383!2d74.35996931478351!3d31.470940848146206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919076225fcb8cb%3A0x1adce4db5160bb42!2sThe%20A%20Team%20Real%20Estate%20%26%20Builders%20-%20Corporate%20Office!5e0!3m2!1sen!2s!4v1640852735291!5m2!1sen!2s"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>

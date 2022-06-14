@@ -56,6 +56,16 @@
                                      </div>
                                  </div>
 
+                                 <div class="col-md-12 mt-2">
+                                    <div class="form-group">
+                                        <label for="">Video Link</label>
+                                        <input type="text" class="form-control" name="link">
+                                        <span class="text-danger"> @error('link')
+                                                {{ $message }}
+                                            @enderror </span>
+                                    </div>
+                                </div>
+
                                  <div class="col-md-12 mt-3">
                                     <div class="form-group">
                                         <label for="">Project Name</label>
@@ -82,7 +92,7 @@
                                  </div>
                                  <div class="col-md-12 mt-3">
                                      <div class="form-group">
-                                         <label for="">Video</label>
+                                         <label for="">Payment Plan Image</label>
                                          <input type="file" class="form-control" name="payment_plain">
                                          <span class="text-danger"> @error('payment_plain')
                                                  {{ $message }}

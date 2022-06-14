@@ -21,7 +21,7 @@
                 <div class="row">
 
                     @foreach ($projects as $project)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mt-3">
                             <a href="{{ url('projects/'.$project->id) }}" id="img-link">
                                 <div class="card border-0 mt-2">
                                     <div class="card-header border-0 p-0">

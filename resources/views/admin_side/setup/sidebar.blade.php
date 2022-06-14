@@ -97,9 +97,14 @@
                 </li>
 
                 <li> <a href="{{ url('details/slider') }}">
-                    <ion-icon name="ellipse-outline"></ion-icon>Details Slider
+                        <ion-icon name="ellipse-outline"></ion-icon>Details Slider
+                    </a>
+                </li>
+
+                {{-- <li> <a href="{{ url('payment_plan') }}">
+                    <ion-icon name="ellipse-outline"></ion-icon>Payment Plan
                 </a>
-            </li>
+            </li> --}}
 
             </ul>
         </li>
@@ -134,18 +139,18 @@
             </a>
             <ul>
                 <li> <a href="{{ url('events/slider') }}">
-                    <ion-icon name="ellipse-outline"></ion-icon>Events Slider
-                </a>
-            </li>
+                        <ion-icon name="ellipse-outline"></ion-icon>Events Slider
+                    </a>
+                </li>
                 <li> <a href="{{ url('admin/events') }}">
                         <ion-icon name="ellipse-outline"></ion-icon>Events
                     </a>
                 </li>
 
                 <li> <a href="{{ url('annual_event') }}">
-                    <ion-icon name="ellipse-outline"></ion-icon>Annual Events
-                </a>
-            </li>
+                        <ion-icon name="ellipse-outline"></ion-icon>Annual Events
+                    </a>
+                </li>
             </ul>
         </li>
 

@@ -17,7 +17,7 @@
                             alt="First slide">
                         <div class="carousel-caption">
                             <h5 class="team">{{ $news_slid->title }}</h5>
-                            <h1 class="team3">NEWS</h1>
+                            <h1 class="team7">NEWS</h1>
                             <p class="latest">{!! $news_slid->desc !!}
                             </p>
                             <h5 class="team mt-4">#theAnews</h5>
@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($news as $new)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mt-3">
                             <div class="card border-0 mt-2">
                                 <div class="card-header border-0 p-0">
                                     <img src="{{ asset('storage/app/public/uploads/news/' . $new->image) }}"

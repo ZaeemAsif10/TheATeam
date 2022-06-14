@@ -59,6 +59,17 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-12 mt-2">
+                                    <div class="form-group">
+                                        <label for="">Video Link</label>
+                                        <input type="text" class="form-control" name="link"
+                                            value="{{ $project_detail->link }}">
+                                        <span class="text-danger"> @error('link')
+                                                {{ $message }}
+                                            @enderror </span>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-12 mt-3">
                                     <div class="form-group">
                                         <label for="">Project Name</label>
@@ -89,9 +100,9 @@
                                     <div class="form-group">
                                         <label for="">Payment Plan</label>
                                         <input type="file" class="form-control" name="payment_plain">
-                                        <video class="mt-4" width="70px" height="70px"
-                                            src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}"
-                                            controls></video>
+                                        <iframe class="mt-4" width="70px" height="70px"
+                                            src="{{ asset('storage/app/public/uploads/detail/payment_plan/' . $project_detail->payment_plain) }}">
+                                        </iframe>
                                         <span class="text-danger"> @error('image')
                                                 {{ $message }}
                                             @enderror </span>

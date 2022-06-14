@@ -1,6 +1,8 @@
 @import url('http://fonts.cdnfonts.com/css/lemon-milk');
 
-@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto:wght@300&display=swap') html {
+/* @import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Roboto:wght@300&display=swap'); */
+
+html{
     overflow-x: hidden;
 }
 
@@ -71,6 +73,10 @@ p,
     box-shadow: none;
 }
 
+.home-section .btn-learn:focus {
+    box-shadow: none;
+}
+
 .navbar .btn-phone:hover {
     background-color: #fff;
 }
@@ -133,6 +139,11 @@ p,
 
 .home-section .team3 {
     font-weight: bold;
+    color: #B1A42C;
+}
+
+.home-section .team7 {
+   font-weight: bold;
     color: #B1A42C;
 }
 
@@ -358,8 +369,12 @@ p,
 }
 
 .home-section .read:hover {
-    background-color: #000;
+    background-color: #02081A;
     color: #fff;
+}
+
+.home-section .read:focus {
+    box-shadow: none;
 }
 
 .home-section .news {
@@ -473,6 +488,10 @@ p,
 
 .home-section .booking .btn-booking:hover {
     background-color: #D2AC2C;
+}
+
+.btn-us:focus{
+    box-shadow: none;
 }
 
 .home-section .team-logo {
@@ -848,7 +867,7 @@ footer .underline {
 }
 
 .about-section .third .btn-us:hover {
-    background-color: #000;
+    background-color: #02081A;
     color: #D2AC2C;
 }
 
@@ -884,7 +903,7 @@ footer .underline {
 }
 
 .about-section .forth .btn-whats:hover {
-    background-color: #000;
+    background-color: #02081A;
     color: #D2AC2C;
 }
 
@@ -899,7 +918,7 @@ footer .underline {
 }
 
 .about-section .fifth .g-img {
-    width: 104%;
+    width: 100%;
     height: 350px;
     border-radius: 8px;
     cursor: pointer;
@@ -1094,6 +1113,10 @@ footer .underline {
     border-radius: 5px;
 }
 
+.laravel-embed__responsive-wrapper{
+    padding-bottom: 0.25% !important;
+}
+
 
 /* ABOUT Section CSS End */
 
@@ -1129,16 +1152,23 @@ footer .underline {
         width: 75%;
     }
 
-    .home-section .team1 {
-        font-size: 24px;
+     .home-section .team1 {
+        font-size: 12px;
+        margin-top: 16px;
     }
 
     .home-section .team2 {
-        font-size: 24px;
+        font-size: 12px;
     }
 
     .home-section .team3 {
         font-size: 24px;
+        margin-bottom: -44px;
+    }
+    
+    .home-section .team7 {
+        font-size: 24px;
+        margin-bottom: 2px;
     }
 
     .home-section .btn-book {
@@ -1169,6 +1199,7 @@ footer .underline {
     }
 
     .home-section .box {
+        margin-top: 40px;
         border-left: none;
         border-right: none;
     }
@@ -1197,13 +1228,105 @@ footer .underline {
         margin-top: 20px;
     }
 
-    .home-section .future {
-        font-size: 12px;
+    .home-section h3{
+        font-size: 8px;
     }
 
     .home-section #al-noor {
         height: 32vh;
     }
+
+    .home-section #scheme {
+        font-size: 9px;
+    }
+
+    .home-section .para5 {
+        font-size: 9px;
+    }
+
+    .modal-dialog{
+        margin-left: 50px;
+    }
+    
+    p{
+        display: none;
+    }
+    
+    .lahore{
+        display: block;
+    } 
+    
+    .loc{
+        display: block;
+    }
+    
+    .email{
+        display: block;
+    }
+    
+    #gell_container{
+        padding-left: 8px;
+    }
+    
+    #scheme{
+        display: block;
+    }
+    
+    .para{
+        display: block;
+    }
+    
+    .para5{
+        display: block;
+    }
+    
+    .level{
+        display: block;
+    }
+    
+    .about-section .third {
+        padding: 17px 0px;
+    }
+    
+    .help{
+        display: block;
+    }
+    
+    .rung{
+        display: block;
+    }
+    
+    .latest {
+        display: none;
+    }
+    
+    h6 p{
+        display: block;
+    }
+    
+    .wish{
+        display: block;
+    }
+    
+    .km{
+        display: block;
+    }
+    
+    .lahore1{
+        display: block;
+    }
+    
+    #privacy{
+        display: block;
+    }
+    
+    .privacy{
+        display: block;
+    }
+    
+    /*h2{*/
+    /*    margin-top: -52px;*/
+    /*}*/
 
     /* Home Section Media Query CSS End */
 
@@ -1253,137 +1376,185 @@ footer .underline {
         display: none;
     }
 
-    /* About Section Media Query CSS End */
-
-}
-
-@media screen and (max-width: 997px) {
-
-    /* Home Section Media Query CSS Start */
-    .home-section .left-head {
-        font-size: 18px
+    .animate h3 {
+        font-size: 9px;
     }
 
-    .home-section .para {
-        font-size: 11px;
+    .a_team{
+        font-size: 30px;
     }
 
-    .home-section .choose {
-        margin-top: 10px;
+    .charman{
+        font-size: 22px;
     }
 
-    .home-section .garden {
-        font-size: 16px;
+    .home-section .c-img{
+        height: 30vh;
     }
 
-    .home-section .top-pro {
-        font-size: 25px;
+    #carouselExampleControls {
+        margin-top: -13rem !important;
     }
 
-    .home-section .lead {
-        font-size: 18px;
+    .nice {
+        position: absolute;
+        top: 88px;
     }
 
-    .home-section .latest {
-        font-size: 10px;
+    .laravel-embed__responsive-wrapper{
+        padding-bottom: 52.25% !important;
+        margin-top: 30px;
     }
 
-    /* Home Section Media Query CSS End */
-
-    /* About Section Media Query CSS Start */
-    .about-section .second .state {
-        font-size: 14px;
+    .home-section .team{
+        margin-top: 40px;
     }
 
-    .about-section .second .help {
-        font-size: 10px;
+        /* About Section Media Query CSS End */
+
     }
 
-    .about-section .fifth .u-head {
-        font-size: 18px;
+    @media screen and (max-width: 997px) {
+
+        /* Home Section Media Query CSS Start */
+        .home-section .left-head {
+            font-size: 18px
+        }
+
+        .home-section .para {
+            font-size: 11px;
+        }
+
+        .home-section .choose {
+            margin-top: 10px;
+        }
+
+        .home-section .garden {
+            font-size: 16px;
+        }
+
+        .home-section .top-pro {
+            font-size: 25px;
+        }
+
+        .home-section .lead {
+            font-size: 18px;
+        }
+
+        b, strong {
+            /* font-size: 10px; */
+            display: none;
+        }
+
+        .home-section .carousel-caption {
+            left: 3%;
+        }
+
+        .all-blocks{
+            margin-left: -54px;
+        }
+
+        /* Home Section Media Query CSS End */
+
+        /* About Section Media Query CSS Start */
+        .about-section .second .state {
+            font-size: 14px;
+        }
+
+        .about-section .second .help {
+            font-size: 10px;
+        }
+
+        .about-section .fifth .u-head {
+            font-size: 18px;
+        }
+
+        .arslan {
+            width: 100%;
+        }
+
+        .nice {
+            position: absolute;
+            top: 79px;
+        }
+
+        /* About Section Media Query CSS End */
     }
 
-    .arslan {
-        width: 100%;
+    @media screen and (min-device-width: 768px) and (max-device-width: 990px) {
+
+        /* Home Section Media Query CSS Start */
+        .home-section .today {
+            padding: 12px 16px;
+        }
+
+        .home-section .detail {
+            padding: 12px 16px;
+        }
+
+        .home-section .team-logo {
+            margin-top: 80px;
+        }
+
+        .home-section .btn-project {
+            margin-top: 40px !important;
+        }
+
+        .home-section .third {
+            padding: 15px 0px;
+        }
+
+        .home-section .lda {
+            font-size: 11px;
+        }
+
+        .home-section .near {
+            height: 22rem;
+            width: 84%;
+            margin-top: 15px;
+        }
+
+        .home-section .card {
+            height: 90%;
+        }
+
+        .home-section .news {
+            height: 128px;
+        }
+
+        /* Home Section Media Query CSS End */
+
+
+
+        /* ABOUT Section Media Query CSS Start */
+        .about-section .level {
+            font-size: 10px;
+        }
+
+        .about-section .box {
+            padding: 25px 20px;
+        }
+
+        .about-section .box1 {
+            padding: 25px 20px;
+        }
+
+        .about-section .box2 {
+            padding: 18px 20px;
+        }
+
+        .about-section .box3 {
+            padding: 25px 20px;
+        }
+
+        .about-section .box4 {
+            padding: 25px 20px;
+        }
+
+        .about-section .box5 {
+            padding: 25px 20px;
+        }
+
+        /* ABOUT Section Media Query CSS End */
+
     }
-
-    /* About Section Media Query CSS End */
-}
-
-@media screen and (min-device-width: 768px) and (max-device-width: 990px) {
-
-    /* Home Section Media Query CSS Start */
-    .home-section .today {
-        padding: 12px 16px;
-    }
-
-    .home-section .detail {
-        padding: 12px 16px;
-    }
-
-    .home-section .team-logo {
-        margin-top: 80px;
-    }
-
-    .home-section .btn-project {
-        margin-top: 40px !important;
-    }
-
-    .home-section .third {
-        padding: 15px 0px;
-    }
-
-    .home-section .lda {
-        font-size: 11px;
-    }
-
-    .home-section .near {
-        height: 22rem;
-        width: 84%;
-        margin-top: 15px;
-    }
-
-    .home-section .card {
-        height: 90%;
-    }
-
-    .home-section .news {
-        height: 128px;
-    }
-
-    /* Home Section Media Query CSS End */
-
-
-
-    /* ABOUT Section Media Query CSS Start */
-    .about-section .level {
-        font-size: 10px;
-    }
-
-    .about-section .box {
-        padding: 25px 20px;
-    }
-
-    .about-section .box1 {
-        padding: 25px 20px;
-    }
-
-    .about-section .box2 {
-        padding: 18px 20px;
-    }
-
-    .about-section .box3 {
-        padding: 25px 20px;
-    }
-
-    .about-section .box4 {
-        padding: 25px 20px;
-    }
-
-    .about-section .box5 {
-        padding: 25px 20px;
-    }
-
-    /* ABOUT Section Media Query CSS End */
-
-}

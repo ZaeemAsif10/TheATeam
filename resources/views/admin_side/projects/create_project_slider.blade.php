@@ -50,9 +50,6 @@
                                      <div class="form-group">
                                          <label for="">Title</label>
                                          <input type="text" class="form-control" name="title">
-                                         <span class="text-danger"> @error('title')
-                                                 {{ $message }}
-                                             @enderror </span>
                                      </div>
                                  </div>
 
@@ -75,9 +72,6 @@
                                      <div class="form-group">
                                          <label for="">Description</label>
                                          <textarea name="description" class="form-control" rows="4"></textarea>
-                                         <span class="text-danger"> @error('description')
-                                                 {{ $message }}
-                                             @enderror </span>
                                      </div>
                                  </div>
                                  <div class="col-md-12 mt-3">

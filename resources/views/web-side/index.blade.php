@@ -98,8 +98,8 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                         <h1 class="font-weight-bold left-head">...</h1>
-                        <h2 class="font-weight-bold left-head">THE A TEAM REAL</h2>
-                        <h2 class="font-weight-bold left-head">ESTATE AND BUILDERS</h2>
+                        <h2 class="font-weight-bold left-head">THE A TEAM</h2>
+                        <h2 class="font-weight-bold left-head">REAL ESTATE AND BUILDERS</h2>
                         <h5 class="mt-4 mb-4 left-head">YOU IMAGINE WE BUILD</h5>
                         <p class="para mb-4">The A-Team Real Estate and Builders provides local market intelligence to
                             occupiers,
@@ -140,7 +140,7 @@
                                 Al-Jalil
                                 Developers
                                 which
-                                offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore With All
+                                offers commercial and residential 03, 08, 10, and 05 marla plots in Lahore with all
                                 facilites & amenities and offering a 3 year flexible payment plan The latest project of Al
                                 Jalil Developers is
                                 Marina Sports City. The endeavor of Al Jalil Developers is to deliver a better living with
@@ -174,7 +174,7 @@
                                 which
                                 offering
                                 you 01 Kanal, 10, 3, and 5 marla residential plots in Lahore West with best facilities along
-                                with central commercial areas. The latest project of Al Noor Orchard is Marina Sports City.
+                                with central commercial areas. The latest block of Al Noor Orchard is Marina Sports City.
                             </p>
                         </div>
                         <ul class="ul1">
@@ -184,11 +184,11 @@
                             </li>
                         </ul>
                         <div class="">
-                            <p class="para5 ml-4">MARINA SPORTS CITY AL NOOR ORCHARD
+                            <p class="para5 ml-4">
                                 The new project of Al Noor Orchard provides you the best opportunity in Lahore, to build
                                 your dream house at a very low price. Marina Sports City is a new and modern housing project
                                 by Al Jalil Developers which offers you 1 Kanal, 3 Marla, 10 Marla, and 5 Marla residential
-                                plots with the best amenities and facilities in Lahore west.</p>
+                                plots with the best amenities and facilities in Lahore west. The endeavor of Al Jalil Developers is to deliver a better living with all modern world facilities.</p>
                         </div>
                     </div>
                 </div>
@@ -258,10 +258,7 @@
                                 <h1 class="font-weight-bold forth-head">...</h1>
                                 <h1 class="text-white font-weight-bold mt-2">CLIENT'S <br> REVIEWS</h1>
                                 <h5 class="text-white mt-5">ELEGENT AND LUXUARY</h5>
-                                <p class="mt-5 wish">I got the best deal and the best location in Al Noor Orchard
-                                    Housing
-                                    Scheme Lahore.
-                                    I recommend The A Team for best deals in Al Noor Orchard.
+                                <p class="mt-5 wish">It was the best decision of my life. My money got the best value. Now, I am a house owner and proudly living the life that I want. Thank you The A Team.
                                 </p>
                                 <h5 class="text-white mt-5">AHMAD ALI</h5>
                                 <h6 class="client">CLIENT - THE A TEAM</h6>
@@ -278,7 +275,7 @@
                                     Scheme Lahore.
                                     I recommend The A Team for best deals in Al Noor Orchard.
                                 </p>
-                                <h5 class="text-white mt-5">MUHAMMAD SHOIB</h5>
+                                <h5 class="text-white mt-5">MUHAMMAD SHOAIB</h5>
                                 <h6 class="client">CLIENT - THE A TEAM</h6>
                             </div>
                         </div>
@@ -298,7 +295,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($news as $new)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mt-3">
                             <div class="card border-0 mt-2">
                                 <div class="card-header border-0 p-0">
                                     <img src="{{ asset('storage/app/public/uploads/news/' . $new->image) }}"
@@ -343,7 +340,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($blogs as $blog)
-                        <div class="col-md-4">
+                        <div class="col-md-4  mt-3">
                             <div class="card border-0 mt-2">
                                 <div class="card-header border-0 p-0">
                                     <img src="{{ asset('storage/app/public/uploads/blogs/' . $blog->image) }}"

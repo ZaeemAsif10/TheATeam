@@ -10,8 +10,8 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DetailSliderController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/', function () {
 //     return view('auth.login');
 // });
+
 
 Auth::routes();
 
@@ -155,6 +156,20 @@ Route::get('annual_event/create', [EventController::class, 'annualEventCreate'])
 Route::post('annual_event/store', [EventController::class, 'annualEventStore']);
 Route::get('annual_event/edit/{id}', [EventController::class, 'annualEventEdit']);
 Route::post('annual_event/update', [EventController::class, 'annualEventUpdate']);
+
+
+
+
+
+
+// Route::get('payment_plan', [ProjectController::class, 'paymentPlan']);
+// Route::get('get-payment_plan', [ProjectController::class, 'getPaymentPlan']);
+// Route::post('store-payment_plan', [ProjectController::class, 'storePaymentPlan']);
+// Route::get('edit-payment_plan', [ProjectController::class, 'editPaymentPlan']);
+// Route::post('update-payment_plan', [ProjectController::class, 'updatePaymentPlan']);
+// Route::get('delete-payment_plan', [ProjectController::class, 'deletePaymentPlan']);
+
+
 
 
 //Contact Routes
